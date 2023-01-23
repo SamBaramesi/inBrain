@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    /* The image used */
+    background-image:
+    url(https://wallpaperaccess.com/full/1406863.jpg);
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    /* Prevent image from repeating */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+  }
