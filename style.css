@@ -1,3 +1,5 @@
+/* SETTING DEFAULT VALUES */
+
 html {
     box-sizing: border-box;
 }
@@ -8,14 +10,176 @@ html {
     padding: 0;
 }
 
+html h1 {
+    font-family: sans-serif;
+    font-size: 4rem;
+}
+
+html h2 {
+    font-family: sans-serif;
+    font-size: 2rem;
+}
+
+html h3 {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+
+html h4 {
+    font-family: sans-serif;
+    font-size: 1.125rem;
+}
+
+html h5 {
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+html h6 {
+    font-family: sans-serif;
+    font-size: 0.875rem;
+}
+
+.p1 {
+    font-family: sans-serif;
+    font-size: 1.125rem;
+}
+
+.p2 {
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.p3 {
+    font-family: sans-serif;
+    font-size: 0.875rem;
+}
+
+.p4 {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+}
+
+/* --------------------------------------------------- */
+/* --------------------------------------------------- */
+
+nav {
+    background-color: #FF6D2D;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav li a:hover {
+    color: white;
+    background-color: black;
+}
+
 .banner {
+    max-width: 100%;
+    height: 75vh;
     /* The image used */
     background-image:
     url(https://wallpaperaccess.com/full/1406863.jpg);
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     /* Prevent image from repeating */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#Bcontent {
+    margin: auto;
+    position: relative;
+    top: 20vh;
+    max-width: 75%;
+    text-align: center;
+    color: white;
+}
+
+#Bcontent button {
+    background-color: pink;
+    border: solid 1px pink;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 25%;
+    height: auto;
+}
+
+.column {
+    border-radius: 5px;
+    padding: 15px;
+    margin: auto;
+    text-align: left;
+    background-color: white;
+    max-width: 80%;
+    position: relative;
+    bottom: 10vh;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+.column ul li {
+    list-style: none;
+}
+
+/*
+html {
+    box-sizing: border-box;
+    line-height: 150%;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: medium;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    The image used
+    background-image:
+    url(https://wallpaperaccess.com/full/1406863.jpg);
+    Create the parallax scrolling effect
+    background-attachment: fixed;
+    Prevent image from repeating
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
-  }
+    height: 100vh;
+}
+
+.desc {
+    background-color: red;
+    max-width: 50%;
+    position: relative;
+    transform: translateX(50%);
+    top: -10vh;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+ul {
+    float: left;
+    width: 33.33%;
+    list-style-type: none;
+    text-align: left;
+    padding: 25px;
+}
+  
+  Clear floats after the columns
+
+  .tabl:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+*/
