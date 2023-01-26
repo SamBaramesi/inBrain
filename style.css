@@ -64,7 +64,8 @@ html h6 {
 /* --------------------------------------------------- */
 
 nav {
-    background-color: #FF6D2D;
+    /* background-color: #FF6D2D; */
+    background-color: white;
     text-align: center;
 }
 
@@ -128,6 +129,25 @@ nav li a:hover {
 
 .column ul li {
     list-style: none;
+}
+
+.contact {
+    margin: auto;
+    max-width: 90%;
+    background-color: whitesmoke;
+    text-align: left;
+    padding: 25px 10px;
+    border-radius: 10px;
+    margin-bottom: 10vh;
+}
+
+.quote {
+    margin: auto;
+    max-width: 90%;
+    text-align: left;
+    padding: 20px;
+    border: solid 1px black;
+    border-radius: 10px;
 }
 
 /*
