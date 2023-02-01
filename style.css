@@ -2,6 +2,7 @@
 
 html {
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 *, *:before, *:after {
@@ -10,54 +11,114 @@ html {
     padding: 0;
 }
 
+@font-face {
+    font-family: "AvenirBlack";
+    src: url(assets/fonts/AvenirLTStd-Black.otf);
+}
+
+@font-face {
+    font-family: "AvenirBlackOblique";
+    src: url(assets/fonts/AvenirLTStd-BlackOblique.otf);
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: "AvenirBook";
+    src: url(assets/fonts/AvenirLTStd-Book.otf);
+}
+
+@font-face {
+    font-family: "AvenirBookOblique";
+    src: url(assets/fonts/AvenirLTStd-BookOblique.otf);
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: "AvenirHeavy";
+    src: url(assets/fonts/AvenirLTStd-Heavy.otf);
+}
+
+@font-face {
+    font-family: "AvenirHeavyOblique";
+    src: url(assets/fonts/AvenirLTStd-HeavyOblique.otf);
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: "AvenirLight";
+    src: url(assets/fonts/AvenirLTStd-Light.otf);
+}
+
+@font-face {
+    font-family: "AvenirRoman";
+    src: url(assets/fonts/AvenirLTStd-Roman.otf);
+}
+
+html #hero {
+    font-family: "AvenirBook";
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+
 html h1 {
-    font-family: sans-serif;
-    font-size: 4rem;
+    font-family: "AvenirBlack";
+    font-size: 2rem;
+    font-weight: bolder;
 }
 
 html h2 {
-    font-family: sans-serif;
-    font-size: 2rem;
+    font-family: "AvenirBlack";
+    font-size: 1.5rem;
+    font-weight: bolder;
 }
 
 html h3 {
-    font-family: sans-serif;
-    font-size: 1.5rem;
+    font-family: "AvenirBlack";
+    font-size: 1.125rem;
+    font-weight: bolder;
 }
 
 html h4 {
-    font-family: sans-serif;
-    font-size: 1.125rem;
+    font-family: "AvenirBlack";
+    font-size: 1rem;
+    font-weight: bolder;
 }
 
 html h5 {
-    font-family: sans-serif;
+    font-family: "AvenirHeavy";
     font-size: 1rem;
+    font-weight: bold;
 }
 
 html h6 {
-    font-family: sans-serif;
+    font-family: "AvenirHeavy";
     font-size: 0.875rem;
+    font-weight: bold;
 }
 
 .p1 {
-    font-family: sans-serif;
+    font-family: "AvenirBook";
     font-size: 1.125rem;
+    font-weight: normal;
 }
 
 .p2 {
-    font-family: sans-serif;
+    font-family: "AvenirBook";
     font-size: 1rem;
+    font-weight: normal;
 }
 
 .p3 {
-    font-family: sans-serif;
+    font-family: "AvenirBook";
     font-size: 0.875rem;
+    font-weight: normal;
 }
 
 .p4 {
-    font-family: sans-serif;
+    font-family: "AvenirBook";
     font-size: 0.75rem;
+    font-weight: normal;
 }
 
 /* --------------------------------------------------- */
@@ -84,7 +145,7 @@ nav li a:hover {
 }
 
 .banner {
-    max-width: 100%;
+    width: 100%;
     height: 75vh;
     /* The image used */
     background-image:
@@ -96,12 +157,17 @@ nav li a:hover {
     background-repeat: no-repeat;
 }
 
+.content {
+    padding: 0px 30px;
+}
+
 #Bcontent {
+    padding: 20px;
+    background-color: red;
     margin: auto;
     position: relative;
     top: 20vh;
-    max-width: 75%;
-    text-align: center;
+    text-align: left;
     color: white;
 }
 
@@ -121,7 +187,7 @@ nav li a:hover {
     margin: auto;
     text-align: left;
     background-color: white;
-    max-width: 80%;
+    width: 100%;
     position: relative;
     bottom: 10vh;
     box-shadow: 0px 15px 10px -15px #111;
@@ -133,7 +199,7 @@ nav li a:hover {
 
 .contact {
     margin: auto;
-    max-width: 90%;
+    width: 100%;
     background-color: whitesmoke;
     text-align: left;
     padding: 25px 10px;
@@ -143,63 +209,178 @@ nav li a:hover {
 
 .quote {
     margin: auto;
-    max-width: 90%;
+    width: 100%;
     text-align: left;
     padding: 20px;
     border: solid 1px black;
     border-radius: 10px;
 }
 
-/*
-html {
-    box-sizing: border-box;
-    line-height: 150%;
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: medium;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-}
-
-.banner {
-    The image used
-    background-image:
-    url(https://wallpaperaccess.com/full/1406863.jpg);
-    Create the parallax scrolling effect
-    background-attachment: fixed;
-    Prevent image from repeating
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-}
-
-.desc {
-    background-color: red;
-    max-width: 50%;
-    position: relative;
-    transform: translateX(50%);
-    top: -10vh;
-    box-shadow: 0px 15px 10px -15px #111;
-}
-
-ul {
-    float: left;
-    width: 33.33%;
-    list-style-type: none;
+.grid {
+    width: 100%;
+    margin: auto;
+    margin-top: 10vh;
+    /* background-color: bisque; */
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 20% 80%;
     text-align: left;
-    padding: 25px;
-}
-  
-  Clear floats after the columns
-
-  .tabl:after {
-    content: "";
-    display: table;
-    clear: both;
 }
 
-*/
+.item {
+    /* background-color: rgba(0, 0, 255, 0.267); */
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+
+#item3 {
+    padding-bottom: 50px;
+}
+
+#item4 {
+    padding-bottom: 50px;
+    background-color: #f8f8f8;
+}
+
+#item6 {
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid #f8f8f8;
+    padding: 5px 0px;
+    margin: 10px 0px;
+}
+
+#item6-1 {
+    background-color: cyan;
+    text-decoration: underline;
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+
+.tooltip {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 50%;
+    background-color: white;
+    color: black;
+    padding: 5px 5px;
+    border-radius: 3px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    
+    z-index: 1;
+  }
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    cursor: pointer;
+    
+}
+
+
+#item6-1:hover {
+    background-color: cyan;
+}
+
+
+
+#item6-2 {
+    background-color: #f8f8f8;
+    padding: 5px 8px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+#item7 {
+    margin-top: -30px;
+}
+
+#item8 {
+    background-color: #f8f8f8;
+    padding: 5px 8px;
+    border-radius: 3px;
+    position: relative;
+    top: -15px;
+}
+
+#item10 {
+    padding-bottom: 50px;
+    background-color: #f8f8f8;
+    position: relative;
+    top: -15px;
+}
+
+#item12 {
+    border-bottom: 1px solid #f8f8f8;
+    padding: 5px 0px;
+    margin: 10px 0px;
+    position: relative;
+    top: -34px;
+}
+
+#item12-1 {
+    background-color: #f8f8f8;
+}
+
+#item14 {
+    padding-bottom: 100px;
+    background-color: #f8f8f8;
+    position: relative;
+    top: -47px;
+}
+
+#item15 {
+    position: relative;
+    top: -50px;
+}
+
+#item16 {
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid #f8f8f8;
+    padding: 5px 0px;
+    position: relative;
+    top: -35px;
+}
+
+#item16-1 {
+    padding-bottom: 50px;
+    background-color: #f8f8f8;
+}
+
+#item17 {
+    position: relative;
+    top: -57px;
+}
+
+#item18 {
+    padding-bottom: 100px;
+    background-color: #f8f8f8;
+    position: relative;
+    top: -37px;
+}
+
+#item19 {
+    position: relative;
+    top: -85px;
+}
+
+#item20 {
+    position: relative;
+    top: -35px;
+}
+
+#item21 {
+    position: relative;
+    top: -37px;
+}
+
+#item22 {
+    border-bottom: 1px solid #f8f8f8;
+    position: relative;
+    top: -50px;
+}
