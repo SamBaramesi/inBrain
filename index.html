@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
     <title>Werken Bij!</title>
 </head>
 
 <body>
     <nav>
-        <ul>
-            <li><a href="#requirements">Vereisten</a></li>
-            <li><a href="#requirements">Vereisten</a></li>
+        <ul class="p4">
             <li><a href="#requirements">Vereisten</a></li>
             <li><a href="#requirements">Vereisten</a></li>
             <li><a href="#requirements">Vereisten</a></li>
@@ -29,72 +28,118 @@
         <div id="Bcontent">
             <div id="hero">Project Manager</div>
             <br>
-            <h1>inBrain</h1>
-            <h2>Utrecht - De Meern</h2>
-            <button>Get started</button>
+            <div class="p1">inBrain</div>
+            <div class="p1">Utrecht - De Meern</div>
+            <a href="http://inbrain.nl">
+                <button type="button" class="zoom"><span class="p1">Soliciteren</span></button>
+            </a>
         </div>
     </section>
     <div class="content">
         <section>
             <div class="column">
-                <h5>Wat is vereist?</h5>
+                <h3>Wat is vereist?</h3>
                 <br>
                 <ul>
-                    <li>HBO/WO werk- en denkniveau</li>
-                    <li>Minimaal 2 jaar relevante werkervaring, bij voorkeur met storytelling en scriptschrijven</li>
-                    <li>Kennis van leerbehoeftes en onderwijskundige werkvormen</li>
-                    <li>Allerlei soorten input uit kunnen werken in duidelijke, verschillende leermethoden</li>
-                    <li>Uitstekende beheersing Nederlands en Engels, zowel in woord als geschrift</li>
-                    <li>Nieuwsgierig, nauwkeurig, brede interesse</li>
+                    <ul class="p2 less-spacing fa-ul">
+                        <li><span class="fa-li"><i class="fas fa-brain fa-fw"></i></span>HBO/WO werk- en denkniveau</li>
+                        <li><span class="fa-li"><i class="fas fa-briefcase fa-fw"></i></span>Minimaal 2 jaar relevante
+                            werkervaring, bij voorkeur met
+                            storytelling en scriptschrijven</li>
+                        <li><span class="fa-li"><i class="fas fa-book fa-fw"></i></span>Kennis van leerbehoeftes en
+                            onderwijskundige werkvormen</li>
+                        <li><span class="fa-li"><i class="fas fa-exchange-alt fa-fw"></i></span>Allerlei soorten input
+                            uit kunnen werken in duidelijke,
+                            verschillende leermethoden</li>
+                        <li><span class="fa-li"><i class="fas fa-language fa-fw"></i></span>Uitstekende beheersing
+                            Nederlands en Engels, zowel in woord als
+                            geschrift</li>
+                        <li><span class="fa-li"><i class="fas fa-smile fa-fw"></i></span>Nieuwsgierig, nauwkeurig, brede
+                            interesse</li>
+                    </ul>
+            </div>
+            <div class="column">
+                <h3>Wat krijg je?</h3>
+                <br>
+                <ul class="p2 less-spacing fa-ul">
+                    <li><span class="fa-li"><i class="fas fa-money-bill-alt"></i></span>Vanaf €2.400 bruto p/m
+                        (afhankelijk van kennis en ervaring)</li>
+                    <li><span class="fa-li"><i class="fas fa-calendar-alt"></i></span>40-urige werkweek</li>
+                    <li><span class="fa-li"><i class="fas fa-plane"></i></span>26 vakantiedagen</li>
+                    <li><span class="fa-li"><i class="fas fa-wallet"></i></span>Persoonlijk opleidingsbudget om je te
+                        ontwikkelen in je functie
+                    </li>
+                    <li><span class="fa-li"><i class="fas fa-shopping-bag"></i></span>Laptop, reiskostenvergoeding,
+                        materiaal voor een goede
+                        thuiswerkplek</li>
                 </ul>
             </div>
             <div class="column">
-                <h5>Wat krijg je?</h5>
+                <h3>Wat doe je?</h3>
                 <br>
                 <ul>
-                    <li>Vanaf €2.400 bruto p/m (afhankelijk van kennis en ervaring)</li>
-                    <li>40-urige werkweek</li>
-                    <li>26 vakantiedagen</li>
-                    <li>Persoonlijk opleidingsbudget om je te ontwikkelen in je functie</li>
-                    <li>Laptop, reiskostenvergoeding, materiaal voor een goede thuiswerkplek</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h5>Wat doe je?</h5>
-                <br>
-                <ul>
-                    <li></li>
+                    <li><canvas id="myChart"></canvas></li>
                 </ul>
             </div>
         </section>
         <section>
             <div class="contact">
-                <h5>Stel direct een vraag</h5>
+                <h3>Stel direct een vraag</h3>
                 <br>
-                <h6>Sebastiaan Neele</h6>
-                <div class="p3">
-                    <p>Excutive Director</p>
-                </div>
+                <h5>Sebastiaan Neele</h5>
+                <p class="p3">Excutive Director</p>
+                <a href="mailto:info@inbrain.nl"><i style="margin-top: 5px;"
+                        class="fa icon-size fa-envelope pc"></i></a>
             </div>
         </section>
         <section>
             <div class="vacHead">
-
+                <h1>Vacature</h1>
             </div>
             <div class="vacDesc">
-
+                <p class="p2" style="margin: 0px 0px 16px;">Als <b>Learning Specialist</b> bij RMMBR ben je
+                    verantwoordelijk voor het ontwikkelen van
+                    online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale
+                    leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een
+                    organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je
+                    opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant,
+                    soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short
+                    copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de
+                    diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.</p>
+                <p class="p2" style="margin: 0px 0px 16px;">RMMBR heeft allerlei klanten, dus je werkt aan uiteenlopende
+                    projecten die verschillen qua
+                    inhoud, omvang en doorlooptijd. Dit betekent dat je je continu moet verdiepen in een ander
+                    onderwerp. Je moet de materie volledig begrijpen voordat je tekstuele uitleg hierover kunt geven.
+                    Daarom heb je regelmatig contact met de inhoudsexpert(s) en/of projectmanager aan de klantzijde.
+                    Daarnaast doe je zelf onderzoek en houd je rekening met visuele aspecten. Copy en design gaan hand
+                    in hand, dus je denkt ook mee over hoe jouw tekst visueel het beste tot zijn recht komt. Verder ben
+                    je soms betrokken bij de offertefase en denk je mee over conceptvoorstellen. </p>
+                <p class="p2" style="margin: 0px 0px 16px;">Je werkt in projectteams met designers, projectregisseurs en
+                    andere learning specialisten.
+                    Je directe collega's, de duur en de omvang van je werk verschillen per project.</p>
             </div>
         </section>
         <section>
             <div class="quote">
-                <div class="p1"><q>Als je het leuk vindt om over uiteenlopende onderwerpen te schrijven op basis van
+                <div class="p2"><q>Als je het leuk vindt om over uiteenlopende onderwerpen te schrijven op basis van
                         briefings, gesprekken met inhoudsexperts en eigen onderzoek, en je het niet erg vindt dat je met
                         veel deadlines te maken krijgt die elkaar soms snel opvolgen, dan is dit een baan voor jou.</q>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="grid">
+        <section style="margin-top: 10vh;">
+            <h1>Werkweek</h1>
+            <div class="grid-head">
+                <div class="profile-picture">
+                    <img src="assets/img/Marco.png" alt="Profile picture">
+                </div>
+                <div class="ppDesc">
+                    <div class="p2">Top G Dev/Fry Master</div>
+                    <div class="p3">Marco van den Bout</div>
+                </div>
+            </div>
+
+            <div class="grid p4">
                 <div id="item1" class="item">08:00</div>
                 <div id="item2" class="item"></div>
                 <div id="item3" class="item">09:00</div>
@@ -131,7 +176,11 @@
                 <div id="item22" class="item"></div>
             </div>
         </section>
+        <section>
+
+        </section>
     </div>
+    <script src="assets/scripts/pie-chart.js"></script>
 </body>
 
 </html>
