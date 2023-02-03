@@ -451,3 +451,33 @@ nav li a:hover {
     position: relative;
     top: -50px;
 }
+
+.calendar {
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.example {
+    border: 1px solid black;
+}
+
+.container{
+    width: 500vw;
+    display: flex;
+    transition: ease-in .5s;
+    /* gap: 1rem; */
+    /* justify-content: space-between; */
+
+}
+.agenda {
+    width: 100vw;
+}
+.flex {
+    gap: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex div{
+    background-color: rgba(0, 0, 255, 0.253);
+}
