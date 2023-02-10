@@ -174,7 +174,7 @@ nav li a:hover {
 }
 
 #Bcontent {
-    padding: 20px;
+    padding: 30px;
     /* background-color: red; */
     margin: auto;
     position: relative;
@@ -246,8 +246,34 @@ nav li a:hover {
     margin-bottom: 16px;
 }
 
+#more {
+    display: none;
+}
+
+#myBtn {
+    background-color: #FF6D2D;
+    border: solid 1px #FF6D2D;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 50%;
+    height: auto;
+    color: white;
+}
+
+#myBtn:hover {
+    background-color: #FF6D2D;
+    ;
+    border: solid 1px #FF6D2D;
+    ;
+    cursor: pointer;
+    transition: ease .5s;
+    transform: scale(1.12);
+    /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 .quote {
-    margin-top: 10vh;
+    margin-top: 5vh;
     width: 100%;
     text-align: left;
     padding: 20px;
@@ -290,168 +316,6 @@ nav li a:hover {
     text-align: left;
 }
 
-.item {
-    /* background-color: rgba(0, 0, 255, 0.267); */
-    padding: 5px 8px;
-    border-radius: 3px;
-}
-
-#item3 {
-    padding-bottom: 50px;
-}
-
-#item4 {
-    padding-bottom: 50px;
-    background-color: #f8f8f8;
-}
-
-#item6 {
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid #f8f8f8;
-    padding: 5px 0px;
-    margin: 10px 0px;
-}
-
-#item6-1 {
-    background-color: cyan;
-    text-decoration: underline;
-    padding: 5px 8px;
-    border-radius: 3px;
-}
-
-.tooltip {
-    position: relative;
-    width: 100%;
-    display: inline-block;
-    margin: auto;
-}
-
-.tooltip:hover {
-    cursor: pointer;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 50%;
-    background-color: white;
-    color: black;
-    padding: 5px 5px;
-    border-radius: 3px;
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    width: 80%;
-    text-align: center;
-    margin-left: -25px;
-}
-
-
-#item6-1:hover {
-    background-color: cyan;
-}
-
-
-
-#item6-2 {
-    background-color: #f8f8f8;
-    padding: 5px 8px;
-    border-radius: 3px;
-    margin-top: 5px;
-}
-
-#item7 {
-    margin-top: -30px;
-}
-
-#item8 {
-    background-color: #f8f8f8;
-    padding: 5px 8px;
-    border-radius: 3px;
-    position: relative;
-    top: -15px;
-}
-
-#item10 {
-    padding-bottom: 50px;
-    background-color: #f8f8f8;
-    position: relative;
-    top: -15px;
-}
-
-#item12 {
-    border-bottom: 1px solid #f8f8f8;
-    padding: 5px 0px;
-    margin: 10px 0px;
-    position: relative;
-    top: -34px;
-}
-
-#item12-1 {
-    background-color: #f8f8f8;
-}
-
-#item14 {
-    padding-bottom: 100px;
-    background-color: #f8f8f8;
-    position: relative;
-    top: -47px;
-}
-
-#item15 {
-    position: relative;
-    top: -50px;
-}
-
-#item16 {
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid #f8f8f8;
-    padding: 5px 0px;
-    position: relative;
-    top: -35px;
-}
-
-#item16-1 {
-    padding-bottom: 50px;
-    background-color: #f8f8f8;
-}
-
-#item17 {
-    position: relative;
-    top: -57px;
-}
-
-#item18 {
-    padding-bottom: 100px;
-    background-color: #f8f8f8;
-    position: relative;
-    top: -37px;
-}
-
-#item19 {
-    position: relative;
-    top: -85px;
-}
-
-#item20 {
-    position: relative;
-    top: -35px;
-}
-
-#item21 {
-    position: relative;
-    top: -37px;
-}
-
-#item22 {
-    border-bottom: 1px solid #f8f8f8;
-    position: relative;
-    top: -50px;
-}
-
 .calendar {
     margin: 2rem 0;
     overflow: hidden;
@@ -461,7 +325,7 @@ nav li a:hover {
     border: 1px solid black;
 }
 
-.container{
+.container {
     width: 500vw;
     display: flex;
     transition: ease-in .5s;
@@ -469,15 +333,142 @@ nav li a:hover {
     /* justify-content: space-between; */
 
 }
+
 .agenda {
     width: 100vw;
 }
+
 .flex {
     gap: .5rem;
     display: flex;
     flex-direction: column;
 }
 
-.flex div{
+.flex div {
     background-color: rgba(0, 0, 255, 0.253);
+}
+
+#showMore {
+    display: none;
+}
+
+#showMoreBtn {
+    background-color: #FF6D2D;
+    border: solid 1px #FF6D2D;
+    border-radius: 5px;
+    padding: 10px;
+    width: 50%;
+    height: auto;
+    color: white;
+}
+
+#showMoreBtn:hover {
+    background-color: #FF6D2D;
+    ;
+    border: solid 1px #FF6D2D;
+    ;
+    cursor: pointer;
+    transition: ease .5s;
+    transform: scale(1.12);
+    /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.groeipad {
+    margin-top: 10vh;
+}
+
+.dot {
+    height: 75px;
+    width: 75px;
+    border: 1px dotted black;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.flexDot {
+    display: flex;
+    justify-content: space-evenly
+}
+
+#line {
+    display: block;
+    background-color: #FF6D2D;
+    height: 1px;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: -37.5px;
+    z-index: -1;
+}
+
+.video {
+    margin-top: 10vh;
+    background-color: black;
+    height: auto;
+    width: 100%;
+}
+
+.proIcons {
+    list-style: none;
+}
+
+.fa-iconi {
+    font-size: 2rem;
+}
+
+.carousel {
+    width: 100%;
+    margin-top: 10vh;
+    background-color: blue;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    display: none;
+    width: 500px;
+    height: 500px;
+    /* background-color: red; */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.active {
+    display: flex !important;
+}
+
+.previous .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.previous:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 768px) {
+
 }
