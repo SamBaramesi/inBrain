@@ -297,9 +297,60 @@
                     {
                         "id": 1,
                         "weekDay": "Monday",
-                        "Values": [
+                        "activities": [
                             {
-                                
+                                "id": 1,
+                                "from": "08:30",
+                                "to": "10:00",
+                                "text": "Werken aan outline"
+                            },
+                            {
+                                "id": 2,
+                                "from": "10:00",
+                                "to": "10:30",
+                                "text": "Salesoverleg"
+                            },
+                            {
+                                "id": 3,
+                                "from": "10:30",
+                                "to": "11:00",
+                                "text": "Projectoverleg"
+                            },
+                            {
+                                "id": 4,
+                                "from": "11:00",
+                                "to": "11:30",
+                                "text": "Contentoverleg"
+                            },
+                            {
+                                "id": 5,
+                                "from": "11:30",
+                                "to": "12:30",
+                                "text": "Werken aan outline"
+                            },
+                            {
+                                "id": 6,
+                                "from": "12:30",
+                                "to": "13:00",
+                                "text": "Lunch"
+                            },
+                            {
+                                "id": 7,
+                                "from": "13:00",
+                                "to": "14:30",
+                                "text": "Werken aan script"
+                            },
+                            {
+                                "id": 8,
+                                "from": "15:00",
+                                "to": "16:00",
+                                "text": "Inhoudelijke overleg klant"
+                            },
+                            {
+                                "id": 9,
+                                "from": "16:00",
+                                "to": "17:30",
+                                "text": "Werken aan script"
                             }
                         ]
                     },
@@ -308,7 +359,46 @@
                         "weekDay": "Tuesday",
                         "Values": [
                             {
-
+                                "id": 1,
+                                "from": "08:30",
+                                "to": "09:00",
+                                "text": "Overleg Projectteam"
+                            },
+                            {
+                                "id": 2,
+                                "from": "09:00",
+                                "to": "11:15",
+                                "text": "Werken aan script"
+                            },
+                            {
+                                "id": 3,
+                                "from": "11:30",
+                                "to": "12:30",
+                                "text": "Offerte schrijven potentiele klant"
+                            },
+                            {
+                                "id": 4,
+                                "from": "12:30",
+                                "to": "13:00",
+                                "text": "Lunch"
+                            },
+                            {
+                                "id": 5,
+                                "from": "13:00",
+                                "to": "14:00",
+                                "text": "Werken aan script"
+                            },
+                            {
+                                "id": 6,
+                                "from": "14:00",
+                                "to": "15:30",
+                                "text": "Inhoudelijke overleg klant"
+                            },
+                            {
+                                "id": 7,
+                                "from": "15:45",
+                                "to": "17:30",
+                                "text": "Werken aan outline"
                             }
                         ]
                     },
@@ -317,7 +407,52 @@
                         "weekDay": "Wednesday",
                         "Values": [
                             {
-
+                                "id": 1,
+                                "from": "08:30",
+                                "to": "10:00",
+                                "text": "Werken aan outline"
+                            },
+                            {
+                                "id": 2,
+                                "from": "10:00",
+                                "to": "10:30",
+                                "text": "Projectoverleg"
+                            },
+                            {
+                                "id": 3,
+                                "from": "10:45",
+                                "to": "11:15",
+                                "text": "Feedback klant e-learning verwerken"
+                            },
+                            {
+                                "id": 4,
+                                "from": "11:30",
+                                "to": "12:30",
+                                "text": "Werken aan script"
+                            },
+                            {
+                                "id": 5,
+                                "from": "12:30",
+                                "to": "13:00",
+                                "text": "Lunch"
+                            },
+                            {
+                                "id": 6,
+                                "from": "13:00",
+                                "to": "15:00",
+                                "text": "Werken aan script"
+                            },
+                            {
+                                "id": 7,
+                                "from": "15:00",
+                                "to": "16:00",
+                                "text": "Offerte schrijven potentiele klant"
+                            },
+                            {
+                                "id": 8,
+                                "from": "16:00",
+                                "to": "17:30",
+                                "text": "Suggesties visuals opstellen"
                             }
                         ]
                     },
@@ -326,7 +461,58 @@
                         "weekDay": "Thursday",
                         "Values": [
                             {
-
+                                "id": 1,
+                                "from": "08:30",
+                                "to": "10:00",
+                                "text": "Werken aan outline"
+                            },
+                            {
+                                "id": 2,
+                                "from": "10:00",
+                                "to": "10:30",
+                                "text": "Salesoverleg"
+                            },
+                            {
+                                "id": 3,
+                                "from": "10:30",
+                                "to": "11:00",
+                                "text": "Projectoverleg"
+                            },
+                            {
+                                "id": 4,
+                                "from": "11:00",
+                                "to": "11:30",
+                                "text": "Contentoverleg"
+                            },
+                            {
+                                "id": 5,
+                                "from": "11:30",
+                                "to": "12:30",
+                                "text": "Werken aan outline"
+                            },
+                            {
+                                "id": 6,
+                                "from": "12:30",
+                                "to": "13:00",
+                                "text": "Lunch"
+                            },
+                            {
+                                "id": 7,
+                                "from": "13:00",
+                                "to": "14:30",
+                                "text": "Werken aan script"
+                            },
+                            {
+                                "id": 8,
+                                "from": "15:00",
+                                "to": "16:00",
+                                "text": "Inhoudelijke overleg klant"
+                            },
+                            {
+                                "id": 9,
+                                "from": "16:00",
+                                "to": "17:30",
+                                "text": "Werken aan script"
                             }
                         ]
                     },
@@ -335,7 +521,52 @@
                         "weekDay": "Friday",
                         "Values": [
                             {
-
+                                "id": 1,
+                                "from": "08:30",
+                                "to": "10:00",
+                                "text": "Werken aan outline"
+                            },
+                            {
+                                "id": 2,
+                                "from": "10:00",
+                                "to": "10:30",
+                                "text": "Projectoverleg"
+                            },
+                            {
+                                "id": 3,
+                                "from": "10:45",
+                                "to": "11:15",
+                                "text": "Feedback klant e-learning verwerken"
+                            },
+                            {
+                                "id": 4,
+                                "from": "11:30",
+                                "to": "12:30",
+                                "text": "Werken aan script"
+                            },
+                            {
+                                "id": 5,
+                                "from": "12:30",
+                                "to": "13:00",
+                                "text": "Lunch"
+                            },
+                            {
+                                "id": 6,
+                                "from": "13:00",
+                                "to": "15:00",
+                                "text": "Werken aan script"
+                            },
+                            {
+                                "id": 7,
+                                "from": "15:00",
+                                "to": "16:00",
+                                "text": "Offerte schrijven potentiele klant"
+                            },
+                            {
+                                "id": 8,
+                                "from": "16:00",
+                                "to": "17:30",
+                                "text": "Suggesties visuals opstellen"
                             }
                         ]
                     }
@@ -343,28 +574,169 @@
             },
             {
                 "id": 6,
-                "sectionName": "",
-                "sectionContent": []
+                "sectionName": "practicalExample",
+                "sectionContent": [
+                    {
+                        "id": 1,
+                        "objectName": "peHead",
+                        "objectValue": "Voorbeeld iot de praktijk"
+                    },
+                    {
+                        "id": 2,
+                        "objectName": "peDescription",
+                        "objectValue": [
+                            {
+                                "id": 1,
+                                "objectName": "quote",
+                                "objectValue": "Je moet een outline schrijven, maar hebt weinig input ontvangen van de klant. Wat doe je?"
+                            },
+                            {
+                                "id": 2,
+                                "objectName": "Paragraaph 1",
+                                "objectValue": "Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant."
+                            },
+                            {
+                                "id": 3,
+                                "objectName": "Paragraaph 2",
+                                "objectValue": "RMMBR heeft allerlei klanten, dus je werkt aan uiteenlopende projecten die verschillen qua inhoud, omvang en doorlooptijd. Dit betekent dat je je continu moet verdiepen in een ander onderwerp. Je moet de materie volledig begrijpen voordat je tekstuele uitleg hierover kunt geven. Daarom heb je regelmatig contact met de inhoudsexpert(s) en/of projectmanager aan de klantzijde. Daarnaast doe je zelf onderzoek en houd je rekening met visuele aspecten. Copy en design gaan hand in hand, dus je denkt ook mee over hoe jouw tekst visueel het beste tot zijn recht komt. Verder ben je soms betrokken bij de offertefase en denk je mee over conceptvoorstellen."
+                            },
+                            {
+                                "id": 4,
+                                "objectName": "Paragraaph 3",
+                                "objectValue": "Je werkt in projectteams met designers, projectregisseurs en andere learning specialisten. Je directe collega's, de duur en de omvang van je werk verschillen per project."
+                            },
+                            {
+                                "id": 5,
+                                "objectName": "button",
+                                "objectValue": [
+                                    {
+                                        "id": 1,
+                                        "defaultValue": "Meer Zien"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "clickedValue": "Minder Zien"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 7,
-                "sectionName": "",
-                "sectionContent": []
+                "sectionName": "careerGrowth",
+                "sectionContent": [
+                    {
+                        "id": 1,
+                        "objectName": "cgHead",
+                        "objectValue": "Groeipad"
+                    },
+                    {
+                        "id": 2,
+                        "objectName": "cgDescription",
+                        "objectValue": [
+                            {
+                                "id": 1,
+                                "objectName": "Paragraaph",
+                                "objectValue": "Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant."
+                            },
+                            {
+                                "id": 2,
+                                "objectName": "Circle",
+                                "objectValue": [
+                                    {
+                                        "id": 1,
+                                        "objectName": "Circle 1",
+                                        "objectText": "Junior",
+                                        "objectImage": "img.png"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "objectName": "Circle 2",
+                                        "objectText": "Medior",
+                                        "objectImage": "img.png"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "objectName": "Circle 3",
+                                        "objectText": "Senior",
+                                        "objectImage": "img.png"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "objectName": "Circle 4",
+                                        "objectText": "Cracked",
+                                        "objectImage": "img.png"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 8,
-                "sectionName": "",
-                "sectionContent": []
+                "sectionName": "video",
+                "sectionContent": "Video.mp4"
             },
             {
                 "id": 9,
-                "sectionName": "",
-                "sectionContent": []
-            },
-            {
-                "id": 10,
-                "sectionName": "",
-                "sectionContent": []
+                "sectionName": "workWithUs",
+                "sectionContent": [
+                    {
+                        "id": 1,
+                        "objectName": "wwuHead",
+                        "objectValue": "Werken Bij RMMBR"
+                    },
+                    {
+                        "id": 2,
+                        "objectName": "wwuDescription",
+                        "objectValue": [
+                            {
+                                "id": 1,
+                                "objectName": "Paragraaph",
+                                "objectValue": "RMMBR zorgt ervoor dat de medewerkers van klanten zo goed mogelijk ondersteund worden bij hun ontwikkeling en leerproces. RMMBR leidt het project en houdt de doelen scherp in het vizier, maar wel constructief en met gevoel. De organisatie gaat continu op zoek naar mogelijkheden en nieuwe oplossingen. De ervaring van RMMBR leert dat de connectie tussen mensen en organisatie de basis is voor oplossingen zonder houdbaarheidsdatum. Daarom streeft RMMBR ernaar om het beste uit digitaal leren te halen voor de ontwikkeling van medewerkers. Bij RMMBR werken gemotiveerde professionals die enthousiast zijn over hun vak."
+                            },
+                            {
+                                "id": 2,
+                                "objectName": "Icons",
+                                "objectValue": [
+                                    {
+                                        "id": 1,
+                                        "objectName": "Location",
+                                        "objectText": "Hoofdkantoor in Amsterdam",
+                                        "objectIcon": "fas fa-map-marker-alt fa-iconi"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "objectName": "Globe",
+                                        "objectText": "Wereldwijd actief",
+                                        "objectIcon": "fas fa-globe fa-iconi"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "objectName": "Employees",
+                                        "objectText": "30 werknemers",
+                                        "objectIcon": "fas fa-users fa-iconi"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "objectName": "gender",
+                                        "objectText": "67% / 33%",
+                                        "objectIcon": "fas fa-venus-mars fa-iconi"
+                                    },
+                                    {
+                                        "id": 5,
+                                        "objectName": "Age",
+                                        "objectText": "Gem. leeftijd 35 jaar",
+                                        "objectIcon": "fas fa-infinity fa-iconi"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
