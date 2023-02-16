@@ -1,0 +1,371 @@
+[
+    {
+        "sectionId": 1,
+        "sectionName": "navBar",
+        "sectionContent": [
+            {
+                "id": 1,
+                "name": "anchorLink1",
+                "contentLink": "(URL)",
+                "contentPlaceholder": "Section1 Name"
+            },
+            {
+                "id": 2,
+                "name": "anchorLink2",
+                "contentLink": "(URL)",
+                "contentPlaceholder": "Section2 Name"
+            },
+            {
+                "id": 3,
+                "name": "anchorLink3",
+                "contentLink": "(URL)",
+                "contentPlaceholder": "Section3 Name"
+            },
+            {
+                "id": 4,
+                "name": "anchorLink4",
+                "contentLink": "(URL)",
+                "contentPlaceholder": "Section4 Name"
+            },
+            {
+                "id": 5,
+                "name": "anchorLink5",
+                "contentLink": "(URL)",
+                "contentPlaceholder": "Section5 Name"
+            },
+            {
+                "id": 6,
+                "name": "anchorLink6",
+                "contentLink": "(URL)",
+                "contentPlaceholder": "Section6 Name"
+            },
+            {
+                "id": 7,
+                "name": "anchorLink7",
+                "contentLink": "(URL)",
+                "contentPlaceholder": "Section7 Name"
+            },
+            {
+                "id": 8,
+                "name": "anchorLink8",
+                "contentLink": "(URL)",
+                "contentPlaceholder": "Section8 Name"
+            }
+        ]
+    },
+    {
+        "sectionId": 2,
+        "sectionName": "banner",
+        "sectionContent": [
+            {
+                "id": 1,
+                "objectName": "header",
+                "objectValue": "Project Manager"
+            },
+            {
+                "id": 2,
+                "objectName": "companyName",
+                "objectValue": "inBrain"
+            },
+            {
+                "id": 3,
+                "objectName": "companyLocation",
+                "objectValue": "Utrecht - De Meern"
+            },
+            {
+                "id": 4,
+                "objectName": "button",
+                "objectValue": "Soliciteren"
+            }
+        ]
+    },
+    {
+        "sectionId": 3,
+        "sectionName": "mainContent",
+        "sectionContent": [
+            {
+                "id": 1,
+                "sectionName": "summary",
+                "sectionContent": [
+                    {
+                        "id": 1,
+                        "columnName": "Wat is vereist?",
+                        "columnContent": [
+                            {
+                                "id": 1,
+                                "objectName": "Item 1",
+                                "objectIcon": "Brain",
+                                "objectClass": "fas fa-brain fa-fw",
+                                "objectText": "HBO/WO werk- en denkniveau"
+                            },
+                            {
+                                "id": 2,
+                                "objectName": "Item 2",
+                                "objectIcon": "Briefcase",
+                                "objectClass": "fas fa-briefcase fa-fw",
+                                "objectText": "Minimaal 2 jaar relevante werkervaring, bij voorkeur met storytelling en scriptschrijven"
+                            },
+                            {
+                                "id": 3,
+                                "objectName": "Item 3",
+                                "objectIcon": "Book",
+                                "objectClass": "fas fa-book fa-fw",
+                                "objectText": "Kennis van leerbehoeftes en onderwijskundige werkvormen"
+                            },
+                            {
+                                "id": 4,
+                                "objectName": "Item 4",
+                                "objectIcon": "Exchange",
+                                "objectClass": "fas fa-exchange-alt fa-fw",
+                                "objectText": "Allerlei soorten input uit kunnen werken in duidelijke, verschillende leermethoden"
+                            },
+                            {
+                                "id": 5,
+                                "objectName": "Item 5",
+                                "objectIcon": "Language Sign",
+                                "objectClass": "fas fa-language fa-fw",
+                                "objectText": "Uitstekende beheersing Nederlands en Engels, zowel in woord als geschrift"
+                            },
+                            {
+                                "id": 6,
+                                "objectName": "Item 6",
+                                "objectIcon": "Smiley",
+                                "objectClass": "fas fa-smile fa-fw",
+                                "objectText": "Nieuwsgierig, nauwkeurig, brede interesse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "columnName": "Wat krijg je?",
+                        "columnContent": [
+                            {
+                                "id": 1,
+                                "objectName": "Item 1",
+                                "objectIcon": "Money Bill",
+                                "objectClass": "fas fa-money-bill-alt",
+                                "objectText": "Vanaf €2.400 bruto p/m (afhankelijk van kennis en ervaring)"
+                            },
+                            {
+                                "id": 2,
+                                "objectName": "Item 2",
+                                "objectIcon": "Calendar",
+                                "objectClass": "fas fa-calendar-alt",
+                                "objectText": "40-urige werkweek"
+                            },
+                            {
+                                "id": 3,
+                                "objectName": "Item 3",
+                                "objectIcon": "Plane",
+                                "objectClass": "fas fa-plane",
+                                "objectText": "26 vakantiedagen"
+                            },
+                            {
+                                "id": 4,
+                                "objectName": "Item 4",
+                                "objectIcon": "Wallet",
+                                "objectClass": "fas fa-wallet",
+                                "objectText": "Persoonlijk opleidingsbudget om je te ontwikkelen in je functie"
+                            },
+                            {
+                                "id": 5,
+                                "objectName": "Item 5",
+                                "objectIcon": "Shopping Bag",
+                                "objectClass": "fas fa-shopping-bag",
+                                "objectText": "Laptop, reiskostenvergoeding, materiaal voor een goede thuiswerkplek"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "columnName": "Wat doe je?",
+                        "columnContent": [
+                            {
+                                "id": 1,
+                                "objectName": "Pie Chart",
+                                "objectContent": [
+                                    {
+                                        "id": 1,
+                                        "color": "Red",
+                                        "Value": 12
+                                    },
+                                    {
+                                        "id": 2,
+                                        "color": "Blue",
+                                        "Value": 19
+                                    },
+                                    {
+                                        "id": 3,
+                                        "color": "Yellow",
+                                        "Value": 3
+                                    },
+                                    {
+                                        "id": 4,
+                                        "color": "Green",
+                                        "Value": 5
+                                    },
+                                    {
+                                        "id": 5,
+                                        "color": "Purple",
+                                        "Value": 2
+                                    },
+                                    {
+                                        "id": 6,
+                                        "color": "Orange",
+                                        "Value": 3
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "sectionName": "contact",
+                "sectionContent": [
+                    {
+                        "id": 1,
+                        "objectName": "header",
+                        "objectValue": "Stel direct een vraag"
+                    },
+                    {
+                        "id": 2,
+                        "objectName": "contactInfo",
+                        "objectValue": [
+                            {
+                                "id": 1,
+                                "contactName": "Sebastiaan Neele",
+                                "contactTitle": "Excutive Director",
+                                "contactEmail": "Info@inbrain.nl"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "sectionName": "vacancy",
+                "sectionContent": [
+                    {
+                        "id": 1,
+                        "objectName": "vacHead",
+                        "objectValue": "Vacature"
+                    },
+                    {
+                        "id": 2,
+                        "objectName": "vacDescription",
+                        "objectValue": [
+                            {
+                                "id": 1,
+                                "objectName": "Paragraaph 1",
+                                "objectValue": "Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant."
+                            },
+                            {
+                                "id": 2,
+                                "objectName": "Paragraaph 2",
+                                "objectValue": "RMMBR heeft allerlei klanten, dus je werkt aan uiteenlopende projecten die verschillen qua inhoud, omvang en doorlooptijd. Dit betekent dat je je continu moet verdiepen in een ander onderwerp. Je moet de materie volledig begrijpen voordat je tekstuele uitleg hierover kunt geven. Daarom heb je regelmatig contact met de inhoudsexpert(s) en/of projectmanager aan de klantzijde. Daarnaast doe je zelf onderzoek en houd je rekening met visuele aspecten. Copy en design gaan hand in hand, dus je denkt ook mee over hoe jouw tekst visueel het beste tot zijn recht komt. Verder ben je soms betrokken bij de offertefase en denk je mee over conceptvoorstellen."
+                            },
+                            {
+                                "id": 3,
+                                "objectName": "button",
+                                "objectValue": [
+                                    {
+                                        "id": 1,
+                                        "defaultValue": "Read More"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "clickedValue": "Read Less"
+                                    }
+                                ]
+
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "sectionName": "quote",
+                "sectionContent": "Als je het leuk vindt om over uiteenlopende onderwerpen te schrijven op basis van briefings, gesprekken met inhoudsexperts en eigen onderzoek, en je het niet erg vindt dat je met veel deadlines te maken krijgt die elkaar soms snel opvolgen, dan is dit een baan voor jou."
+            },
+            {
+                "id": 5,
+                "sectionName": "Calendar",
+                "sectionContent": [
+                    {
+                        "id": 1,
+                        "weekDay": "Monday",
+                        "Values": [
+                            {
+                                
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "weekDay": "Tuesday",
+                        "Values": [
+                            {
+
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "weekDay": "Wednesday",
+                        "Values": [
+                            {
+
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "weekDay": "Thursday",
+                        "Values": [
+                            {
+
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "weekDay": "Friday",
+                        "Values": [
+                            {
+
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "sectionName": "",
+                "sectionContent": []
+            },
+            {
+                "id": 7,
+                "sectionName": "",
+                "sectionContent": []
+            },
+            {
+                "id": 8,
+                "sectionName": "",
+                "sectionContent": []
+            },
+            {
+                "id": 9,
+                "sectionName": "",
+                "sectionContent": []
+            },
+            {
+                "id": 10,
+                "sectionName": "",
+                "sectionContent": []
+            }
+        ]
+    }
+]
