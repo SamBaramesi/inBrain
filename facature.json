@@ -7,49 +7,49 @@
                 "id": 1,
                 "name": "anchorLink1",
                 "contentLink": "(URL)",
-                "contentPlaceholder": "Section1 Name"
+                "contentPlaceholder": "Vereisten"
             },
             {
                 "id": 2,
                 "name": "anchorLink2",
                 "contentLink": "(URL)",
-                "contentPlaceholder": "Section2 Name"
+                "contentPlaceholder": "Vereisten"
             },
             {
                 "id": 3,
                 "name": "anchorLink3",
                 "contentLink": "(URL)",
-                "contentPlaceholder": "Section3 Name"
+                "contentPlaceholder": "Vereisten"
             },
             {
                 "id": 4,
                 "name": "anchorLink4",
                 "contentLink": "(URL)",
-                "contentPlaceholder": "Section4 Name"
+                "contentPlaceholder": "Vereisten"
             },
             {
                 "id": 5,
                 "name": "anchorLink5",
                 "contentLink": "(URL)",
-                "contentPlaceholder": "Section5 Name"
+                "contentPlaceholder": "Vereisten"
             },
             {
                 "id": 6,
                 "name": "anchorLink6",
                 "contentLink": "(URL)",
-                "contentPlaceholder": "Section6 Name"
+                "contentPlaceholder": "Vereisten"
             },
             {
                 "id": 7,
                 "name": "anchorLink7",
                 "contentLink": "(URL)",
-                "contentPlaceholder": "Section7 Name"
+                "contentPlaceholder": "Vereisten"
             },
             {
                 "id": 8,
                 "name": "anchorLink8",
                 "contentLink": "(URL)",
-                "contentPlaceholder": "Section8 Name"
+                "contentPlaceholder": "Vereisten"
             }
         ]
     },
@@ -186,31 +186,16 @@
                                 "objectContent": [
                                     {
                                         "id": 1,
-                                        "color": "Red",
-                                        "Value": 12
-                                    },
-                                    {
-                                        "id": 2,
-                                        "color": "Blue",
-                                        "Value": 19
-                                    },
-                                    {
-                                        "id": 3,
-                                        "color": "Yellow",
-                                        "Value": 3
-                                    },
-                                    {
-                                        "id": 4,
                                         "color": "Green",
                                         "Value": 5
                                     },
                                     {
-                                        "id": 5,
+                                        "id": 2,
                                         "color": "Purple",
                                         "Value": 2
                                     },
                                     {
-                                        "id": 6,
+                                        "id": 3,
                                         "color": "Orange",
                                         "Value": 3
                                     }
