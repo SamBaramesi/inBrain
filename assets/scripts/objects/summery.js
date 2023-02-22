@@ -12,7 +12,6 @@ $(document).ready(function(){
     $.getJSON("facature.json", function (data) {
 
         let column2 = data[2].sectionContent[0].sectionContent[1].columnContent
-        console.log(column2)
 
         column2.forEach(row => {
             

@@ -135,14 +135,14 @@ html h6 {
 /* --------------------------------------------------- */
 
 nav {
-    /* background-color: #FF6D2D; */
     background-color: white;
     text-align: center;
     padding: 5px;
 }
 
 nav li {
-    display: inline;
+    display: inline-block;
+    margin: 0px 10px;
 }
 
 nav li a {

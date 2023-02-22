@@ -2,7 +2,7 @@ $(document).ready(function () {
     $.getJSON("facature.json", function (data) {
 
         const ul = document.createElement("ul");
-        ul.classList.add("p4");
+        ul.classList.add("p3");
         
         let li = data[0].sectionContent;
         
