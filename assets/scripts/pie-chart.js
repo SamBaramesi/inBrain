@@ -2,12 +2,12 @@ $(document).ready(function () {
     $.getJSON("facature.json", function (data) {
 
         let content = data[2].sectionContent[0].sectionContent[2].columnContent[0].objectContent
+        label = [];
+        values = [];
         
         content.forEach(row => {
-           label = [];
-           values = [];
-           label.push(row.color);
-           values.push(row.Value);
+           label.push(row.label);
+           values.push(row.value);
         });
         
         console.log(content);
@@ -26,10 +26,10 @@ $(document).ready(function () {
         let myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Green', 'Purple', 'Orange'],
+                labels: label,
                 datasets: [{
                     label: '6',
-                    data: [50, 20, 30],
+                    data: values,
                     backgroundColor: [
                         'rgba(75, 192, 192, 0.2)',
                         'rgba(153, 102, 255, 0.2)',
@@ -40,7 +40,7 @@ $(document).ready(function () {
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)'
                     ],
-                    borderWidth: 3
+                    borderWidth: 2
                 }]
             },
             options: {
