@@ -1,670 +1,665 @@
 /* SETTING DEFAULT VALUES */
 
 html {
-    box-sizing: border-box;
-    font-size: 16px;
-    line-height: 25px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 25px;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
-    font-family: "AvenirBlack";
-    src: url(assets/fonts/AvenirLTStd-Black.otf);
+  font-family: "AvenirBlack";
+  src: url(assets/fonts/AvenirLTStd-Black.otf);
 }
 
 @font-face {
-    font-family: "AvenirBlackOblique";
-    src: url(assets/fonts/AvenirLTStd-BlackOblique.otf);
-    font-style: oblique;
+  font-family: "AvenirBlackOblique";
+  src: url(assets/fonts/AvenirLTStd-BlackOblique.otf);
+  font-style: oblique;
 }
 
 @font-face {
-    font-family: "AvenirBook";
-    src: url(assets/fonts/AvenirLTStd-Book.otf);
+  font-family: "AvenirBook";
+  src: url(assets/fonts/AvenirLTStd-Book.otf);
 }
 
 @font-face {
-    font-family: "AvenirBookOblique";
-    src: url(assets/fonts/AvenirLTStd-BookOblique.otf);
-    font-style: oblique;
+  font-family: "AvenirBookOblique";
+  src: url(assets/fonts/AvenirLTStd-BookOblique.otf);
+  font-style: oblique;
 }
 
 @font-face {
-    font-family: "AvenirHeavy";
-    src: url(assets/fonts/AvenirLTStd-Heavy.otf);
+  font-family: "AvenirHeavy";
+  src: url(assets/fonts/AvenirLTStd-Heavy.otf);
 }
 
 @font-face {
-    font-family: "AvenirHeavyOblique";
-    src: url(assets/fonts/AvenirLTStd-HeavyOblique.otf);
-    font-style: oblique;
+  font-family: "AvenirHeavyOblique";
+  src: url(assets/fonts/AvenirLTStd-HeavyOblique.otf);
+  font-style: oblique;
 }
 
 @font-face {
-    font-family: "AvenirLight";
-    src: url(assets/fonts/AvenirLTStd-Light.otf);
+  font-family: "AvenirLight";
+  src: url(assets/fonts/AvenirLTStd-Light.otf);
 }
 
 @font-face {
-    font-family: "AvenirRoman";
-    src: url(assets/fonts/AvenirLTStd-Roman.otf);
+  font-family: "AvenirRoman";
+  src: url(assets/fonts/AvenirLTStd-Roman.otf);
 }
 
 .pc {
-    color: #FF6D2D;
+  color: #ff6d2d;
 }
 
 .icon-size {
-    font-size: 25px;
+  font-size: 25px;
 }
 
-html #hero {
-    font-family: "AvenirBook";
-    font-size: 2.5rem;
-    font-weight: Bold;
+/* I removed the 'html' selector here because i think that's verbose:*/
+/* also: try to set rules with as many lines of code as possible! There was a lot of repetition here i think. Maybe you can do the same for the rest of this file */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "AvenirBlack";
+  font-weight: bolder;
 }
 
-html h1 {
-    font-family: "AvenirBlack";
-    font-size: 2rem;
-    font-weight: bolder;
+h5,
+h6 {
+  font-family: "AvenirHeavy";
+  font-weight: bold;
 }
 
-html h2 {
-    font-family: "AvenirBlack";
-    font-size: 1.5rem;
-    font-weight: bolder;
+.p1,
+.p2,
+.p3,
+.p4 {
+  font-family: "AvenirBook";
+  font-weight: normal;
 }
 
-html h3 {
-    font-family: "AvenirBlack";
-    font-size: 1.125rem;
-    font-weight: bolder;
+#hero {
+  font-family: "AvenirBook";
+  font-size: 2.5rem;
+  font-weight: Bold;
 }
 
-html h4 {
-    font-family: "AvenirBlack";
-    font-size: 1rem;
-    font-weight: bolder;
+h1 {
+  font-size: 2rem;
 }
 
-html h5 {
-    font-family: "AvenirHeavy";
-    font-size: 1rem;
-    font-weight: bold;
+h2 {
+  font-size: 1.5rem;
 }
 
-html h6 {
-    font-family: "AvenirHeavy";
-    font-size: 0.875rem;
-    font-weight: bold;
+h3 {
+  font-size: 1.125rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
 }
 
 .p1 {
-    font-family: "AvenirBook";
-    font-size: 1.125rem;
-    font-weight: normal;
+  font-size: 1.125rem;
 }
 
 .p2 {
-    font-family: "AvenirBook";
-    font-size: 1rem;
-    font-weight: normal;
+  font-size: 1rem;
 }
 
 .p3 {
-    font-family: "AvenirBook";
-    font-size: 0.875rem;
-    font-weight: normal;
+  font-size: 0.875rem;
 }
 
 .p4 {
-    font-family: "AvenirBook";
-    font-size: 0.75rem;
-    font-weight: normal;
+  font-size: 0.75rem;
 }
 
 /* --------------------------------------------------- */
 /* --------------------------------------------------- */
 
 nav {
-    background-color: white;
-    text-align: center;
-    padding: 5px;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
 }
 
 nav li {
-    display: inline-block;
-    margin: 0px 10px;
+  display: inline-block;
+  margin: 0px 10px;
 }
 
 nav li a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 nav li a:hover {
-    border-bottom: 2px solid #FF6D2D;
-    ;
+  border-bottom: 2px solid #ff6d2d;
 }
 
 .banner {
-    width: 100%;
-    height: 75vh;
-    /* The image used */
-    background-image:
-        url(https://wallpaperaccess.com/full/1406863.jpg);
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    /* Prevent image from repeating */
-    background-size: cover;
-    background-repeat: no-repeat;
+  width: 100%;
+  height: 75vh;
+  /* The image used */
+  background-image: url(https://wallpaperaccess.com/full/1406863.jpg);
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  /* Prevent image from repeating */
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .content {
-    padding: 0px 30px;
-    margin: auto;
+  padding: 0px 30px;
+  margin: auto;
 }
 
 #Bcontent {
-    padding: 30px;
-    /* background-color: red; */
-    margin: auto;
-    position: relative;
-    top: 20vh;
-    text-align: left;
-    color: white;
+  padding: 30px;
+  /* background-color: red; */
+  margin: auto;
+  position: relative;
+  top: 20vh;
+  text-align: left;
+  color: white;
 }
 
 #Bcontent button {
-    background-color: #FF6D2D;
-    border: solid 1px #FF6D2D;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 20px;
-    width: 50%;
-    height: auto;
-    color: white;
+  background-color: #ff6d2d;
+  border: solid 1px #ff6d2d;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 50%;
+  height: auto;
+  color: white;
 }
 
 #Bcontent button:hover {
-    background-color: #FF6D2D;
-    ;
-    border: solid 1px #FF6D2D;
-    ;
-    cursor: pointer;
-    transition: ease .5s;
-    transform: scale(1.12);
-    /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  background-color: #ff6d2d;
+  border: solid 1px #ff6d2d;
+  cursor: pointer;
+  transition: ease 0.5s;
+  transform: scale(1.12);
+  /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .column {
-    border-radius: 5px;
-    padding: 15px;
-    margin: auto;
-    text-align: left;
-    background-color: white;
-    width: 100%;
-    position: relative;
-    bottom: 10vh;
-    box-shadow: 0px 15px 10px -15px #111;
+  border-radius: 5px;
+  padding: 15px;
+  margin: auto;
+  text-align: left;
+  background-color: white;
+  width: 100%;
+  position: relative;
+  bottom: 10vh;
+  box-shadow: 0px 15px 10px -15px #111;
 }
 
 .column ul li {
-    list-style: none;
-    color: grey;
-    margin-bottom: 15px;
+  list-style: none;
+  color: grey;
+  margin-bottom: 15px;
 }
 
 .fas {
-    margin-right: 10px;
-    color: #FF6D2D;
+  margin-right: 10px;
+  color: #ff6d2d;
 }
 
 .less-spacing {
-    line-height: 1.2;
+  line-height: 1.2;
 }
 
 .contact {
+  margin: auto;
+  width: 100%;
+  /* height: auto; */
+  background-color: whitesmoke;
+  text-align: left;
+  padding: 25px 10px;
+  border-radius: 10px;
+  margin-bottom: 10vh;
+}
+
+.vacHead {
+  margin-bottom: 16px;
+}
+
+#more {
+  display: none;
+}
+
+#myBtn {
+  background-color: #ff6d2d;
+  border: solid 1px #ff6d2d;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 50%;
+  height: auto;
+  color: white;
+}
+
+#myBtn:hover {
+  background-color: #ff6d2d;
+  border: solid 1px #ff6d2d;
+  cursor: pointer;
+  transition: ease 0.5s;
+  transform: scale(1.12);
+  /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.quote {
+  margin-top: 5vh;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  border: solid 1px black;
+  border-radius: 10px;
+}
+
+.grid-head {
+  display: flex;
+  justify-content: start;
+}
+
+.profile-picture {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: black;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ppDesc {
+  text-align: left;
+  margin: auto;
+}
+
+.grid {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 20% 80%;
+  text-align: left;
+}
+
+.calendar {
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.example {
+  border: 1px solid black;
+}
+
+.container {
+  width: 500vw;
+  display: flex;
+  transition: ease-in 0.5s;
+  /* gap: 1rem; */
+  /* justify-content: space-between; */
+}
+
+.agenda {
+  width: 100vw;
+}
+
+.flex {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex div {
+  background-color: rgba(0, 0, 255, 0.253);
+}
+
+#showMore {
+  display: none;
+}
+
+#showMoreBtn {
+  background-color: #ff6d2d;
+  border: solid 1px #ff6d2d;
+  border-radius: 5px;
+  padding: 10px;
+  width: 50%;
+  height: auto;
+  color: white;
+}
+
+#showMoreBtn:hover {
+  background-color: #ff6d2d;
+  border: solid 1px #ff6d2d;
+  cursor: pointer;
+  transition: ease 0.5s;
+  transform: scale(1.12);
+  /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.groeipad {
+  margin-top: 10vh;
+}
+
+.groeipad h1 {
+  margin-bottom: 5vh;
+}
+
+.dot {
+  height: 75px;
+  width: 75px;
+  border: 1px dotted black;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.flexDot {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#line {
+  display: block;
+  background-color: #ff6d2d;
+  height: 1px;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: -37.5px;
+  z-index: -1;
+}
+
+.video {
+  margin-top: 10vh;
+  background-color: black;
+  height: auto;
+  width: 100%;
+}
+
+.proIcons {
+  list-style: none;
+}
+
+.flexICN {
+  margin-top: 5vh;
+  line-height: 5vh;
+}
+
+.fa-iconi {
+  font-size: 2rem;
+}
+
+.carousel {
+  width: 100%;
+  margin-top: 10vh;
+  background-color: blue;
+}
+
+.slides {
+  display: flex;
+}
+
+.slide {
+  display: none;
+  width: 500px;
+  height: 500px;
+  /* background-color: red; */
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.active {
+  display: flex !important;
+}
+
+.previous .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.previous:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 768px) {
+  html #hero {
+    font-family: "AvenirBook";
+    font-size: 3rem;
+    font-weight: Bold;
+  }
+
+  .p1 {
+    font-family: "AvenirBook";
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  #Bcontent button {
+    background-color: #ff6d2d;
+    border: solid 1px #ff6d2d;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 60%;
+    height: auto;
+    color: white;
+  }
+
+  .column {
+    display: inline-block;
+    padding: 15px;
+    margin: auto;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    bottom: 10vh;
+    box-shadow: 0px 0px 0px 0px #111;
+  }
+
+  .column-1 {
+    width: 50%;
+    float: left;
+    border-radius: 0%;
+  }
+
+  .column-2 {
+    float: none;
+    width: 100%;
+    box-shadow: 0px 15px 10px -15px #111;
+  }
+
+  .contact {
     margin: auto;
     width: 100%;
-    /* height: auto; */
+    height: 20vh;
     background-color: whitesmoke;
     text-align: left;
     padding: 25px 10px;
     border-radius: 10px;
     margin-bottom: 10vh;
-}
+  }
 
-.vacHead {
-    margin-bottom: 16px;
-}
-
-#more {
-    display: none;
-}
-
-#myBtn {
-    background-color: #FF6D2D;
-    border: solid 1px #FF6D2D;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 20px;
-    width: 50%;
-    height: auto;
-    color: white;
-}
-
-#myBtn:hover {
-    background-color: #FF6D2D;
-    ;
-    border: solid 1px #FF6D2D;
-    ;
-    cursor: pointer;
-    transition: ease .5s;
-    transform: scale(1.12);
-    /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-
-.quote {
-    margin-top: 5vh;
-    width: 100%;
-    text-align: left;
-    padding: 20px;
-    border: solid 1px black;
-    border-radius: 10px;
-}
-
-.grid-head {
-    display: flex;
-    justify-content: start;
-}
-
-.profile-picture {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: black;
-}
-
-.profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.ppDesc {
-    text-align: left;
-    margin: auto;
-}
-
-.grid {
-    width: 100%;
-    margin: auto;
-    display: grid;
-    gap: 0.5rem;
-    grid-template-columns: 20% 80%;
-    text-align: left;
-}
-
-.calendar {
-    margin: 2rem 0;
-    overflow: hidden;
-}
-
-.example {
-    border: 1px solid black;
-}
-
-.container {
-    width: 500vw;
-    display: flex;
-    transition: ease-in .5s;
-    /* gap: 1rem; */
-    /* justify-content: space-between; */
-}
-
-.agenda {
-    width: 100vw;
-}
-
-.flex {
-    gap: .5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.flex div {
-    background-color: rgba(0, 0, 255, 0.253);
-}
-
-#showMore {
-    display: none;
-}
-
-#showMoreBtn {
-    background-color: #FF6D2D;
-    border: solid 1px #FF6D2D;
-    border-radius: 5px;
-    padding: 10px;
-    width: 50%;
-    height: auto;
-    color: white;
-}
-
-#showMoreBtn:hover {
-    background-color: #FF6D2D;
-    ;
-    border: solid 1px #FF6D2D;
-    ;
-    cursor: pointer;
-    transition: ease .5s;
-    transform: scale(1.12);
-    /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-
-.groeipad {
-    margin-top: 10vh;
-}
-
-.groeipad h1 {
-    margin-bottom: 5vh;
-}
-
-.dot {
-    height: 75px;
-    width: 75px;
-    border: 1px dotted black;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.flexDot {
-    display: flex;
-    justify-content: space-evenly
-}
-
-#line {
-    display: block;
-    background-color: #FF6D2D;
-    height: 1px;
-    width: 80%;
-    margin: auto;
-    position: relative;
-    top: -37.5px;
-    z-index: -1;
-}
-
-.video {
-    margin-top: 10vh;
-    background-color: black;
-    height: auto;
-    width: 100%;
-}
-
-.proIcons {
-    list-style: none;
-}
-
-.flexICN {
-    margin-top: 5vh;
-    line-height: 5vh;
-}
-
-.fa-iconi {
+  .contact h3 {
     font-size: 2rem;
-}
+    width: 70%;
+  }
 
-.carousel {
+  .conFloat {
+    float: left;
+  }
+
+  .F1 {
+    padding: 20px 0px;
+    width: 50%;
+    height: 100%;
+  }
+
+  .F2 {
+    padding: 20px 0px;
+    width: 50%;
+    height: 100%;
+  }
+
+  .vacHead {
+    width: 30%;
+    float: left;
+  }
+
+  .vacDesc {
+    width: 70%;
+    display: inline-block;
+  }
+
+  .quote {
+    width: 70%;
+    float: right;
+  }
+
+  .calendar {
+    clear: right;
+    width: 100%;
+    margin: auto;
+  }
+
+  #btnL {
+    display: none;
+  }
+
+  #btnR {
+    display: none;
+  }
+
+  .container {
     width: 100%;
     margin-top: 10vh;
-    background-color: blue;
-}
+  }
 
-.slides {
-    display: flex;
-}
+  .agenda {
+    width: 20%;
+  }
 
-.slide {
-    display: none;
-    width: 500px;
-    height: 500px;
-    /* background-color: red; */
-}
+  #quoteH {
+    width: 30%;
+    float: left;
+  }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+  .quoteB {
+    width: 70%;
+    margin-top: auto;
+  }
 
-.active {
-    display: flex !important;
-}
+  .groeipad {
+    clear: both;
+    display: inline-block;
+    margin-top: 10vh;
+  }
 
-.previous .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
+  .groeipad h1 {
+    width: 30%;
+    float: left;
+    margin: auto;
+  }
 
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.previous:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-@media (min-width: 768px) {
-    html #hero {
-        font-family: "AvenirBook";
-        font-size: 3rem;
-        font-weight: Bold;
-    }
-
-    .p1 {
-        font-family: "AvenirBook";
-        font-size: 1.5rem;
-        font-weight: normal;
-    }
-
-    #Bcontent button {
-        background-color: #FF6D2D;
-        border: solid 1px #FF6D2D;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 20px;
-        width: 60%;
-        height: auto;
-        color: white;
-    }
-
-    .column {
-        display: inline-block;
-        padding: 15px;
-        margin: auto;
-        text-align: left;
-        width: 100%;
-        position: relative;
-        bottom: 10vh;
-        box-shadow: 0px 0px 0px 0px #111;
-    }
-
-    .column-1 {
-        width: 50%;
-        float: left;
-        border-radius: 0%;
-    }
-
-    .column-2 {
-        float: none;
-        width: 100%;
-        box-shadow: 0px 15px 10px -15px #111;
-    }
-
-
-    .contact {
-        margin: auto;
-        width: 100%;
-        height: 20vh;
-        background-color: whitesmoke;
-        text-align: left;
-        padding: 25px 10px;
-        border-radius: 10px;
-        margin-bottom: 10vh;
-    }
-
-    .contact h3 {
-        font-size: 2rem;
-        width: 70%;
-    }
-
-    .conFloat {
-        float: left;
-    }
-
-    .F1 {
-        padding: 20px 0px;
-        width: 50%;
-        height: 100%;
-    }
-
-    .F2 {
-        padding: 20px 0px;
-        width: 50%;
-        height: 100%;
-    }
-
-    .vacHead {
-        width: 30%;
-        float: left;
-    }
-
-    .vacDesc {
-        width: 70%;
-        display: inline-block;
-    }
-
-    .quote {
-        width: 70%;
-        float: right;
-    }
-
-    .calendar {
-        clear: right;
-        width: 100%;
-        margin: auto;
-    }
-
-    #btnL {
-        display: none;
-    }
-
-    #btnR {
-        display: none;
-    }
-
-    .container {
-        width: 100%;
-        margin-top: 10vh;
-    }
-
-    .agenda {
-        width: 20%;
-    }
-
-    #quoteH {
-        width: 30%;
-        float: left;
-    }
-
-    .quoteB {
-        width: 70%;
-        margin-top: auto;
-    }
-
-    .groeipad {
-        clear: both;
-        display: inline-block;
-        margin-top: 10vh;
-    }
-
-    .groeipad h1 {
-        width: 30%;
-        float: left;
-        margin: auto;
-    }
-    
-    .groeipad p {
-        width: 70%;
-        float: right;
-        margin: auto;
-    }
+  .groeipad p {
+    width: 70%;
+    float: right;
+    margin: auto;
+  }
 }
 
 @media (min-width: 992px) {
+  #Bcontent {
+    padding: 30px;
+    margin: auto;
+    position: relative;
+    top: 20vh;
+    text-align: left;
+    color: white;
+  }
 
-    #Bcontent {
-        padding: 30px;
-        margin: auto;
-        position: relative;
-        top: 20vh;
-        text-align: left;
-        color: white;
-    }
-    
-    #Bcontent button {
-        background-color: #FF6D2D;
-        border: solid 1px #FF6D2D;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 20px;
-        width: 40%;
-        height: auto;
-        color: white;
-    }
+  #Bcontent button {
+    background-color: #ff6d2d;
+    border: solid 1px #ff6d2d;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 40%;
+    height: auto;
+    color: white;
+  }
 
-    .column-1 {
-        width: 33%;
-    }
+  .column-1 {
+    width: 33%;
+  }
 
-    .column-2 {
-        width: 33%;
-        border-radius: 0;
-        box-shadow: 0px 0px 0px 0px #111;
-    }
+  .column-2 {
+    width: 33%;
+    border-radius: 0;
+    box-shadow: 0px 0px 0px 0px #111;
+  }
 
-    .contact {
-        clear: both;
-        margin: auto;
-        width: 100%;
-        height: 20vh;
-        text-align: left;
-        padding: 25px 10px;
-        border-radius: 10px;
-        margin-bottom: 10vh;
-    }
+  .contact {
+    clear: both;
+    margin: auto;
+    width: 100%;
+    height: 20vh;
+    text-align: left;
+    padding: 25px 10px;
+    border-radius: 10px;
+    margin-bottom: 10vh;
+  }
 }
