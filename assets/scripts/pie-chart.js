@@ -10,18 +10,6 @@ $(document).ready(function () {
            values.push(row.value);
         });
         
-        console.log(content);
-        console.log(label);
-        console.log(values);
-
-
-
-
-
-        
-        
-        
-        
         let ctx = document.getElementById('myChart').getContext('2d');
         let myChart = new Chart(ctx, {
             type: 'pie',
@@ -57,6 +45,3 @@ $(document).ready(function () {
     });
     
 });
-
-
-

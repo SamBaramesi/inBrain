@@ -257,7 +257,7 @@ nav li a:hover {
     border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
-    width: 50%;
+    width: 25%;
     height: auto;
     color: white;
 }
@@ -268,7 +268,7 @@ nav li a:hover {
     border: solid 1px #FF6D2D;
     ;
     cursor: pointer;
-    transition: ease .5s;
+    transition: ease-in-out .5s;
     transform: scale(1.12);
     /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }

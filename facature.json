@@ -564,47 +564,17 @@
                     {
                         "id": 1,
                         "objectName": "peHead",
-                        "objectValue": "Voorbeeld iot de praktijk"
+                        "objectValue": "Voorbeeld uit de praktijk"
                     },
                     {
                         "id": 2,
-                        "objectName": "peDescription",
-                        "objectValue": [
-                            {
-                                "id": 1,
-                                "objectName": "quote",
-                                "objectValue": "Je moet een outline schrijven, maar hebt weinig input ontvangen van de klant. Wat doe je?"
-                            },
-                            {
-                                "id": 2,
-                                "objectName": "Paragraaph 1",
-                                "objectValue": "Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant."
-                            },
-                            {
-                                "id": 3,
-                                "objectName": "Paragraaph 2",
-                                "objectValue": "RMMBR heeft allerlei klanten, dus je werkt aan uiteenlopende projecten die verschillen qua inhoud, omvang en doorlooptijd. Dit betekent dat je je continu moet verdiepen in een ander onderwerp. Je moet de materie volledig begrijpen voordat je tekstuele uitleg hierover kunt geven. Daarom heb je regelmatig contact met de inhoudsexpert(s) en/of projectmanager aan de klantzijde. Daarnaast doe je zelf onderzoek en houd je rekening met visuele aspecten. Copy en design gaan hand in hand, dus je denkt ook mee over hoe jouw tekst visueel het beste tot zijn recht komt. Verder ben je soms betrokken bij de offertefase en denk je mee over conceptvoorstellen."
-                            },
-                            {
-                                "id": 4,
-                                "objectName": "Paragraaph 3",
-                                "objectValue": "Je werkt in projectteams met designers, projectregisseurs en andere learning specialisten. Je directe collega's, de duur en de omvang van je werk verschillen per project."
-                            },
-                            {
-                                "id": 5,
-                                "objectName": "button",
-                                "objectValue": [
-                                    {
-                                        "id": 1,
-                                        "defaultValue": "Meer Zien"
-                                    },
-                                    {
-                                        "id": 2,
-                                        "clickedValue": "Minder Zien"
-                                    }
-                                ]
-                            }
-                        ]
+                        "objectName": "quote",
+                        "objectValue": "Je moet een outline schrijven, maar hebt weinig input ontvangen van de klant. Wat doe je?"
+                    },
+                    {
+                        "id": 3,
+                        "objectName": "Paragraaph",
+                        "objectValue": "Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant."
                     }
                 ]
             },

@@ -1,18 +1,16 @@
 function readMore() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
+    let moreText = document.getElementById("more");
+    let btnText = document.getElementById("myBtn");
 
-    if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Read More";
-        moreText.style.display = "none";
-    } else {
-        dots.style.display = "none";
-        btnText.innerHTML = "Read Less";
-        moreText.style.display = "inline";
-    }
+        if (moreText.style.display == "none"){
+            moreText.style.display = "inline";
+            btnText.innerHTML = "Read Less";
+        } else {
+            moreText.style.display = "none";
+            btnText.innerHTML = "Read More";
+        }
 }
+
 
 function readMoreDiv() {
     var btn = document.getElementById("showMoreBtn");

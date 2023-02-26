@@ -24,6 +24,7 @@
 
     <div class="content">
 
+        <!-- Summery Section -->
         <section class="colFloat">
             <div class="column column-1">
                 <h3>Wat is vereist?</h3><br>
@@ -41,47 +42,17 @@
                 </ul>
             </div>
         </section>
+
         <!-- Contact Section -->
         <section><div class="contact"></div></section>
 
-        <section>
-            <div class="vacHead">
-                <h1>Vacature</h1>
-            </div>
-            <div class="vacDesc">
-                <p class="p2" style="margin: 0px 0px 16px;">Als <b>Learning Specialist</b> bij RMMBR ben je
-                    verantwoordelijk voor het ontwikkelen van
-                    online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale
-                    leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een
-                    organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je
-                    opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant,
-                    soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short
-                    copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de
-                    diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.</p>
-                <p class="p2" style="margin: 0px 0px 16px;">RMMBR heeft allerlei klanten, dus je werkt aan uiteenlopende
-                    projecten die verschillen qua
-                    inhoud,<span id="dots">...</span><span id="more"> omvang en doorlooptijd. Dit betekent dat je je
-                        continu moet verdiepen in een ander
-                        onderwerp. Je moet de materie volledig begrijpen voordat je tekstuele uitleg hierover kunt
-                        geven.
-                        Daarom heb je regelmatig contact met de inhoudsexpert(s) en/of projectmanager aan de klantzijde.
-                        Daarnaast doe je zelf onderzoek en houd je rekening met visuele aspecten. Copy en design gaan
-                        hand
-                        in hand, dus je denkt ook mee over hoe jouw tekst visueel het beste tot zijn recht komt. Verder
-                        ben
-                        je soms betrokken bij de offertefase en denk je mee over
-                        conceptvoorstellen.</span></p>
-                <p><button onclick="readMore()" id="myBtn">Read more</button></p>
-            </div>
-        </section>
-        <section>
-            <div class="quote">
-                <div class="p2"><q>Als je het leuk vindt om over uiteenlopende onderwerpen te schrijven op basis van
-                        briefings, gesprekken met inhoudsexperts en eigen onderzoek, en je het niet erg vindt dat je met
-                        veel deadlines te maken krijgt die elkaar soms snel opvolgen, dan is dit een baan voor jou.</q>
-                </div>
-            </div>
-        </section>
+        <!-- Vacancy Section -->
+        <section id="vacancy"></section>
+
+        <!-- Quote Section -->
+        <section id="quote"></section>
+
+        <!-- Calendar Section -->
         <section class="calendar">
             <button id="btnL">Prev Day</button>
             <button id="btnR">Next Day</button>
@@ -153,62 +124,11 @@
                 </div>
             </div>
         </section>
-        <section style="margin-top: 10vh; min-height: 18.5vh;">
-            <div id="quoteH">
-                <h1>Voorbeeld uit de praktijk</h1>
-            </div>
-            <div class="p2 quote quoteB">
-                <p><q>Je moet een outline schrijven, maar hebt weinig input ontvangen van de klant. Wat doe je?</q>
-                </p>
-                <br>
-                <span id="showMore">
-                    <p class="p2" style="margin: 0px 0px 16px;">Als <b>Learning Specialist</b> bij RMMBR ben je
-                        verantwoordelijk voor het ontwikkelen van
-                        online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor
-                        digitale
-                        leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van
-                        een
-                        organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave
-                        die
-                        je
-                        opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de
-                        klant,
-                        soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel
-                        short
-                        copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je
-                        inhoudelijk
-                        de
-                        diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.
-                    </p>
 
-                    <p class="p2" style="margin: 0px 0px 16px;">RMMBR heeft allerlei klanten, dus je werkt aan
-                        uiteenlopende
-                        projecten die verschillen qua
-                        inhoud, omvang en doorlooptijd. Dit betekent dat je je continu moet verdiepen in een ander
-                        onderwerp. Je moet de materie volledig begrijpen voordat je tekstuele uitleg hierover kunt
-                        geven.
-                        Daarom heb je regelmatig contact met de inhoudsexpert(s) en/of projectmanager aan de
-                        klantzijde.
-                        Daarnaast doe je zelf onderzoek en houd je rekening met visuele aspecten. Copy en design
-                        gaan
-                        hand
-                        in hand, dus je denkt ook mee over hoe jouw tekst visueel het beste tot zijn recht komt.
-                        Verder
-                        ben
-                        je soms betrokken bij de offertefase en denk je mee over conceptvoorstellen.
-                    </p>
-
-                    <p class="p2" style="margin: 0px 0px 16px;">Je werkt in projectteams met designers,
-                        projectregisseurs en
-                        andere learning specialisten.
-                        Je directe collega's, de duur en de omvang van je werk verschillen per project.
-                    </p>
-                </span>
-                <button id="showMoreBtn" onclick="readMoreDiv()">Meer Zien</button>
-            </div>
-        </section>
+        <section id="practicalExample" style="margin-top: 10vh; min-height: 18.5vh;"></section>
+        
         <section>
-            <div>
+            <div id="careerGrowth">
                 <div class="groeipad">
                     <h1>Groeipad</h1>
                     <p class="p2">Je kunt niet alleen groeien als Learning Specialist, maar
@@ -279,6 +199,10 @@
     <script src="assets/scripts/objects/banner.js"></script>
     <script src="assets/scripts/objects/navBar.js"></script>
     <script src="assets/scripts/objects/contact.js"></script>
+    <script src="assets/scripts/objects/vacancy.js"></script>
+    <script src="assets/scripts/objects/quote.js"></script>
+    <script src="assets/scripts/objects/practicalExample.js"></script>
+    <script src="assets/scripts/objects/careerGrowth.js"></script>
 </body>
 
 </html>
