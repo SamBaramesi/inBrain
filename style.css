@@ -360,6 +360,7 @@ nav li a:hover {
     width: 50%;
     height: auto;
     color: white;
+    margin-top: 2.5vh;
 }
 
 #showMoreBtn:hover {
@@ -371,6 +372,10 @@ nav li a:hover {
     transition: ease .5s;
     transform: scale(1.12);
     /* (0.12% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#spacing {
+    margin-bottom: 10px;
 }
 
 .groeipad {
@@ -409,7 +414,7 @@ nav li a:hover {
 iframe {
     margin-top: 10vh;
     background-color: black;
-    height: 100vh;
+    height: 50vh;
     width: 100%;
 }
 
@@ -500,6 +505,49 @@ iframe {
         width: 60%;
         height: auto;
         color: white;
+    }
+
+    #more {
+        display: inline;
+    }
+    
+    #myBtn {
+        display: none;
+        /* background-color: #FF6D2D;
+        border: solid 1px #FF6D2D;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        width: 25%;
+        height: auto;
+        color: white; */
+    }
+
+    #showMore {
+        display: inline;
+    }
+    
+    #showMoreBtn {
+        display: none;
+        /* background-color: #FF6D2D;
+        border: solid 1px #FF6D2D;
+        border-radius: 5px;
+        padding: 10px;
+        width: 50%;
+        height: auto;
+        color: white; */
+    }
+
+    #spacing {
+        margin-bottom: 20px;
+    }
+
+    .quote {
+        width: 100%;
+        text-align: left;
+        padding: 20px;
+        border: solid 1px black;
+        border-radius: 10px;
     }
 
     .column {
@@ -603,7 +651,6 @@ iframe {
 
     .quoteB {
         width: 70%;
-        margin-top: auto;
     }
 
     .groeipad {
@@ -666,6 +713,13 @@ iframe {
         padding: 25px 10px;
         border-radius: 10px;
         margin-bottom: 10vh;
+    }
+
+    iframe {
+        margin-top: 10vh;
+        background-color: black;
+        height: 75vh;
+        width: 100%;
     }
 }
 

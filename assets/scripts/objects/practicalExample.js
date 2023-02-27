@@ -26,6 +26,7 @@ $(document).ready(function () {
     
         // make p
         let p1 = document.createElement("p");
+        p1.id = "spacing";
         div2.appendChild(p1);
 
         // make q
@@ -42,7 +43,6 @@ $(document).ready(function () {
 
         let p2 = document.createElement("p");
         p2.classList.add("p2");
-        p2.style.margin = "0px 0px 16px";
         p2.innerText = paragraph;
         span.appendChild(p2)
 
