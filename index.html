@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@event-calendar/build@0.16.1/event-calendar.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@event-calendar/build@0.16.1/event-calendar.min.js"></script>
     <title>Werken Bij!</title>
 </head>
 
@@ -53,12 +55,42 @@
         <section id="quote"></section>
 
         <!-- Calendar Section -->
-        <section class="calendar">
-            <button id="btnL">Prev Day</button>
-            <button id="btnR">Next Day</button>
-            <div class="container">
-                <div class="agenda" style="background-color: yellow;">
-                    <div class="flex">
+        <section class="calendar"><div class="container" id="ec"></section>
+        
+        <!-- practicalExample Section -->
+        <section id="practicalExample" style="margin-top: 10vh; min-height: 18.5vh;"></section>
+        
+        <!-- careerGrowth Section -->
+        <section><div id="careerGrowth"></div></section>
+
+        <!-- Video Section -->
+        <section id="video"></section>
+
+        <!-- Work With Us Section -->
+        <section id="workWithUs"></section>
+    </div>
+    
+    <script src="assets/scripts/pie-chart.js"></script>
+    <script src="assets/scripts/calendar.js"></script>
+    <script src="assets/scripts/functions.js"></script>
+    <script src="assets/scripts/objects/summery.js"></script>
+    <script src="assets/scripts/objects/banner.js"></script>
+    <script src="assets/scripts/objects/navBar.js"></script>
+    <script src="assets/scripts/objects/contact.js"></script>
+    <script src="assets/scripts/objects/vacancy.js"></script>
+    <script src="assets/scripts/objects/quote.js"></script>
+    <script src="assets/scripts/objects/practicalExample.js"></script>
+    <script src="assets/scripts/objects/careerGrowth.js"></script>
+    <script src="assets/scripts/objects/video.js"></script>
+    <script src="assets/scripts/objects/workWithUs.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- class="agenda" style="background-color: yellow;" -->
+                    <!-- <div class="flex">
                         <div>x</div>
                         <div>x</div>
                         <div>x</div>
@@ -121,36 +153,4 @@
                         <div>x</div>
                         <div>x</div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- practicalExample Section -->
-        <section id="practicalExample" style="margin-top: 10vh; min-height: 18.5vh;"></section>
-        
-        <!-- careerGrowth Section -->
-        <section><div id="careerGrowth"></div></section>
-
-        <!-- Video Section -->
-        <section id="video"></section>
-
-        <!-- Work With Us Section -->
-        <section id="workWithUs"></section>
-    </div>
-    
-    <script src="assets/scripts/pie-chart.js"></script>
-    <script src="assets/scripts/calendar.js"></script>
-    <script src="assets/scripts/functions.js"></script>
-    <script src="assets/scripts/objects/summery.js"></script>
-    <script src="assets/scripts/objects/banner.js"></script>
-    <script src="assets/scripts/objects/navBar.js"></script>
-    <script src="assets/scripts/objects/contact.js"></script>
-    <script src="assets/scripts/objects/vacancy.js"></script>
-    <script src="assets/scripts/objects/quote.js"></script>
-    <script src="assets/scripts/objects/practicalExample.js"></script>
-    <script src="assets/scripts/objects/careerGrowth.js"></script>
-    <script src="assets/scripts/objects/video.js"></script>
-    <script src="assets/scripts/objects/workWithUs.js"></script>
-</body>
-
-</html>
+                </div> -->

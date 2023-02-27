@@ -2,7 +2,7 @@ function readMore() {
     let moreText = document.getElementById("more");
     let btnText = document.getElementById("myBtn");
 
-        if (moreText.style.display == "none"){
+        if (moreText.style.display === "none" || !moreText.style.display){
             moreText.style.display = "inline";
             btnText.innerHTML = "Read Less";
         } else {
@@ -16,7 +16,7 @@ function readMoreDiv() {
     var btn = document.getElementById("showMoreBtn");
     var showMore = document.getElementById("showMore");
 
-    if (showMore.style.display === "none") {
+    if (showMore.style.display === "none" || !showMore.style.display) {
         showMore.style.display = "inline";
         btn.innerHTML = "Minder Zien";
     } else {
