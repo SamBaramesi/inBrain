@@ -170,7 +170,6 @@ nav li a:hover {
 
 .content {
     padding: 0px 30px;
-    margin: auto;
 }
 
 #Bcontent {
@@ -317,21 +316,13 @@ nav li a:hover {
     text-align: left;
 }
 
-.calendar {
-    margin: 2rem 0;
-    overflow: hidden;
+#fc {
+    margin-top: 10vh;
+    width: 100%;
 }
 
 .example {
     border: 1px solid black;
-}
-
-.container {
-    width: 500vw;
-    display: flex;
-    transition: ease-in .5s;
-    /* gap: 1rem; */
-    /* justify-content: space-between; */
 }
 
 .agenda {
@@ -510,7 +501,7 @@ iframe {
     #more {
         display: inline;
     }
-    
+
     #myBtn {
         display: none;
         /* background-color: #FF6D2D;
@@ -526,7 +517,7 @@ iframe {
     #showMore {
         display: inline;
     }
-    
+
     #showMoreBtn {
         display: none;
         /* background-color: #FF6D2D;
@@ -543,12 +534,19 @@ iframe {
     }
 
     .quote {
+        margin-top: 0vh;
         width: 100%;
         text-align: left;
         padding: 20px;
         border: solid 1px black;
         border-radius: 10px;
     }
+
+    /* .qpqp {
+
+
+        margin-top: 5vh;
+    } */
 
     .column {
         display: inline-block;
@@ -622,9 +620,7 @@ iframe {
     }
 
     .calendar {
-        clear: right;
         width: 100%;
-        margin: auto;
     }
 
     #btnL {
@@ -649,6 +645,10 @@ iframe {
         float: left;
     }
 
+    #quote {
+        margin-top: 5vh;
+    }
+
     .quoteB {
         width: 70%;
     }
@@ -664,7 +664,7 @@ iframe {
         float: left;
         margin: auto;
     }
-    
+
     .groeipad p {
         width: 70%;
         float: right;
@@ -682,7 +682,7 @@ iframe {
         text-align: left;
         color: white;
     }
-    
+
     #Bcontent button {
         background-color: #FF6D2D;
         border: solid 1px #FF6D2D;
@@ -723,6 +723,43 @@ iframe {
     }
 }
 
-#ec {
+/* #ec {
     font-family: "AvenirBlack";
+} */
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+}
+
+.day {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.body {
+    display: flex;
+}
+
+.time {
+    width: 50px;
+    text-align: center;
+    border-right: 1px solid black;
+    padding: 10px;
+}
+
+.event {
+    flex: 1;
+    border-right: 1px solid black;
+    padding: 10px;
 }

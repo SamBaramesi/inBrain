@@ -6,9 +6,6 @@ $(document).ready(function () {
         let paragraph = data[2].sectionContent[8].sectionContent[1].objectValue[0].objectValue
         let icons = data[2].sectionContent[8].sectionContent[1].objectValue[1].objectValue
 
-        console.log(icons);
-        console.log(section);
-
         // create h1 element
         let h1 = document.createElement("h1");
         h1.style.textAlign = "center";

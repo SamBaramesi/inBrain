@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@event-calendar/build@0.16.1/event-calendar.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@event-calendar/build@0.16.1/event-calendar.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <title>Werken Bij!</title>
 </head>
 
@@ -47,22 +47,26 @@
         </section>
 
         <!-- Contact Section -->
-        <section><div class="contact"></div></section>
+        <section>
+            <div class="contact"></div>
+        </section>
 
         <!-- Vacancy Section -->
         <section id="vacancy"></section>
-
+    
         <!-- Quote Section -->
-        <section id="quote"></section>
+        <!-- <section id="quote" class="qpqp"></section> -->
 
         <!-- Calendar Section -->
-        <section class="calendar"><div class="container" id="calendar"></section>
-        
+        <section class="calendar" id="fc"></section>
+            
         <!-- practicalExample Section -->
         <section id="practicalExample" style="margin-top: 10vh; min-height: 18.5vh;"></section>
-        
+
         <!-- careerGrowth Section -->
-        <section><div id="careerGrowth"></div></section>
+        <section>
+            <div id="careerGrowth"></div>
+        </section>
 
         <!-- Video Section -->
         <section id="video"></section>
@@ -70,7 +74,7 @@
         <!-- Work With Us Section -->
         <section id="workWithUs"></section>
     </div>
-    
+
     <script src="assets/scripts/pie-chart.js"></script>
     <script src="assets/scripts/calendar.js"></script>
     <script src="assets/scripts/functions.js"></script>
@@ -91,7 +95,7 @@
 
 
 <!-- class="agenda" style="background-color: yellow;" -->
-                    <!-- <div class="flex">
+<!-- <div class="flex">
                         <div>x</div>
                         <div>x</div>
                         <div>x</div>
