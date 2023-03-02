@@ -316,8 +316,12 @@ nav li a:hover {
     text-align: left;
 }
 
-#fc {
+.workWeek {
     margin-top: 10vh;
+}
+
+#fc {
+    margin-top: 5vh;
     width: 100%;
 }
 
@@ -474,6 +478,12 @@ iframe {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* WORK WEEK STYLE */
+
+.fc-head-container {
+    background-color: #bbb;
+}
+
 @media (min-width: 768px) {
     html #hero {
         font-family: "AvenirBook";
@@ -542,6 +552,15 @@ iframe {
         border-radius: 10px;
     }
 
+    .workWeek h1 {
+        display: inline;
+    }
+    
+    #fc {
+        margin-top: 0vh;
+        width: 70%;
+        float: right;
+    }
     /* .qpqp {
 
 

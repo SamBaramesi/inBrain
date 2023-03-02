@@ -277,281 +277,235 @@
             },
             {
                 "id": 5,
-                "sectionName": "Calendar",
+                "sectionName": "WorkWeek",
                 "sectionContent": [
                     {
                         "id": 1,
                         "weekDay": "Monday",
-                        "activities": [
+                        "values": [
                             {
                                 "id": 1,
-                                "from": "08:30",
-                                "to": "10:00",
-                                "text": "Werken aan outline"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-27"
                             },
                             {
                                 "id": 2,
-                                "from": "10:00",
-                                "to": "10:30",
-                                "text": "Salesoverleg"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-27"
                             },
                             {
                                 "id": 3,
-                                "from": "10:30",
-                                "to": "11:00",
-                                "text": "Projectoverleg"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-27"
                             },
                             {
                                 "id": 4,
-                                "from": "11:00",
-                                "to": "11:30",
-                                "text": "Contentoverleg"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-27"
                             },
                             {
                                 "id": 5,
-                                "from": "11:30",
-                                "to": "12:30",
-                                "text": "Werken aan outline"
-                            },
-                            {
-                                "id": 6,
-                                "from": "12:30",
-                                "to": "13:00",
-                                "text": "Lunch"
-                            },
-                            {
-                                "id": 7,
-                                "from": "13:00",
-                                "to": "14:30",
-                                "text": "Werken aan script"
-                            },
-                            {
-                                "id": 8,
-                                "from": "15:00",
-                                "to": "16:00",
-                                "text": "Inhoudelijke overleg klant"
-                            },
-                            {
-                                "id": 9,
-                                "from": "16:00",
-                                "to": "17:30",
-                                "text": "Werken aan script"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-27"
                             }
                         ]
                     },
                     {
                         "id": 2,
                         "weekDay": "Tuesday",
-                        "Values": [
+                        "values": [
                             {
                                 "id": 1,
-                                "from": "08:30",
-                                "to": "09:00",
-                                "text": "Overleg Projectteam"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-28"
                             },
                             {
                                 "id": 2,
-                                "from": "09:00",
-                                "to": "11:15",
-                                "text": "Werken aan script"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-28"
                             },
                             {
                                 "id": 3,
-                                "from": "11:30",
-                                "to": "12:30",
-                                "text": "Offerte schrijven potentiele klant"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-28"
                             },
                             {
                                 "id": 4,
-                                "from": "12:30",
-                                "to": "13:00",
-                                "text": "Lunch"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-28"
                             },
                             {
                                 "id": 5,
-                                "from": "13:00",
-                                "to": "14:00",
-                                "text": "Werken aan script"
-                            },
-                            {
-                                "id": 6,
-                                "from": "14:00",
-                                "to": "15:30",
-                                "text": "Inhoudelijke overleg klant"
-                            },
-                            {
-                                "id": 7,
-                                "from": "15:45",
-                                "to": "17:30",
-                                "text": "Werken aan outline"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-02-28"
                             }
                         ]
                     },
                     {
                         "id": 3,
                         "weekDay": "Wednesday",
-                        "Values": [
+                        "values": [
                             {
                                 "id": 1,
-                                "from": "08:30",
-                                "to": "10:00",
-                                "text": "Werken aan outline"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-01"
                             },
                             {
                                 "id": 2,
-                                "from": "10:00",
-                                "to": "10:30",
-                                "text": "Projectoverleg"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-01"
                             },
                             {
                                 "id": 3,
-                                "from": "10:45",
-                                "to": "11:15",
-                                "text": "Feedback klant e-learning verwerken"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-01"
                             },
                             {
                                 "id": 4,
-                                "from": "11:30",
-                                "to": "12:30",
-                                "text": "Werken aan script"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-01"
                             },
                             {
                                 "id": 5,
-                                "from": "12:30",
-                                "to": "13:00",
-                                "text": "Lunch"
-                            },
-                            {
-                                "id": 6,
-                                "from": "13:00",
-                                "to": "15:00",
-                                "text": "Werken aan script"
-                            },
-                            {
-                                "id": 7,
-                                "from": "15:00",
-                                "to": "16:00",
-                                "text": "Offerte schrijven potentiele klant"
-                            },
-                            {
-                                "id": 8,
-                                "from": "16:00",
-                                "to": "17:30",
-                                "text": "Suggesties visuals opstellen"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-01"
                             }
                         ]
                     },
                     {
                         "id": 4,
                         "weekDay": "Thursday",
-                        "Values": [
+                        "values": [
                             {
                                 "id": 1,
-                                "from": "08:30",
-                                "to": "10:00",
-                                "text": "Werken aan outline"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-02",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-02"
                             },
                             {
                                 "id": 2,
-                                "from": "10:00",
-                                "to": "10:30",
-                                "text": "Salesoverleg"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-02",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-02"
                             },
                             {
                                 "id": 3,
-                                "from": "10:30",
-                                "to": "11:00",
-                                "text": "Projectoverleg"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-02",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-02"
                             },
                             {
                                 "id": 4,
-                                "from": "11:00",
-                                "to": "11:30",
-                                "text": "Contentoverleg"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-02",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-02"
                             },
                             {
                                 "id": 5,
-                                "from": "11:30",
-                                "to": "12:30",
-                                "text": "Werken aan outline"
-                            },
-                            {
-                                "id": 6,
-                                "from": "12:30",
-                                "to": "13:00",
-                                "text": "Lunch"
-                            },
-                            {
-                                "id": 7,
-                                "from": "13:00",
-                                "to": "14:30",
-                                "text": "Werken aan script"
-                            },
-                            {
-                                "id": 8,
-                                "from": "15:00",
-                                "to": "16:00",
-                                "text": "Inhoudelijke overleg klant"
-                            },
-                            {
-                                "id": 9,
-                                "from": "16:00",
-                                "to": "17:30",
-                                "text": "Werken aan script"
+                                "title": "Werken aan outline",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-02",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-02"
                             }
                         ]
                     },
                     {
                         "id": 5,
                         "weekDay": "Friday",
-                        "Values": [
+                        "values": [
                             {
                                 "id": 1,
-                                "from": "08:30",
-                                "to": "10:00",
-                                "text": "Werken aan outline"
+                                "title": "FRIDAY1",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-03",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-03"
                             },
                             {
                                 "id": 2,
-                                "from": "10:00",
-                                "to": "10:30",
-                                "text": "Projectoverleg"
+                                "title": "FRIDAY2",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-03",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-03"
                             },
                             {
                                 "id": 3,
-                                "from": "10:45",
-                                "to": "11:15",
-                                "text": "Feedback klant e-learning verwerken"
+                                "title": "FRIDAY3",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-03",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-03"
                             },
                             {
                                 "id": 4,
-                                "from": "11:30",
-                                "to": "12:30",
-                                "text": "Werken aan script"
+                                "title": "FRIDAY4",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-03",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-03"
                             },
                             {
                                 "id": 5,
-                                "from": "12:30",
-                                "to": "13:00",
-                                "text": "Lunch"
-                            },
-                            {
-                                "id": 6,
-                                "from": "13:00",
-                                "to": "15:00",
-                                "text": "Werken aan script"
-                            },
-                            {
-                                "id": 7,
-                                "from": "15:00",
-                                "to": "16:00",
-                                "text": "Offerte schrijven potentiele klant"
-                            },
-                            {
-                                "id": 8,
-                                "from": "16:00",
-                                "to": "17:30",
-                                "text": "Suggesties visuals opstellen"
+                                "title": "FRIDAY5",
+                                "timeStart": "T08:30:00",
+                                "dateStart": "2023-03-03",
+                                "timeEnd": "T08:30:00",
+                                "dateEnd": "2023-03-03"
                             }
                         ]
                     }

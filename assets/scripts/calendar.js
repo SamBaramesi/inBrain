@@ -1,106 +1,58 @@
 $(document).ready(function () {
-    $('#fc').fullCalendar({
-        header: false,
-        height: 'auto',
-        defaultView: 'agendaWeek',
-        weekends: false,
-        allDaySlot: false, // remove the all-day row
-        slotDuration: '00:30', // set the duration to 1 hour
-        minTime: '08:00:00', // set the start time to 8:00 am
-        maxTime: '18:00:00', // set the end time to 6:00 pm
-        slotLabelFormat: 'H:mm a', // set the time format to 24-hour format
-        columnFormat: 'ddd', // set the date format to day name (e.g. "Mon")
-        editable: false, // allow events to be edited
-        events: [
-            {
-                title: 'Script Schrijven',
-                start: '2023-02-27T08:30:00',
-                end: '2023-02-27T10:00:00',
-                color: "grey",
-            },
-            {
-                title: 'Team Talk',
-                start: '2023-02-27T10:15:00',
-                end: '2023-02-27T11:00:00',
-                color: "grey",
-            },
-            {
-                title: 'Client meeting',
-                start: '2023-02-27T11:15:00',
-                end: '2023-02-27T12:15:00',
-                color: "grey",
-            },
-            {
-                title: 'lunch',
-                start: '2023-02-27T12:30:00',
-                end: '2023-02-27T13:00:00',
-                color: "green",
-            },
-            {
-                title: 'Workshop',
-                start: '2023-02-27T13:15:00',
-                end: '2023-02-27T15:30:00',
-                color: "grey",
-            },
-            {
-                title: 'work on script',
-                start: '2023-02-27T15:45:00',
-                end: '2023-02-27T16:30:00',
-                color: "grey",
-            },
-            {
-                title: 'lunch',
-                start: '2023-02-27T12:30:00',
-                end: '2023-02-27T13:00:00',
-                color: "green",
-            },
-            {
-                title: 'lunch',
-                start: '2023-02-27T12:30:00',
-                end: '2023-02-27T13:00:00',
-                color: "green",
-            },
-            {
-                title: 'lunch',
-                start: '2023-02-27T12:30:00',
-                end: '2023-02-27T13:00:00',
-                color: "green",
-            },
-            {
-                title: 'lunch',
-                start: '2023-02-27T12:30:00',
-                end: '2023-02-27T13:00:00',
-                color: "green",
-            },
-            {
-                title: 'Event 1',
-                start: '2023-03-01T09:00:00',
-                end: '2023-03-01T10:30:00'
-            },
-            {
-                title: 'Event 1',
-                start: '2023-03-01T09:00:00',
-                end: '2023-03-01T10:30:00'
-            },
-            {
-                title: 'Event 1',
-                start: '2023-03-01T09:00:00',
-                end: '2023-03-01T10:30:00'
-            },
-            {
-                title: 'Event 1',
-                start: '2023-03-01T09:00:00',
-                end: '2023-03-01T10:30:00'
-            },
-            {
-                title: 'Event 2',
-                start: '2023-03-01T12:00:00',
-                end: '2023-03-01T13:30:00'
-            }
-        ]
+    $.getJSON("facature.json", function (data) {
+
+        let section = document.querySelector(".workWeek");
+        let week = data[2].sectionContent[4].sectionContent
+        
+        
+        console.log(week);
+
+            week.forEach(day => {
+                for (let i = 0; i < day.values.length; i++) {
+                    const element = day.values[i];
+
+                    console.log(element);
+
+                    let name = `${element.title}`;
+                    let startTime = `${element.dateStart}${element.timeStart}`;
+                    let endTime = `${element.dateEnd}${element.timeEnd}`;
+
+                }
+                
+            });
+
+            
+
+        let h1 = document.createElement("h1");
+        h1.innerHTML = "Werk Week";
+        section.appendChild(h1);
+
+        let div = document.createElement("div");
+        div.classList.add("calendar");
+        div.id = "fc";
+        section.appendChild(div);
+
+        $('#fc').fullCalendar({
+            header: false,
+            height: 'auto',
+            defaultView: 'agendaWeek',
+            weekends: false,
+            allDaySlot: false, // remove the all-day row
+            slotDuration: '00:30', // set the duration to 1 hour
+            minTime: '08:00:00', // set the start time to 8:00 am
+            maxTime: '18:00:00', // set the end time to 6:00 pm
+            slotLabelFormat: 'H:mm a', // set the time format to 24-hour format
+            columnFormat: 'ddd', // set the date format to day name (e.g. "Mon")
+            editable: false, // allow events to be edited
+            events: [
+                
+                
+            ]
+            
+            
+        });
     });
 });
-
 
 
 // const events = [
