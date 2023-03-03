@@ -24,3 +24,4 @@ function readMoreDiv() {
         btn.innerHTML = "Meer Zien";
     }
 }
+

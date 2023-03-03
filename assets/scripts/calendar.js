@@ -1,56 +1,86 @@
+
+
 $(document).ready(function () {
     $.getJSON("facature.json", function (data) {
-
+        
         let section = document.querySelector(".workWeek");
         let week = data[2].sectionContent[4].sectionContent
+        let fakeEvents = [];
         
-        
-        console.log(week);
-
-            week.forEach(day => {
-                for (let i = 0; i < day.values.length; i++) {
-                    const element = day.values[i];
-
-                    console.log(element);
-
-                    let name = `${element.title}`;
-                    let startTime = `${element.dateStart}${element.timeStart}`;
-                    let endTime = `${element.dateEnd}${element.timeEnd}`;
-
-                }
+        week.forEach(day => {
+            for (let i = 0; i < day.values.length; i++) {
+                const element = day.values[i];
                 
-            });
+                
+                let name = element.title;
+                let startTime = element.dateStart + element.timeStart;
+                let endTime = element.dateEnd + element.timeEnd;
+                let eventId = element.id;
+                
+                console.log(name);
+                console.log(startTime);
+                console.log(endTime);
+                
+                fakeEvents.push(
+                    {
+                        id: eventId,
+                        title: name,
+                        start: startTime,
+                        end: endTime
+                    },
+                )
 
-            
+            }
 
+        });
+
+        
+        
         let h1 = document.createElement("h1");
         h1.innerHTML = "Werk Week";
         section.appendChild(h1);
-
+        
         let div = document.createElement("div");
         div.classList.add("calendar");
         div.id = "fc";
         section.appendChild(div);
-
-        $('#fc').fullCalendar({
-            header: false,
-            height: 'auto',
-            defaultView: 'agendaWeek',
-            weekends: false,
+        
+        let calendar = new FullCalendar.Calendar(div, {
+            themeSystem: 'bootstrap5',
             allDaySlot: false, // remove the all-day row
+            height: 'auto',
+            initialView: 'timeGridWeek',
+            headerToolbar: false,
+            weekends: false,
+            slotMinTime: '08:00:00',
+            slotMaxTime: '18:00:00',
+            events: fakeEvents,
             slotDuration: '00:30', // set the duration to 1 hour
-            minTime: '08:00:00', // set the start time to 8:00 am
-            maxTime: '18:00:00', // set the end time to 6:00 pm
-            slotLabelFormat: 'H:mm a', // set the time format to 24-hour format
-            columnFormat: 'ddd', // set the date format to day name (e.g. "Mon")
-            editable: false, // allow events to be edited
-            events: [
-                
-                
-            ]
-            
-            
+            handleWindowResize: true,
+            windowResizeDelay: 1,
+            dayHeaderFormat: { weekday: 'short' },
+            navLinks: false,
+            eventInteractive: true,
+            eventBackgroundColor: "yellow",
+            eventBorderColor: "red",
+            eventTextColor: "black",
+            eventDisplay: 'list-item',
+            displayEventTime: false,
         });
+        
+        
+        calendar.render();
+        
+        console.log(calendar);
+        
+        // slotLabelFormat: 'H:mm a', // set the time format to 24-hour format
+        // columnFormat: 'ddd', // set the date format to day name (e.g. "Mon")
+        // editable: false, // allow events to be edited
+
+
+        // $('#fc').fullCalendar({
+
+        // });
     });
 });
 

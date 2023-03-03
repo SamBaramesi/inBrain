@@ -290,38 +290,6 @@
                                 "dateStart": "2023-02-27",
                                 "timeEnd": "T08:30:00",
                                 "dateEnd": "2023-02-27"
-                            },
-                            {
-                                "id": 2,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-02-27",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-27"
-                            },
-                            {
-                                "id": 3,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-02-27",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-27"
-                            },
-                            {
-                                "id": 4,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-02-27",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-27"
-                            },
-                            {
-                                "id": 5,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-02-27",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-27"
                             }
                         ]
                     },
@@ -331,38 +299,6 @@
                         "values": [
                             {
                                 "id": 1,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-02-28",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-28"
-                            },
-                            {
-                                "id": 2,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-02-28",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-28"
-                            },
-                            {
-                                "id": 3,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-02-28",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-28"
-                            },
-                            {
-                                "id": 4,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-02-28",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-28"
-                            },
-                            {
-                                "id": 5,
                                 "title": "Werken aan outline",
                                 "timeStart": "T08:30:00",
                                 "dateStart": "2023-02-28",
@@ -382,38 +318,6 @@
                                 "dateStart": "2023-03-01",
                                 "timeEnd": "T08:30:00",
                                 "dateEnd": "2023-03-01"
-                            },
-                            {
-                                "id": 2,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-01",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-01"
-                            },
-                            {
-                                "id": 3,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-01",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-01"
-                            },
-                            {
-                                "id": 4,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-01",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-01"
-                            },
-                            {
-                                "id": 5,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-01",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-01"
                             }
                         ]
                     },
@@ -423,38 +327,6 @@
                         "values": [
                             {
                                 "id": 1,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-02",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-02"
-                            },
-                            {
-                                "id": 2,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-02",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-02"
-                            },
-                            {
-                                "id": 3,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-02",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-02"
-                            },
-                            {
-                                "id": 4,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-02",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-02"
-                            },
-                            {
-                                "id": 5,
                                 "title": "Werken aan outline",
                                 "timeStart": "T08:30:00",
                                 "dateStart": "2023-03-02",
@@ -470,38 +342,6 @@
                             {
                                 "id": 1,
                                 "title": "FRIDAY1",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-03",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-03"
-                            },
-                            {
-                                "id": 2,
-                                "title": "FRIDAY2",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-03",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-03"
-                            },
-                            {
-                                "id": 3,
-                                "title": "FRIDAY3",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-03",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-03"
-                            },
-                            {
-                                "id": 4,
-                                "title": "FRIDAY4",
-                                "timeStart": "T08:30:00",
-                                "dateStart": "2023-03-03",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-03"
-                            },
-                            {
-                                "id": 5,
-                                "title": "FRIDAY5",
                                 "timeStart": "T08:30:00",
                                 "dateStart": "2023-03-03",
                                 "timeEnd": "T08:30:00",

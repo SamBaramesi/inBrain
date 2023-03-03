@@ -734,51 +734,14 @@ iframe {
         margin-bottom: 10vh;
     }
 
+    .contact p, .contact h5 {
+        margin-bottom: 0px;
+    }
+
     iframe {
         margin-top: 10vh;
         background-color: black;
         height: 75vh;
         width: 100%;
     }
-}
-
-/* #ec {
-    font-family: "AvenirBlack";
-} */
-
-.calendar {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    width: 600px;
-    margin: 0 auto;
-}
-
-.header {
-    display: flex;
-}
-
-.day {
-    flex: 1;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    border-bottom: 1px solid black;
-}
-
-.body {
-    display: flex;
-}
-
-.time {
-    width: 50px;
-    text-align: center;
-    border-right: 1px solid black;
-    padding: 10px;
-}
-
-.event {
-    flex: 1;
-    border-right: 1px solid black;
-    padding: 10px;
 }
