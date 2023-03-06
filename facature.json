@@ -286,10 +286,24 @@
                             {
                                 "id": 1,
                                 "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
+                                "timeStart": "T08:00:00",
                                 "dateStart": "2023-02-27",
-                                "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-27"
+                                "timeEnd": "T09:00:00",
+                                "dateEnd": "2023-02-27",
+                                "evColor": "#F26531",
+                                "textColor": "#333333",
+                                "description": ""
+                            },
+                            {
+                                "id": 2,
+                                "title": "yo mama",
+                                "timeStart": "T09:30:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T10:30:00",
+                                "dateEnd": "2023-02-27",
+                                "evColor": "#F26531",
+                                "textColor": "#333333",
+                                "description": ""
                             }
                         ]
                     },
@@ -303,7 +317,10 @@
                                 "timeStart": "T08:30:00",
                                 "dateStart": "2023-02-28",
                                 "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-02-28"
+                                "dateEnd": "2023-02-28",
+                                "evColor": "#F26531",
+                                "textColor": "#333333",
+                                "description": ""
                             }
                         ]
                     },
@@ -317,7 +334,21 @@
                                 "timeStart": "T08:30:00",
                                 "dateStart": "2023-03-01",
                                 "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-01"
+                                "dateEnd": "2023-03-01",
+                                "evColor": "#F26531",
+                                "textColor": "#333333",
+                                "description": ""
+                            },
+                            {
+                                "id": 2,
+                                "title": "KRIS",
+                                "timeStart": "T12:15:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T13:15:00",
+                                "dateEnd": "2023-03-01",
+                                "evColor": "#fff",
+                                "textColor": "#333333",
+                                "description": ""
                             }
                         ]
                     },
@@ -331,7 +362,21 @@
                                 "timeStart": "T08:30:00",
                                 "dateStart": "2023-03-02",
                                 "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-02"
+                                "dateEnd": "2023-03-02",
+                                "evColor": "#F26531",
+                                "textColor": "#333333",
+                                "description": ""
+                            },
+                            {
+                                "id": 2,
+                                "title": "Test Event",
+                                "timeStart": "T15:30:00",
+                                "dateStart": "2023-03-02",
+                                "timeEnd": "T17:30:00",
+                                "dateEnd": "2023-03-02",
+                                "evColor": "#333333",
+                                "textColor": "#fff",
+                                "description": ""
                             }
                         ]
                     },
@@ -345,7 +390,21 @@
                                 "timeStart": "T08:30:00",
                                 "dateStart": "2023-03-03",
                                 "timeEnd": "T08:30:00",
-                                "dateEnd": "2023-03-03"
+                                "dateEnd": "2023-03-03",
+                                "evColor": "#F26531",
+                                "textColor": "#333333",
+                                "description": ""
+                            },
+                            {
+                                "id": 2,
+                                "title": "Sebastiaan",
+                                "timeStart": "T15:30:00",
+                                "dateStart": "2023-03-03",
+                                "timeEnd": "T16:30:00",
+                                "dateEnd": "2023-03-03",
+                                "evColor": "#fff",
+                                "textColor": "#333333",
+                                "description": "Hello, This is a description"
                             }
                         ]
                     }
