@@ -348,7 +348,7 @@
                                 "dateEnd": "2023-03-01",
                                 "evColor": "#fff",
                                 "textColor": "#333333",
-                                "description": ""
+                                "description": "1"
                             }
                         ]
                     },
@@ -365,7 +365,7 @@
                                 "dateEnd": "2023-03-02",
                                 "evColor": "#F26531",
                                 "textColor": "#333333",
-                                "description": ""
+                                "description": "Test"
                             },
                             {
                                 "id": 2,
@@ -376,7 +376,7 @@
                                 "dateEnd": "2023-03-02",
                                 "evColor": "#333333",
                                 "textColor": "#fff",
-                                "description": ""
+                                "description": "Thursday"
                             }
                         ]
                     },
@@ -393,7 +393,7 @@
                                 "dateEnd": "2023-03-03",
                                 "evColor": "#F26531",
                                 "textColor": "#333333",
-                                "description": ""
+                                "description": "Friday"
                             },
                             {
                                 "id": 2,

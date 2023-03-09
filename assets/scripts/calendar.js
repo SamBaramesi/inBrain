@@ -7,6 +7,7 @@ $(document).ready(function () {
         let week = data[2].sectionContent[4].sectionContent
         let fakeEvents = [];
 
+
         week.forEach(day => {
             for (let i = 0; i < day.values.length; i++) {
                 const element = day.values[i];
@@ -20,13 +21,6 @@ $(document).ready(function () {
                 let txtColor = element.textColor;
                 let desc = element.description;
 
-                console.log(name);
-                console.log(startTime);
-                console.log(endTime);
-                console.log(eventId);
-                console.log(evColor);
-                console.log(txtColor);
-
                 fakeEvents.push(
                     {
                         id: eventId,
@@ -34,8 +28,8 @@ $(document).ready(function () {
                         start: startTime,
                         end: endTime,
                         color: evColor,
-                        textColor: txtColor,
-
+                        description: desc,
+                        textColor: txtColor
                     },
 
                 )
@@ -74,92 +68,36 @@ $(document).ready(function () {
                 minute: '2-digit',
                 hour12: false
             },
-            // eventDidMount: function (info) {
+            eventMouseEnter: function (info) {
+                let eventDescription = info.event.extendedProps.description
+
+                console.log(info);
+                console.log(eventDescription);
+
+                // create a new tooltip element
+                let tooltipEl = document.createElement("span");
+                tooltipEl.classList.add('tooltip');
+                tooltipEl.innerHTML = eventDescription
 
 
-            //     if (info.event.extendedProps.description != "") {
+                // tooltipEl.style.left = (info.jsEvent.clientX + 10) + 'px';
+                // tooltipEl.style.top = (info.jsEvent.clientY + 10) + 'px';
 
-            //         tippy(info.event, {
-            //             content: desc
-            //         });
-
-            //     }
-
-
-
-            //     // // create tooltip element
-            //     // let tooltipEl = document.createElement('div');
-            //     // tooltipEl.innerHTML = info.event.extendedProps.description;
-            //     // tooltipEl.classList.add('tooltip');
-
-            //     //     // position tooltip above event element
-            //     //     let eventTop = info.el.getBoundingClientRect().top;
-            //     //     tooltipEl.style.top = (eventTop - tooltipEl.offsetHeight) + 'px';
-            //     //     tooltipEl.style.left = info.el.getBoundingClientRect().left + 'px';
-
-            //     //     // add tooltip element to DOM
-            //     //     document.body.appendChild(tooltipEl);
-
-            //     //     // show/hide tooltip on hover
-            //     //     info.el.addEventListener('mouseenter', function() {
-            //     //         tooltipEl.classList.add('show');
-            //     //     });
-            //     //     info.el.addEventListener('mouseleave', function() {
-            //     //         tooltipEl.classList.remove('show');
-            //     //     });
-            //     // }
-            //     // handleWindowResize: true,
-            //     // windowResizeDelay: 1,
-            //     // eventInteractive: true,
-            //     // eventBackgroundColor: "yellow",
-            //     // eventBorderColor: "red",
-            //     // eventTextColor: "black",
-            //     // showNonCurrentDates: true,
-            // },
+                // add the tooltip element to the page
+                info.el.appendChild(tooltipEl);
+            },
+            eventMouseLeave: function (info) {
+                // remove the tooltip element when the user's mouse leaves the event
+                let tooltipEl = document.querySelector('.tooltip');
+                if (tooltipEl) {
+                    info.el.removeChild(tooltipEl);
+                }
+            }
 
         });
 
 
         calendar.render();
 
-        console.log(calendar);
-
     });
 });
-
-// slotLabelFormat: 'H:mm a', // set the time format to 24-hour format
-// columnFormat: 'ddd', // set the date format to day name (e.g. "Mon")
-// editable: false, // allow events to be edited
-
-
-// $('#fc').fullCalendar({
-
-// });
-
-// const events = [
-//   { day: 'Monday', start: '10:00', end: '12:00', title: 'Meeting' },
-//   { day: 'Tuesday', start: '14:00', end: '16:00', title: 'Training' },
-//   { day: 'Wednesday', start: '9:00', end: '11:00', title: 'Presentation' },
-//   { day: 'Thursday', start: '13:00', end: '15:00', title: 'Project Work' },
-//   { day: 'Friday', start: '11:00', end: '13:00', title: 'Client Call' },
-// ];
-
-// const calendar = document.querySelector('.calendar');
-
-// events.forEach(event => {
-//   const dayIndex = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].indexOf(event.day);
-//   const startHour = parseInt(event.start.split(':')[0]);
-//   const startMinute = parseInt(event.start.split(':')[1]);
-//   const endHour = parseInt(event.end.split(':')[0]);
-//   const endMinute = parseInt(event.end.split(':')[1]);
-//   const startCell = (startHour - 8) * 6 + startMinute / 10 + 1;
-//   const endCell = (endHour - 8) * 6 + endMinute / 10 + 1;
-//   const eventDiv = document.createElement('div');
-//   eventDiv.classList.add('event');
-//   eventDiv.textContent = event.title;
-//   eventDiv.style.gridColumnStart = dayIndex + 1;
-//   eventDiv.style.gridColumnEnd = dayIndex + 2;
-//   eventDiv.style.gridRowStart = startCell;
-//   eventDiv.style.gridRowEnd = endCell;
-//   calendar.querySelector('.body').appendChild(eventDiv);
-// });
