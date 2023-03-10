@@ -27,9 +27,10 @@ $(document).ready(function () {
                         title: name,
                         start: startTime,
                         end: endTime,
-                        color: evColor,
+                        backgroundColor: evColor,
+                        borderColor: evColor,
+                        textColor: txtColor,
                         description: desc,
-                        textColor: txtColor
                     },
 
                 )
@@ -71,31 +72,22 @@ $(document).ready(function () {
             eventMouseEnter: function (info) {
                 let eventDescription = info.event.extendedProps.description
 
-                console.log(info);
-                console.log(eventDescription);
+                if (eventDescription) {
 
-                // create a new tooltip element
-                let tooltipEl = document.querySelector(".popper-tooltip");
-                tooltipEl.innerHTML = eventDescription
+                    let tooltipEl = document.createElement("span");
+                    tooltipEl.classList.add("popper-tooltip");
+                    tooltipEl.innerHTML = eventDescription
+                    section.appendChild(tooltipEl);
+                    Popper.createPopper(info.el, tooltipEl, { placement: 'top' });
+                }
 
-                Popper.createPopper(info.el, tooltipEl, { placement: 'bottom'});
-
-
-                // tooltipEl.style.left = (info.jsEvent.clientX + 10) + 'px';
-                // tooltipEl.style.top = (info.jsEvent.clientY + 10) + 'px';
-
-                // add the tooltip element to the page
-                //info.el.appendChild(tooltipEl);
             },
             eventMouseLeave: function (info) {
-                // remove the tooltip element when the user's mouse leaves the event
-                if (tooltip) {
-                    //info.el.removeChild(tooltipEl);
-                }
+                let tooltipEl = document.querySelector(".popper-tooltip");
+                tooltipEl.classList.remove("popper-tooltip");
+                tooltipEl.classList.add("popper-tooltip-hide");
             }
-
         });
-
 
         calendar.render();
 

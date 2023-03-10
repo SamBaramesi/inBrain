@@ -285,26 +285,71 @@
                         "values": [
                             {
                                 "id": 1,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:00:00",
+                                "title": "Weekstart",
+                                "timeStart": "T09:00:00",
                                 "dateStart": "2023-02-27",
-                                "timeEnd": "T09:00:00",
+                                "timeEnd": "T09:30:00",
                                 "dateEnd": "2023-02-27",
-                                "evColor": "#F26531",
-                                "textColor": "#333333",
-                                "description": "Lorem ipsum dolor sid amet"
+                                "evColor": "#333333",
+                                "textColor": "#FFFFFF",
+                                "description": "Hello, This is a description"
                             },
                             {
                                 "id": 2,
-                                "title": "yo mama",
-                                "timeStart": "T09:30:00",
+                                "title": "Storyboard schrijven",
+                                "timeStart": "T09:45:00",
                                 "dateStart": "2023-02-27",
-                                "timeEnd": "T10:30:00",
+                                "timeEnd": "T10:50:00",
+                                "dateEnd": "2023-02-27",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 3,
+                                "title": "Overleg inhoudsexpert",
+                                "timeStart": "T11:00:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T12:15:00",
                                 "dateEnd": "2023-02-27",
                                 "evColor": "#F26531",
                                 "textColor": "#333333",
+                                "description": "Hello, This is a description"
+                            },
+                            {
+                                "id": 4,
+                                "title": "Lunch",
+                                "timeStart": "T12:30:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T13:00:00",
+                                "dateEnd": "2023-02-27",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 5,
+                                "title": "Ontwerp storyboard",
+                                "timeStart": "T13:05:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T15:55:00",
+                                "dateEnd": "2023-02-27",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 6,
+                                "title": "Script schrijven",
+                                "timeStart": "T16:05:00",
+                                "dateStart": "2023-02-27",
+                                "timeEnd": "T17:30:00",
+                                "dateEnd": "2023-02-27",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
                                 "description": ""
                             }
+
                         ]
                     },
                     {
@@ -313,14 +358,58 @@
                         "values": [
                             {
                                 "id": 1,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
+                                "title": "Overleg projectteam",
+                                "timeStart": "T09:00:00",
                                 "dateStart": "2023-02-28",
-                                "timeEnd": "T08:30:00",
+                                "timeEnd": "T09:50:00",
                                 "dateEnd": "2023-02-28",
-                                "evColor": "#F26531",
-                                "textColor": "#333333",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
                                 "description": ""
+                            },
+                            {
+                                "id": 2,
+                                "title": "Feedback verwerken storyboard",
+                                "timeStart": "T10:00:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T12:15:00",
+                                "dateEnd": "2023-02-28",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 3,
+                                "title": "Lunch",
+                                "timeStart": "T12:30:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T13:00:00",
+                                "dateEnd": "2023-02-28",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 4,
+                                "title": "Overleg inhoudsexpert",
+                                "timeStart": "T13:05:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T14:30:00",
+                                "dateEnd": "2023-02-28",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 5,
+                                "title": "Ontwikkelen module in Storyline",
+                                "timeStart": "T14:45:00",
+                                "dateStart": "2023-02-28",
+                                "timeEnd": "T17:30:00",
+                                "dateEnd": "2023-02-28",
+                                "evColor": "#333333",
+                                "textColor": "#FFFFFF",
+                                "description": "Hello, This is a description"
                             }
                         ]
                     },
@@ -330,25 +419,58 @@
                         "values": [
                             {
                                 "id": 1,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
+                                "title": "Ontwikkelen module in Storyline",
+                                "timeStart": "T08:00:00",
                                 "dateStart": "2023-03-01",
-                                "timeEnd": "T08:30:00",
+                                "timeEnd": "T11:15:00",
                                 "dateEnd": "2023-03-01",
-                                "evColor": "#F26531",
-                                "textColor": "#333333",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
                                 "description": ""
                             },
                             {
                                 "id": 2,
-                                "title": "KRIS",
-                                "timeStart": "T12:15:00",
+                                "title": "Overleg designer",
+                                "timeStart": "T11:30:00",
                                 "dateStart": "2023-03-01",
-                                "timeEnd": "T13:15:00",
+                                "timeEnd": "T12:15:00",
                                 "dateEnd": "2023-03-01",
-                                "evColor": "#fff",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 3,
+                                "title": "Lunch",
+                                "timeStart": "T12:30:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T13:00:00",
+                                "dateEnd": "2023-03-01",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 4,
+                                "title": "Brainstormen voor sales aanvraag",
+                                "timeStart": "T13:05:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T15:00:00",
+                                "dateEnd": "2023-03-01",
+                                "evColor": "#F26531",
                                 "textColor": "#333333",
-                                "description": "1"
+                                "description": "Hello, This is a description"
+                            },
+                            {
+                                "id": 5,
+                                "title": "Helpen bij schrijven offerte potentiele klant",
+                                "timeStart": "T15:05:00",
+                                "dateStart": "2023-03-01",
+                                "timeEnd": "T16:30:00",
+                                "dateEnd": "2023-03-01",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
                             }
                         ]
                     },
@@ -358,25 +480,47 @@
                         "values": [
                             {
                                 "id": 1,
-                                "title": "Werken aan outline",
-                                "timeStart": "T08:30:00",
+                                "title": "Visuals uitwerken met designer",
+                                "timeStart": "T09:00:00",
                                 "dateStart": "2023-03-02",
-                                "timeEnd": "T08:30:00",
+                                "timeEnd": "T10:00:00",
                                 "dateEnd": "2023-03-02",
-                                "evColor": "#F26531",
-                                "textColor": "#333333",
-                                "description": "Test"
+                                "evColor": "#333333",
+                                "textColor": "#FFFFFF",
+                                "description": "Hello, This is a description"
                             },
                             {
                                 "id": 2,
-                                "title": "Test Event",
-                                "timeStart": "T15:30:00",
+                                "title": "Globaal ontwerp opstellen",
+                                "timeStart": "T10:15:00",
+                                "dateStart": "2023-03-02",
+                                "timeEnd": "T12:15:00",
+                                "dateEnd": "2023-03-02",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 3,
+                                "title": "Lunch",
+                                "timeStart": "T12:30:00",
+                                "dateStart": "2023-03-02",
+                                "timeEnd": "T13:00:00",
+                                "dateEnd": "2023-03-02",
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 4,
+                                "title": "Globaal ontwerp opstellen",
+                                "timeStart": "T13:05:00",
                                 "dateStart": "2023-03-02",
                                 "timeEnd": "T17:30:00",
                                 "dateEnd": "2023-03-02",
-                                "evColor": "#333333",
-                                "textColor": "#fff",
-                                "description": "Thursday"
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
                             }
                         ]
                     },
@@ -386,25 +530,47 @@
                         "values": [
                             {
                                 "id": 1,
-                                "title": "FRIDAY1",
-                                "timeStart": "T08:30:00",
+                                "title": "Globaal ontwerp opstellen",
+                                "timeStart": "T09:00:00",
                                 "dateStart": "2023-03-03",
-                                "timeEnd": "T08:30:00",
+                                "timeEnd": "T12:15:00",
                                 "dateEnd": "2023-03-03",
-                                "evColor": "#F26531",
-                                "textColor": "#333333",
-                                "description": "Friday"
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
                             },
                             {
                                 "id": 2,
-                                "title": "Sebastiaan",
-                                "timeStart": "T15:30:00",
+                                "title": "Fry-day!",
+                                "timeStart": "T12:30:00",
+                                "dateStart": "2023-03-03",
+                                "timeEnd": "T13:00:00",
+                                "dateEnd": "2023-03-03",
+                                "evColor": "#F26531",
+                                "textColor": "#FFFFFF",
+                                "description": "Hello, This is a description Hello, This is a description Hello, This is a description Hello, This is a description Hello, This is a description Hello, This is a description Hello, This is a description"
+                            },
+                            {
+                                "id": 3,
+                                "title": "Storyboard schrijven",
+                                "timeStart": "T13:05:00",
                                 "dateStart": "2023-03-03",
                                 "timeEnd": "T16:30:00",
                                 "dateEnd": "2023-03-03",
-                                "evColor": "#fff",
-                                "textColor": "#333333",
-                                "description": "Hello, This is a description"
+                                "evColor": "#FFFFFF",
+                                "textColor": "#ADADAD",
+                                "description": ""
+                            },
+                            {
+                                "id": 4,
+                                "title": "VrijMiBo",
+                                "timeStart": "T16:45:00",
+                                "dateStart": "2023-03-03",
+                                "timeEnd": "T17:30:00",
+                                "dateEnd": "2023-03-03",
+                                "evColor": "#333333",
+                                "textColor": "#FFFFFF",
+                                "description": "Vrijdag middag Borrel. YAAAAAY !"
                             }
                         ]
                     }
