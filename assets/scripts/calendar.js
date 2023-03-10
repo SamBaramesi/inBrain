@@ -75,22 +75,22 @@ $(document).ready(function () {
                 console.log(eventDescription);
 
                 // create a new tooltip element
-                let tooltipEl = document.createElement("span");
-                tooltipEl.classList.add('tooltip');
+                let tooltipEl = document.querySelector(".popper-tooltip");
                 tooltipEl.innerHTML = eventDescription
+
+                Popper.createPopper(info.el, tooltipEl, { placement: 'bottom'});
 
 
                 // tooltipEl.style.left = (info.jsEvent.clientX + 10) + 'px';
                 // tooltipEl.style.top = (info.jsEvent.clientY + 10) + 'px';
 
                 // add the tooltip element to the page
-                info.el.appendChild(tooltipEl);
+                //info.el.appendChild(tooltipEl);
             },
             eventMouseLeave: function (info) {
                 // remove the tooltip element when the user's mouse leaves the event
-                let tooltipEl = document.querySelector('.tooltip');
-                if (tooltipEl) {
-                    info.el.removeChild(tooltipEl);
+                if (tooltip) {
+                    //info.el.removeChild(tooltipEl);
                 }
             }
 
