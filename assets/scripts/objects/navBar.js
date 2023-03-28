@@ -15,6 +15,12 @@ if (jsonData) {
         li.appendChild(a);
     })
 
-    document.getElementById("nav").appendChild(ul);
+    let admin = document.createElement("a");
+    admin.setAttribute('href', "/php/login.php");
+    admin.classList.add("login");
+    admin.innerHTML = "Admin Login";
+    ul.appendChild(admin);
 
+    document.getElementById("nav").appendChild(ul);
+    
 }
