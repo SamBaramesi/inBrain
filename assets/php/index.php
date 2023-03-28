@@ -18,10 +18,7 @@
 						<a class="nav-link active" aria-current="page" href="#">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">New Admin User</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">View Users</a>
+						<a class="nav-link" href="users/createUser.php">New Admin User</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Manage Data</a>
