@@ -1,3 +1,8 @@
+<?php
+	session_start(); // start session
+	$user_name = $_SESSION['user_name'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +23,7 @@
 						<a class="nav-link active" aria-current="page" href="#">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="users/createUser.php">New Admin User</a>
+						<a class="nav-link" href="users/users.php">Admin Users</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Manage Data</a>
@@ -26,7 +31,7 @@
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Logout</a>
+						<a class="nav-link" href="logout.php">Logout</a>
 					</li>
 				</ul>
 			</div>
@@ -34,7 +39,7 @@
 	</nav>
 
 	<div class="container mt-3">
-		<h3>Welcome to the Admin Dashboard</h3>
+		<h3>Welcome to the Admin Dashboard <?php echo $user_name; ?></h3>
 		<p>This is where you can manage users and data.</p>
 	</div>
 

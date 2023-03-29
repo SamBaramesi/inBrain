@@ -16,7 +16,7 @@ if (jsonData) {
     })
 
     let admin = document.createElement("a");
-    admin.setAttribute('href', "/php/login.php");
+    admin.setAttribute('href', "assets/php/login.php");
     admin.classList.add("login");
     admin.innerHTML = "Admin Login";
     ul.appendChild(admin);

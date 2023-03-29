@@ -1,9 +1,13 @@
 <?php
+
+session_start(); // start session
+
 require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php"; // Include database connection file
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Sanitize user input to prevent SQL Injection attacks
+    $name = filter_var(trim($_POST["name"]), FILTER_SANITIZE_STRING);
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $password = filter_var(trim($_POST["password"]), FILTER_SANITIZE_STRING);
 
@@ -11,11 +15,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare an INSERT statement to add a new user to the database
-    $stmt = $pdo->prepare("INSERT INTO users ( username, password) VALUES (?, ?)");
-    $stmt->execute([$email, $hashed_password]);
+    $stmt = $pdo->prepare("INSERT INTO users ( name, username, password) VALUES (?, ?, ?)");
+    $stmt->execute([$name, $email, $hashed_password]);
 
     // Redirect to the home page after successfully adding the user to the database
-    header("location: ./index.php");
+    header("location: users.php");
     exit;
 }
 ?>
@@ -33,6 +37,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h1>Create User</h1>
         <hr>
         <form action="createUser.php" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="name" class="form-control" id="name" name="name" required>
+            </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" required>

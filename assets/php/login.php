@@ -17,11 +17,11 @@ if(isset($_POST["submit"])){
     if($user && password_verify($password, $user['password'])){
         // If the user exists and the entered password matches the stored hash
         $_SESSION["user_id"] = $user["id"]; // Store user ID in session
+        $_SESSION["user_name"] = $user["name"]; // Store user Name in session
         header("location: index.php"); // Redirect to home page
         exit;
-    }
-    else{
-        $error = "Incorrect username or password"; // Set error message
+    } else {
+        $error = "Incorrect username or password!"; // Set error message
     }
 }
 ?>
@@ -56,7 +56,7 @@ if(isset($_POST["submit"])){
                 <div class="card shadow-lg">
                     <div class="card-body">
                         <h3 class="card-title text-center mb-3">Login</h3>
-
+                        <?php if (isset($error)) {echo $error;} ?>
                         <!-- Login Form -->
                         <form action="login.php" method="POST">
                             <div class="form-floating mb-3">
