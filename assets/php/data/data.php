@@ -1,17 +1,17 @@
 <?php
-session_start(); // start session
+	session_start(); // start session
 
-require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
+    require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
 
-// Check if the user is logged in
+    // Check if the user is logged in
 if (!isset($_SESSION["user_id"])) {
     header("location: ../login.php");
     exit;
 }
 
-// Retrieve all admin users from the users table
-$stmt = $pdo->query("SELECT * FROM users");
-$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->query("SELECT * FROM vacature");
+$vacancies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 
@@ -29,27 +29,25 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">Admin Users</h1>
-        <a href="createUser.php" class="btn btn-primary mb-4">Add New User</a>
+        <h1 class="mb-4">Manage Data</h1>
+        <a href="createUser.php" class="btn btn-primary mb-4">Add Vacancy</a>
         <a href="../index.php" class="btn btn-secondary mb-4">Back to Home</a>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Username</th>
+                    <th scope="col">Vacancy ID</th>
+                    <th scope="col">Vacancy Name</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $user) : ?>
+                <?php foreach ($vacancies as $vacancy) : ?>
                     <tr>
-                        <th scope="row"><?php echo $user["id"]; ?></th>
-                        <td><?php echo $user["name"]; ?></td>
-                        <td><?php echo $user["username"]; ?></td>
+                        <th scope="row"><?php echo $vacancy["id"]; ?></th>
+                        <td><?php echo $vacancy["name"]; ?></td>
                         <td>
-                            <a type="submit" href="deleteUser.php?id=<?php echo $user["id"]; ?>" class="btn btn-danger">Delete</a>
-                            <a type="submit" href="editUser.php?id=<?php echo $user["id"]; ?>" class="btn btn-primary">Edit</a>
+                            <a type="submit" href="?id=<?php echo $vacancy["id"]; ?>" class="btn btn-danger">Delete</a>
+                            <a type="submit" href="?id=<?php echo $vacancy["id"]; ?>" class="btn btn-primary">Edit</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

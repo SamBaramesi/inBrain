@@ -50,7 +50,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Create User</button>
-            <button href="/assets/php/index.php" class="btn btn-secondary">Back To Dashboard</button>
         </form>
     </div>
 
