@@ -1,3 +1,7 @@
+<?php
+    include("assets/scripts/objects/data.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,9 +85,8 @@
         <!-- Work With Us Section -->
         <section id="workWithUs" style="padding: 30px 30px;"></section>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="assets/scripts/objects/data.js"></script>
-    <script src="assets/scripts/objects/banner.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- <script src="assets/scripts/objects/data.php"></script> -->
     <script src="assets/scripts/pie-chart.js"></script>
     <script src="assets/scripts/calendar.js"></script>
     <script src="assets/scripts/functions.js"></script>

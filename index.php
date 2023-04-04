@@ -6,15 +6,6 @@ $stmt->execute();
 
 $vacatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($vacatures as $vacature) {
-    $vacatureID = $vacature['id'];
-    $name = $vacature['name'];
-    echo $vacatureID;
-    echo " => ";
-    echo $name;
-    echo '<br>';
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +16,16 @@ foreach ($vacatures as $vacature) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <title>Document</title>
 </head>
+
+<style>
+    .btn {
+        background-color: #F26531;
+        border-color: #F26531;
+    }
+</style>
 
 <body>
     <div class="container">
@@ -38,14 +37,15 @@ foreach ($vacatures as $vacature) {
                 $vacatureID = $vacature['id'];
                 $name = $vacature['name'];
                 $img = $vacature['img'];
+                $description = $vacature['description'];
                 ?>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card">
-                    <img class="card-img-top" src="assets/img/<?php echo $img; ?>" alt="<?php echo $name; ?>">
+                        <img class="card-img-top" src="assets/img/<?php echo $img; ?>" alt="<?php echo $name; ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $name; ?></h5>
-                            <p class="card-text"></p>
-                            <a href="index.php?id<<?php echo $vacatureID ?>" class="btn btn-primary">Soliciteren</a>
+                            <p class="card-text"><?php echo $description ?></p>
+                            <a href="assets/scripts/objects/data.php?id=<?php echo $vacatureID ?>" class="btn btn-info">Soliciteren</a>
                         </div>
                     </div>
                 </div>

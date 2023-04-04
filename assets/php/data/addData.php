@@ -75,7 +75,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Redirect to the home page after successfully adding the user to the database
     header("location: data.php");
     exit;
-
 }
 
 ?>
