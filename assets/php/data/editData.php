@@ -1,45 +1,30 @@
 <?php
 
-// session_start(); // start session
+session_start(); // start session
 
-// require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
+require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
 
-// if (!isset($_SESSION['user_id'])) { // Redirect to login page if user is not logged in
-//     header("location: ../login.php");
-//     exit;
-// }
-
-// if (isset($_POST['submit'])) {
-
-//     $user_id = $_POST['id'];
-//     $name = $_POST['name'];
-//     $username = $_POST['username'];
-//     $password = $_POST['password'];
-
-//     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-//     // Update user details in the database
-//     $stmt = $pdo->prepare("UPDATE users SET name = :name, username = :username, password = :password WHERE id = $user_id");
-//     $stmt->execute(['name' => $name, 'username' => $username, 'password' => $hashed_password]);
-
-//     // Redirect back to user list page
-//     header("location: users.php");
-//     exit;
-
-// } elseif (isset($_GET['id'])) {
-
-//     $user_id = $_GET['id'];
-
-//     // Retrieve user details from the database
-//     $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
-//     $stmt->execute([$user_id]);
-//     $user = $stmt->fetch();
-
-// } else {
-//     echo "something went wrong";
-// }
+if (isset($_GET['id'])) {
+    $vacatureID = $_GET['id'];
+}
 
 ?>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    let jsonData = null;
+
+    $.ajax({
+        async: false,
+        global: false,
+        url: "../../../vacaturejson.php",
+        dataType: "json",
+        success: function(data) {
+            jsonData = data;
+        }
+    });
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +47,9 @@
 </style>
 
 <body>
-    
+
+    <!-- --------------------------- Banner ------------------------- -->
+
     <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
@@ -75,34 +62,33 @@
             </div>
         </div>
         <hr>
-        <form action="editUser.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
-            <div class="mb-2">
-                <label for="Function Name" class="form-label">Function Name</label>
-                <input type="text" class="form-control" id="Function Name" name="Function Name" required>
-            </div>
-            <div class="mb-2">
-                <label for="company name" class="form-label">company name</label>
-                <input type="text" class="form-control" id="company name" name="company name" required>
-            </div>
-            <div class="mb-2">
-                <label for="company location" class="form-label">company location</label>
-                <input type="text" class="form-control" id="company location" name="company location" required>
-            </div>
-            <div class="mb-2">
-                <label for="Button Text" class="form-label">Button Text</label>
-                <input type="text" class="form-control" id="Button Text" name="Button Text" required>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="banner">
+                <script>
+                    if (jsonData) {
+
+                        let bannerHeader = jsonData[1].sectionContent[0].objectValue
+                        let companyName = jsonData[1].sectionContent[1].objectValue
+                        let companyLocation = jsonData[1].sectionContent[2].objectValue
+                        let button = jsonData[1].sectionContent[3].objectValue
+
+                        document.getElementById("banner").innerHTML = `
+                        <label for="bannerHeader">Function Name</label>
+                        <input type="text" class="form-control mb-2" placeholder="${bannerHeader}"></input>
+                        <label for="companyName">Company Name</label>
+                        <input type="text" class="form-control mb-2" placeholder="${companyName}"></input>
+                        <label for="companyLocation">Company Location</label>
+                        <input type="text" class="form-control mb-2" placeholder="${companyLocation}"></input>
+                        <label for="buttonText">Button Text</label>
+                        <input type="text" class="form-control mb-2" placeholder="${button}"></input>
+                        `;
+                    }
+                </script>
             </div>
         </form>
     </div>
 
-    <!-- ------------------------------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------------------------------ -->
-
-    <hr class="mt-5">
+    <!-- --------------------------- Qualifications ------------------------- -->
     <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
@@ -115,37 +101,345 @@
             </div>
         </div>
         <hr>
-        <form action="editUser.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
-            <div class="mb-2">
-                <label for="Opleiding Niveau" class="form-label">Opleiding Niveau</label>
-                <input type="text" class="form-control" id="Opleiding Niveau" name="Opleiding Niveau" required>
-            </div>
-            <div class="mb-2">
-                <label for="Werk Ervaring" class="form-label">Werk Ervaring</label>
-                <input type="text" class="form-control" id="Werk Ervaring" name="Werk Ervaring" required>
-            </div>
-            <div class="mb-2">
-                <label for="Vaardigheden" class="form-label">Vaardigheden</label>
-                <input type="text" class="form-control" id="Vaardigheden" name="Vaardigheden" required>
-            </div>
-            <div class="mb-2">
-                <label for="Vaardigheden" class="form-label">Vaardigheden</label>
-                <input type="text" class="form-control" id="Vaardigheden" name="Vaardigheden" required>
-            </div>
-            <div class="mb-2">
-                <label for="Taal Niveau" class="form-label">Taal Niveau</label>
-                <input type="text" class="form-control" id="Taal Niveau" name="Taal Niveau" required>
-            </div>
-            <div class="mb-2">
-                <label for="Persoonlijke houding" class="form-label">Persoonlijke houding</label>
-                <input type="text" class="form-control" id="Persoonlijke houding" name="Persoonlijke houding" required>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="qualifications">
+                <script>
+                    if (jsonData) {
+
+                        let column1 = jsonData[2].sectionContent[0].sectionContent[0].columnContent
+
+                        column1.forEach(row => {
+                            // Append the HTML string for each row to the variable
+                            document.getElementById('qualifications').innerHTML += `<div class="col-sm-6"><label for="iconClass">Icon class</label><input type="text" class="form-control mb-2" placeholder="${row.objectClass}"></div><div class="col-sm-6"><label for="text">Text</label><input type="text" class="form-control mb-2" placeholder="${row.objectText}"></div>`;
+                        });
+                    }
+                </script>
             </div>
         </form>
     </div>
-    
-    </form>
+
+    <!-- --------------------------- Benefits ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Benefits</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="benefits">
+                <script>
+                    if (jsonData) {
+
+                        let column2 = jsonData[2].sectionContent[0].sectionContent[1].columnContent
+
+                        column2.forEach(row => {
+                            // Append the HTML string for each row to the variable
+                            document.getElementById('benefits').innerHTML += `<div class="col-sm-6"><label for="iconClass">Icon class</label><input type="text" class="form-control mb-2" placeholder="${row.objectClass}"></div><div class="col-sm-6"><label for="text">Text</label><input type="text" class="form-control mb-2" placeholder="${row.objectText}"></div>`;
+                        });
+                    }
+                </script>
+            </div>
+        </form>
     </div>
+
+    <!-- --------------------------- Activity ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Activity</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="activity">
+                <script>
+                    if (jsonData) {
+
+                        let content = jsonData[2].sectionContent[0].sectionContent[2].columnContent[0].objectContent
+
+                        content.forEach(row => {
+                            // Append the HTML string for each row to the variable
+                            document.getElementById('activity').innerHTML += `<div class="col-sm-6"><label for="iconClass">Activity</label><input type="text" class="form-control mb-2" placeholder="${row.label}"></div><div class="col-sm-6"><label for="iconText">Value (In %)</label><input type="text" class="form-control mb-2" placeholder="${row.value}"></div>`;
+                        });
+                    }
+                </script>
+            </div>
+        </form>
+    </div>
+
+    <!-- --------------------------- Activity ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Contact</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="contact">
+                <script>
+                    if (jsonData) {
+
+                        let title = jsonData[2].sectionContent[1].sectionContent[0].objectValue;
+                        let contactName = jsonData[2].sectionContent[1].sectionContent[1].objectValue[0].contactName;
+                        let contactTitle = jsonData[2].sectionContent[1].sectionContent[1].objectValue[0].contactTitle;
+                        let contactEmail = jsonData[2].sectionContent[1].sectionContent[1].objectValue[0].contactEmail;
+
+                        document.getElementById("contact").innerHTML = `
+                        <label for="iconClass">Title</label>
+                        <input type="text" class="form-control mb-2" placeholder="${title}"></input>
+                        <label for="iconClass">Contact Name</label>
+                        <input type="text" class="form-control mb-2" placeholder="${contactName}"></input>
+                        <label for="iconClass">Contact Title</label>
+                        <input type="text" class="form-control mb-2" placeholder="${contactTitle}"></input>
+                        <label for="iconClass">Contact Email</label>
+                        <input type="text" class="form-control mb-2" placeholder="${contactEmail}"></input>
+                        `
+                    }
+                </script>
+            </div>
+        </form>
+    </div>
+
+    <!-- --------------------------- Vacancy ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Vacature</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="vacature">
+                <script>
+                    if (jsonData) {
+
+                        let vacancyHead = jsonData[2].sectionContent[2].sectionContent[0].objectValue
+                        let firstP = jsonData[2].sectionContent[2].sectionContent[1].objectValue[0].objectValue
+                        let secondP = jsonData[2].sectionContent[2].sectionContent[1].objectValue[1].objectValue
+
+                        document.getElementById("vacature").innerHTML = `
+                        <label for="iconClass">Vacancy Title</label>
+                        <input type="text" class="form-control mb-2" placeholder="${vacancyHead}"></input>
+                        <label for="iconClass">First Paragraaph</label>
+                        <input type="text" class="form-control mb-2" placeholder="${firstP}"></input>
+                        <label for="iconClass">Second Paragraaph</label>
+                        <input type="text" class="form-control mb-2" placeholder="${secondP}"></input>
+                        `
+                    }
+                </script>
+            </div>
+        </form>
+    </div>
+
+    <!-- --------------------------- Work Week ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Work Week</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="workWeek">
+                <script>
+                    if (jsonData) {
+                        let week = jsonData[2].sectionContent[4].sectionContent;
+
+                        week.forEach(day => {
+                            const dayId = `workWeekData-${day.weekDay}`;
+                            let colClass = day.weekDay === 'Friday' ? 'col-sm-12 ' : 'col-sm-6'; // check if day is Friday
+
+                            document.getElementById("workWeek").innerHTML += `
+                                <div class="${colClass} border rounded bg-light my-3">
+                                    <h3 class="text-center mt-2">${day.weekDay}</h3>
+                                    <br>
+                                    <div id="${dayId}"></div>
+                                </div>
+                            `;
+
+                            for (let i = 0; i < day.values.length; i++) {
+                                const element = day.values[i];
+
+                                let name = element.title;
+                                let startTime = element.dateStart + element.timeStart;
+                                let endTime = element.dateEnd + element.timeEnd;
+                                let eventId = element.id;
+                                let evColor = element.evColor;
+                                let txtColor = element.textColor;
+                                let desc = element.description;
+
+                                document.getElementById(dayId).innerHTML += `
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label for="iconClass">Event Name</label>
+                                            <input type="text" class="form-control mb-2" placeholder="${name}"></input>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label for="iconClass">Event Start</label>
+                                            <input type="text" class="form-control mb-2" placeholder="${startTime}"></input>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label for="iconClass">Event End</label>
+                                            <input type="text" class="form-control mb-2" placeholder="${endTime}"></input>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label for="iconClass">Event ID</label>
+                                            <input type="text" class="form-control mb-2" placeholder="${eventId}"></input>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label for="iconClass">Event Color</label>
+                                            <input type="text" class="form-control mb-2" placeholder="${evColor}"></input>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="iconClass">Text Color</label>
+                                            <input type="text" class="form-control mb-2" placeholder="${txtColor}"></input>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="iconClass">Description</label>
+                                            <input type="text" class="form-control mb-2" placeholder="${desc}"></input>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                `;
+                            }
+                        });
+                    };
+                </script>
+            </div>
+        </form>
+    </div>
+
+    <!-- --------------------------- Practical Example ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Practical Example</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="practicalExample">
+                <script>
+                    if (jsonData) {
+
+                        let title = jsonData[2].sectionContent[5].sectionContent[0].objectValue
+                        let quote = jsonData[2].sectionContent[5].sectionContent[1].objectValue
+                        let paragraph = jsonData[2].sectionContent[5].sectionContent[2].objectValue
+
+                        document.getElementById("practicalExample").innerHTML = `
+                        <label for="iconClass">Title</label>
+                        <input type="text" class="form-control mb-2" placeholder="${title}"></input>
+                        <label for="iconClass">Quote</label>
+                        <input type="text" class="form-control mb-2" placeholder="${quote}"></input>
+                        <label for="iconClass">Paragraaph</label>
+                        <input type="text" class="form-control mb-2" placeholder="${paragraph}"></input>
+                        `
+                    }
+                </script>
+            </div>
+        </form>
+    </div>
+
+    <!-- --------------------------- Career Growth ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Career Growth</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php" method="POST">
+            <div class="row form-group" id="careerGrowth">
+                <script>
+                    if (jsonData) {
+
+                        let title = jsonData[2].sectionContent[6].sectionContent[0].objectValue
+                        let paragraph = jsonData[2].sectionContent[6].sectionContent[1].objectValue[0].objectValue
+
+                        document.getElementById("careerGrowth").innerHTML = `
+                        <label for="iconClass">Title</label>
+                        <input type="text" class="form-control mb-2" placeholder="${title}"></input>
+                        <label for="iconClass">paragraph</label>
+                        <input type="text" class="form-control mb-2" placeholder="${paragraph}"></input>
+                        `;
+                    }
+                </script>
+                <div class="row">
+                    <script>
+                        if (jsonData) {
+
+                            let circle = jsonData[2].sectionContent[6].sectionContent[1].objectValue[1].objectValue
+
+                            circle.forEach(row => {
+
+                                document.getElementById("careerGrowth").innerHTML += `
+                            
+                                    <div class="col-sm-3">
+                                        <label for="iconClass">Object Text</label>
+                                        <input type="text" class="form-control mb-2" placeholder="${row.objectText}"></input>
+                                    </div>
+                                    
+                                    `;
+                            });
+
+                            circle.forEach(row => {
+
+                                document.getElementById("careerGrowth").innerHTML += `
+
+                                <div class="col-sm-3">
+                                    <label for="iconClass">Object Image</label>
+                                    <img type="image" class="form-control mb-2">${row.objectImage}</img>
+                                    <input type="file" class="form-control mb-2"></input>
+                                    </div>
+                                
+                                `;
+                            });
+                        }
+                    </script>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -165,24 +459,31 @@
 </html>
 
 <?php
-$stmt = $db->query("SELECT header,companyName,companyLocation,button from banner where vacature_id={$vacatureID}");
-$bannerData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$banner = array();
-foreach ($bannerData as $bannerRow) {
-    foreach ($bannerRow as $bannerKey => $bannerValue) {
-        $banner[] = array("id" => count($banner) + 1, "objectName" => $bannerKey, "objectValue" => $bannerValue);
-    }
-}
+
 ?>
 <!--  -->
-<?php foreach ($users as $user) : ?>
-    <tr>
-        <th scope="row"><?php echo $user["id"]; ?></th>
-        <td><?php echo $user["name"]; ?></td>
-        <td><?php echo $user["username"]; ?></td>
+<?php
+//  foreach ($users as $user) : 
+?>
+<!-- <tr>
+        <th scope="row"><?php
+                        //  echo $user["id"];
+                        ?></th>
+        <td><?php
+            //  echo $user["name"];
+            ?></td>
+        <td><?php
+            // echo $user["username"];
+            ?></td>
         <td>
-            <a type="submit" href="deleteUser.php?id=<?php echo $user["id"]; ?>" class="btn btn-danger">Delete</a>
-            <a type="submit" href="editUser.php?id=<?php echo $user["id"]; ?>" class="btn btn-primary">Edit</a>
+            <a type="submit" href="deleteUser.php?id=<?php
+                                                        //  echo $user["id"];
+                                                        ?>" class="btn btn-danger">Delete</a>
+            <a type="submit" href="editUser.php?id=<?php
+                                                    //  echo $user["id"];
+                                                    ?>" class="btn btn-primary">Edit</a>
         </td>
-    </tr>
-<?php endforeach; ?>
+    </tr> -->
+<?php
+//  endforeach;
+?>

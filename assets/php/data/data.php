@@ -2,7 +2,7 @@
 	session_start(); // start session
 
     require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
-
+    
     // Check if the user is logged in
 if (!isset($_SESSION["user_id"])) {
     header("location: ../login.php");
@@ -10,6 +10,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 $stmt = $pdo->query("SELECT * FROM vacature");
+
 $vacancies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 

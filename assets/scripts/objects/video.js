@@ -1,9 +1,7 @@
-$(document).ready(function () {
-    $.getJSON("facature.json", function (data) {
+if (jsonData) {
 
-        let section = document.getElementById("video");
-        let videoURL = data[2].sectionContent[7].sectionContent
-        
-        let vid = section.innerHTML = videoURL;
-    });
-});
+    let vid = document.getElementById("video");
+    let videoURL = jsonData[2].sectionContent[7].sectionContent;
+
+    vid.innerHTML = videoURL;
+};

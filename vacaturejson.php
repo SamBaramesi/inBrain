@@ -1,6 +1,9 @@
 <?php
 //welke vacature?
-$vacatureID = 1;
+// $vacatureID = 1;
+$vacatureID = $_GET["id"];
+
+var_dump($vacatureID);
 
 // Create a new PDO object to connect to the database
 $db = new PDO('mysql:host=localhost;dbname=inBrain2', 'root', '');
@@ -150,7 +153,8 @@ foreach ($vacatures as $vacature) {
     $videoData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $video = array();
     foreach($videoData as $videoRow){
-            $video = "<iframe src=\"".$videoRow["link"]."\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
+        $videoLink = "<iframe src=\"".$videoRow["link"]."\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
+        $video = $videoLink;
     }
 
     // Fetch workWithUs
