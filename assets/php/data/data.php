@@ -10,7 +10,6 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 $stmt = $pdo->query("SELECT * FROM vacature");
-
 $vacancies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
@@ -47,7 +46,7 @@ $vacancies = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th scope="row"><?php echo $vacancy["id"]; ?></th>
                         <td><?php echo $vacancy["name"]; ?></td>
                         <td>
-                            <a type="submit" href="deleteData.php?id=<?php echo $vacancy["id"]; ?>" class="btn btn-danger">Delete</a>
+                            <?php $vacayID = $vacancy['id']; if($vacayID !== 1){echo "<a type=\"submit\" href=\"deleteData.php?id=$vacayID\" class=\"btn btn-danger\">Delete</a>";}?>
                             <a type="submit" href="editData.php?id=<?php echo $vacancy["id"]; ?>" class="btn btn-primary">Edit</a>
                         </td>
                     </tr>

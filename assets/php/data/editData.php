@@ -11,14 +11,18 @@ if (isset($_GET['id'])) {
 ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
 <script>
+    var url_string = window.location.href;
+
+    var url = new URL(url_string);
+
+    var vacatureID = url.searchParams.get("id");
     let jsonData = null;
 
     $.ajax({
         async: false,
         global: false,
-        url: "../../../vacaturejson.php",
+        url: "../../../vacaturejson.php?id=" + vacatureID,
         dataType: "json",
         success: function(data) {
             jsonData = data;

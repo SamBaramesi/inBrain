@@ -10,14 +10,67 @@ if (!isset($_SESSION['user_id'])) { // Redirect to login page if user is not log
 }
 
 if (isset($_GET['id'])) {
-    $vacancy_id = $_GET['id'];
+    $vacature_id = $_GET['id'];
 
     // check if confirmation is received
     if (isset($_POST['confirm'])) {
 
         // Prepare a DELETE statement to remove the vacancy with the given ID
-        $stmt = $pdo->prepare("DELETE FROM vacature WHERE id = ?");
-        $stmt->execute([$vacancy_id]);
+        $stmt = $pdo->prepare("DELETE FROM vacature WHERE id = :id");
+        $stmt->bindParam(":id", $vacature_id);
+        $stmt->execute();
+
+        // // DELETE banner table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM banner WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE qualifications table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM qualifications WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE benefits table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM benefits WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE activity table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM activity WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE contact table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM contact WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE vacancy table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM vacancy WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE workweek table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM weekday WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE practicalExample table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM practicalexample WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE careerGrowth table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM careergrowth WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE growthPath table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM growthpath WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE Video table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM video WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE workWithUs table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM workwithus WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
+
+        // // DELETE workWithUsIcons table WHERE id = $vacatureID
+        // $stmt = $pdo->prepare("DELETE FROM workwithusicons WHERE vacature_id = $vacature_id");
+        // $stmt->execute();
 
         // Redirect back to user list page
         header("location: data.php");

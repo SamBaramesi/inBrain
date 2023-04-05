@@ -2,6 +2,7 @@
 include_once("assets/php/dbconnect.php");
 
 $vacatureID = $_GET['id'];
+// echo $vacatureID;
 
 // Execute the query and fetch the results
 $stmt = $pdo->prepare("SELECT * FROM vacature WHERE id = :id");
