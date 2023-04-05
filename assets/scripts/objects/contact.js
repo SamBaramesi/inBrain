@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startContact = function startContact(jsonData) {
 
     // Get the data thats going to be used!
     let title = jsonData[2].sectionContent[1].sectionContent[0].objectValue;

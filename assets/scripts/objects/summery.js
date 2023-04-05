@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startSummery = function startSummery(jsonData) {
 
     let column1 = jsonData[2].sectionContent[0].sectionContent[0].columnContent
     column1.forEach(row => {

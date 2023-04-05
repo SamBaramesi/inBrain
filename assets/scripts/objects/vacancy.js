@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startVacancy = function startVacancy(jsonData) {
 
     // Get the data thats going to be used!
     let vacancyHead = jsonData[2].sectionContent[2].sectionContent[0].objectValue

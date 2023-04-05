@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startPracticalExample = function startPracticalExample(jsonData) {
 
     let title = jsonData[2].sectionContent[5].sectionContent[0].objectValue
     let quote = jsonData[2].sectionContent[5].sectionContent[1].objectValue

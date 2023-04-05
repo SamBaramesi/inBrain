@@ -1,23 +1,19 @@
 <?php
+include_once("assets/php/dbconnect.php");
 
-//welke vacature?
 $vacatureID = $_GET['id'];
 
-// Create a new PDO object to connect to the database
-$db = new PDO('mysql:host=localhost;dbname=inBrain2', 'root', '');
-
-// Build the query to fetch data from the database
-$sql = "SELECT * FROM vacature WHERE id={$vacatureID}";
-
 // Execute the query and fetch the results
-$stmt = $db->query($sql);
+$stmt = $pdo->prepare("SELECT * FROM vacature WHERE id = :id");
+$stmt->bindParam(":id", $vacatureID);
+$stmt->execute();
 $vacatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Loop through the results and build the JSON structure
 foreach ($vacatures as $vacature) {
 
     // Fetch banner
-    $stmt = $db->query("SELECT header,companyName,companyLocation,button from banner where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT header,companyName,companyLocation,button from banner where vacature_id={$vacatureID}");
     $bannerData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $banner = array();
     foreach ($bannerData as $bannerRow) {
@@ -27,7 +23,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch qualifications
-    $stmt = $db->query("SELECT icon,icon_class,icon_text from qualifications where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT icon,icon_class,icon_text from qualifications where vacature_id={$vacatureID}");
     $qualificationsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $qualifications = array();
     foreach ($qualificationsData as $qualificationsRow) {
@@ -35,7 +31,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch benefits
-    $stmt = $db->query("SELECT icon,icon_class,icon_text from benefits where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT icon,icon_class,icon_text from benefits where vacature_id={$vacatureID}");
     $benefitsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $benefits = array();
     foreach ($benefitsData as $benefitsRow) {
@@ -43,7 +39,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch activity
-    $stmt = $db->query("SELECT activity_name,activity_value from activity where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT activity_name,activity_value from activity where vacature_id={$vacatureID}");
     $activityData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $activity = array();
     foreach ($activityData as $activityRow) {
@@ -51,7 +47,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch contact
-    $stmt = $db->query("SELECT contact_header,contact_name,contact_title,contact_email from contact where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT contact_header,contact_name,contact_title,contact_email from contact where vacature_id={$vacatureID}");
     $contactData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $contact = array();
     foreach ($contactData as $contactRow) {
@@ -60,7 +56,7 @@ foreach ($vacatures as $vacature) {
     $contactHeader = $contactRow["contact_header"];
 
     // Fetch vacancy
-    $stmt = $db->query("SELECT Paragraaph1,Paragraaph2 from vacancy where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT Paragraaph1,Paragraaph2 from vacancy where vacature_id={$vacatureID}");
     $vacancyData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $vacancy = array();
     foreach ($vacancyData as $vacancyRow) {
@@ -70,57 +66,30 @@ foreach ($vacatures as $vacature) {
     }
 
     // fetch vacancy head
-    $stmt = $db->query("SELECT vacancy_header from vacancy where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT vacancy_header from vacancy where vacature_id={$vacatureID}");
     $vacHeadData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($vacHeadData as $vacHeadRow) {
         $vacHead = $vacHeadRow["vacancy_header"];
     }
 
     // Fetch quote
-    $stmt = $db->query("SELECT quote_text from quote where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT quote_text from quote where vacature_id={$vacatureID}");
     $quoteData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($quoteData as $quoteRow) {
         $quote = $quoteRow["quote_text"];
     }
 
     // Fetch weekday
-    $stmt = $db->query("SELECT `day`, id, event_title, event_timeStart, event_dateStart, event_timeEnd, event_dateEnd, event_color, event_textColor, event_description from `weekday` where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT `day`, id, event_title, event_timeStart, event_dateStart, event_timeEnd, event_dateEnd, event_color, event_textColor, event_description from `weekday` where vacature_id={$vacatureID}");
     $weekdayData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $week = array("monday" => [], "tuesday" => [], "wednesday" => [], "thursday" => [], "friday" => []);
     foreach ($weekdayData as $weekdayRow) {
         $week[$weekdayRow["day"]][] = array("id" => $weekdayRow["id"], "title" => $weekdayRow["event_title"], "timeStart" => "T" . $weekdayRow["event_timeStart"], "dateStart" => $weekdayRow["event_dateStart"], "timeEnd" => "T" . $weekdayRow["event_timeEnd"], "dateEnd" => $weekdayRow["event_dateEnd"], "evColor" => $weekdayRow["event_color"], "textColor" => $weekdayRow["event_textColor"], "description" => $weekdayRow["event_description"]);
-
-        /*$day = $weekdayRow["day"];
-        $$day[] = array("id"=>$weekdayRow["id"], "title"=>$weekdayRow["event_title"], "timeStart"=> "T". $weekdayRow["event_timeStart"], "dateStart"=>$weekdayRow["event_dateStart"], "timeEnd"=> "T". $weekdayRow["event_timeEnd"], "dateEnd"=>$weekdayRow["event_dateEnd"], "evColor"=>$weekdayRow["event_color"], "textColor"=>$weekdayRow["event_textColor"], "description"=>$weekdayRow["event_description"]);        
-        */
-        /*
-        switch ($weekdayRow["day"]) {
-            case "monday":
-                // do something specific for Monday
-                $monday[] = array("id"=>count($monday)+1, "title"=>$weekdayRow["event_title"], "timeStart"=> "T". $weekdayRow["event_timeStart"], "dateStart"=>$weekdayRow["event_dateStart"], "timeEnd"=> "T". $weekdayRow["event_timeEnd"], "dateEnd"=>$weekdayRow["event_dateEnd"], "evColor"=>$weekdayRow["event_color"], "textColor"=>$weekdayRow["event_textColor"], "description"=>$weekdayRow["event_description"]);
-                break;
-            case "tuesday":
-                // do something specific for tuesday
-                $tuesday[] = array("id"=>count($weekday)+1, "title"=>$weekdayRow["event_title"], "timeStart"=> "T". $weekdayRow["event_timeStart"], "dateStart"=>$weekdayRow["event_dateStart"], "timeEnd"=> "T". $weekdayRow["event_timeEnd"], "dateEnd"=>$weekdayRow["event_dateEnd"], "evColor"=>$weekdayRow["event_color"], "textColor"=>$weekdayRow["event_textColor"], "description"=>$weekdayRow["event_description"]);
-                break;
-            case "wednesday":
-                // do something specific for wednesday
-                $wednesday[] = array("id"=>count($weekday)+1, "title"=>$weekdayRow["event_title"], "timeStart"=> "T". $weekdayRow["event_timeStart"], "dateStart"=>$weekdayRow["event_dateStart"], "timeEnd"=> "T". $weekdayRow["event_timeEnd"], "dateEnd"=>$weekdayRow["event_dateEnd"], "evColor"=>$weekdayRow["event_color"], "textColor"=>$weekdayRow["event_textColor"], "description"=>$weekdayRow["event_description"]);
-                break;
-            case "thursday":
-                // do something specific for thursday
-                $thursday[] = array("id"=>count($weekday)+1, "title"=>$weekdayRow["event_title"], "timeStart"=> "T". $weekdayRow["event_timeStart"], "dateStart"=>$weekdayRow["event_dateStart"], "timeEnd"=> "T". $weekdayRow["event_timeEnd"], "dateEnd"=>$weekdayRow["event_dateEnd"], "evColor"=>$weekdayRow["event_color"], "textColor"=>$weekdayRow["event_textColor"], "description"=>$weekdayRow["event_description"]);
-                break;
-            case "friday":
-                // do something specific for Friday
-                $friday[] = array("id"=>count($weekday)+1, "title"=>$weekdayRow["event_title"], "timeStart"=> "T". $weekdayRow["event_timeStart"], "dateStart"=>$weekdayRow["event_dateStart"], "timeEnd"=> "T". $weekdayRow["event_timeEnd"], "dateEnd"=>$weekdayRow["event_dateEnd"], "evColor"=>$weekdayRow["event_color"], "textColor"=>$weekdayRow["event_textColor"], "description"=>$weekdayRow["event_description"]);
-                break;
-        }*/
     }
 
     // Fetch practicalExample
-    $stmt = $db->query("SELECT peHead,quote,paragraaph from practicalexample where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT peHead,quote,paragraaph from practicalexample where vacature_id={$vacatureID}");
     $peData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $pe = array();
     foreach ($peData as $peRow) {
@@ -130,7 +99,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch careerGrowth
-    $stmt = $db->query("SELECT header,paragraaph from careergrowth where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT header,paragraaph from careergrowth where vacature_id={$vacatureID}");
     $careergrowthData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($careergrowthData as $careergrowthRow) {
         $careergrowthHead = $careergrowthRow["header"];
@@ -138,7 +107,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch growthpath
-    $stmt = $db->query("SELECT objectText, objectImage from growthpath where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT objectText, objectImage from growthpath where vacature_id={$vacatureID}");
     $growthpathData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $growthpath = array();
     foreach ($growthpathData as $growthpathRow) {
@@ -146,7 +115,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch video
-    $stmt = $db->query("SELECT link from video where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT link from video where vacature_id={$vacatureID}");
     $videoData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $video = array();
     foreach ($videoData as $videoRow) {
@@ -155,7 +124,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch workWithUs
-    $stmt = $db->query("SELECT header,paragraaph from workwithus where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT header,paragraaph from workwithus where vacature_id={$vacatureID}");
     $workwithusData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($workwithusData as $workwithusRow) {
         $workwithusHead = $workwithusRow["header"];
@@ -163,7 +132,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch workWithUsIcons
-    $stmt = $db->query("SELECT icon_name,icon_text,icon_class from workwithusicons where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT icon_name,icon_text,icon_class from workwithusicons where vacature_id={$vacatureID}");
     $workwithusiconsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $workwithusicons = array();
     foreach ($workwithusiconsData as $workwithusiconsRow) {
@@ -173,7 +142,7 @@ foreach ($vacatures as $vacature) {
     // Add each field to the array
     $item = array(
         [
-            'sectionId' => '1',
+            'sectionId' => 1,
             'sectionName' => 'navBar',
             'sectionContent' => array(
                 [
@@ -407,7 +376,7 @@ foreach ($vacatures as $vacature) {
 $json_string = json_encode($json, JSON_PRETTY_PRINT);
 echo $json_string;
 
-exit();
 
+exit();
 
 ?>

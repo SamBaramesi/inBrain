@@ -1,7 +1,3 @@
-<?php
-    include("assets/scripts/objects/data.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,9 +59,6 @@
         <!-- Vacancy Section -->
         <section id="vacancy" style="padding: 30px 30px;"></section>
 
-        <!-- Quote Section -->
-        <!-- <section id="quote" class="qpqp"></section> -->
-
         <!-- Calendar Section -->
         <section class="workWeek" style="background-color: #e8e8e8; padding: 30px 30px; display:inline-block;">
             <!-- <div class="popper-tooltip"></div> -->
@@ -85,20 +78,20 @@
         <!-- Work With Us Section -->
         <section id="workWithUs" style="padding: 30px 30px;"></section>
     </div>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <!-- <script src="assets/scripts/objects/data.php"></script> -->
-    <script src="assets/scripts/pie-chart.js"></script>
-    <script src="assets/scripts/calendar.js"></script>
-    <script src="assets/scripts/functions.js"></script>
-    <script src="assets/scripts/objects/summery.js"></script> 
     <script src="assets/scripts/objects/navBar.js"></script>
+    <script src="assets/scripts/objects/banner.js"></script>
+    <script src="assets/scripts/objects/summery.js"></script>
+    <script src="assets/scripts/pie-chart.js"></script>
     <script src="assets/scripts/objects/contact.js"></script>
     <script src="assets/scripts/objects/vacancy.js"></script>
-    <script src="assets/scripts/objects/quote.js"></script>
+    <script src="assets/scripts/calendar.js"></script>
     <script src="assets/scripts/objects/practicalExample.js"></script>
     <script src="assets/scripts/objects/careerGrowth.js"></script>
     <script src="assets/scripts/objects/video.js"></script>
     <script src="assets/scripts/objects/workWithUs.js"></script>
+    <script src="assets/scripts/objects/data.js"></script>
+    <script src="assets/scripts/functions.js"></script>
+    
 </body>
 
 </html>

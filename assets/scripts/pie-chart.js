@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startPieChart = function startPieChart(jsonData) {
     
     let content = jsonData[2].sectionContent[0].sectionContent[2].columnContent[0].objectContent
     label = [];

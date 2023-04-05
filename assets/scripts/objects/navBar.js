@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startNavBar = function startNavBar(jsonData) {
 
 
     const ul = document.createElement("ul");

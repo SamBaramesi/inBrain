@@ -3,7 +3,6 @@ include_once("assets/php/dbconnect.php");
 
 $stmt = $pdo->prepare("SELECT * FROM vacature");
 $stmt->execute();
-
 $vacatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -16,7 +15,6 @@ $vacatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <title>Document</title>
 </head>
 
@@ -40,12 +38,12 @@ $vacatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $description = $vacature['description'];
                 ?>
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card">
+                    <div class="card" id="vacature-card-<?php echo $vacatureID; ?>">
                         <img class="card-img-top" src="assets/img/<?php echo $img; ?>" alt="<?php echo $name; ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $name; ?></h5>
                             <p class="card-text"><?php echo $description ?></p>
-                            <a href="assets/scripts/objects/data.php?id=<?php echo $vacatureID ?>" class="btn btn-info">Soliciteren</a>
+                            <a href="vacature.php?id=<?php echo $vacatureID ?>" class="btn btn-info">Soliciteren</a>
                         </div>
                     </div>
                 </div>

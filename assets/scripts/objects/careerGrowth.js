@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startCareerGrowth = function startCareerGrowth(jsonData) {
 
     let section = document.getElementById("careerGrowth");
     let title = jsonData[2].sectionContent[6].sectionContent[0].objectValue

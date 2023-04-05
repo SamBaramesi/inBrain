@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startCalendar = function startCalendar(jsonData) {
 
 
     let section = document.querySelector(".workWeek");

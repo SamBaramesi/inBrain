@@ -1,4 +1,4 @@
-if (jsonData) {
+window.startWorkWithUs = function startWorkWithUs(jsonData) {
 
     let section = document.getElementById("workWithUs");
     let title = jsonData[2].sectionContent[8].sectionContent[0].objectValue
