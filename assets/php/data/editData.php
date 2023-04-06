@@ -17,6 +17,7 @@ if (isset($_GET['id'])) {
     var url = new URL(url_string);
 
     var vacatureID = url.searchParams.get("id");
+
     let jsonData = null;
 
     $.ajax({
@@ -50,6 +51,47 @@ if (isset($_GET['id'])) {
     }
 </style>
 
+
+<?php
+
+// Make Function getColumnName
+function getColumnName($table){
+    global $stmt, $pdo, $vacatureID;
+
+    $stmt = $pdo->prepare("DESCRIBE $table");
+    $stmt->execute();
+    $columnName = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    return implode(",",$columnName);
+}
+
+echo getColumnName('banner');
+
+$tables = array('banner', 'qualifications', 'benefits', 'activity', 'contact', 'vacancy', 'weekday', 'practicalExample', 'careerGrowth', 'growthPath', 'Video', 'workWithUs', 'workWithUsIcons',);
+
+
+// Make Function updateTableRow
+function updateTableRow($table){
+    
+    global $pdo, $vacature_id;
+    
+    $stmt = $pdo->prepare("UPDATE $table header,companyName,companyLocation,button VALUES (?,?,?,?)");
+    $stmt->execute([$vacature_id]);
+}
+
+
+
+if (isset($_POST['submit'])) {
+    $bannerHeader = $_POST["bannerHeader"];
+    $companyName = $_POST["companyName"];
+    $companyLocation = $_POST["companyLocation"];
+    $buttonText = $_POST["buttonText"];
+
+    
+    updateTableRow('banner');
+}
+    
+?>
+
 <body>
 
     <!-- --------------------------- Banner ------------------------- -->
@@ -66,25 +108,26 @@ if (isset($_GET['id'])) {
             </div>
         </div>
         <hr>
-        <form action="editData.php" method="POST">
+        <form action="editData.php?id=<?php $vacatureID ?>" method="POST">
             <div class="row form-group" id="banner">
                 <script>
                     if (jsonData) {
 
-                        let bannerHeader = jsonData[1].sectionContent[0].objectValue
-                        let companyName = jsonData[1].sectionContent[1].objectValue
-                        let companyLocation = jsonData[1].sectionContent[2].objectValue
-                        let button = jsonData[1].sectionContent[3].objectValue
+                        let bannerHeaderJSON = jsonData[1].sectionContent[0].objectValue
+                        let companyNameJSON = jsonData[1].sectionContent[1].objectValue
+                        let companyLocationJSON = jsonData[1].sectionContent[2].objectValue
+                        let buttonJSON = jsonData[1].sectionContent[3].objectValue
 
                         document.getElementById("banner").innerHTML = `
                         <label for="bannerHeader">Function Name</label>
-                        <input type="text" class="form-control mb-2" placeholder="${bannerHeader}"></input>
+                        <input type="text" class="form-control mb-2" name="bannerHeader" placeholder="${bannerHeaderJSON}"></input>
                         <label for="companyName">Company Name</label>
-                        <input type="text" class="form-control mb-2" placeholder="${companyName}"></input>
+                        <input type="text" class="form-control mb-2" name="companyName" placeholder="${companyNameJSON}"></input>
                         <label for="companyLocation">Company Location</label>
-                        <input type="text" class="form-control mb-2" placeholder="${companyLocation}"></input>
+                        <input type="text" class="form-control mb-2" name="companyLocation" placeholder="${companyLocationJSON}"></input>
                         <label for="buttonText">Button Text</label>
-                        <input type="text" class="form-control mb-2" placeholder="${button}"></input>
+                        <input type="text" class="form-control mb-2" name="buttonText" placeholder="${buttonJSON}"></input>
+                        <button type="submit" class="btn btn-primary">Update Section</button>
                         `;
                     }
                 </script>
