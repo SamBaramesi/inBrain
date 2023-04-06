@@ -24,59 +24,34 @@
     <!-- Nav Section -->
     <nav id="nav"></nav>
     <!-- Banner Section -->
-    <section class="banner">
-        <div id="Bcontent">
-            <span id="banJSON"></span>
-        </div>
-    </section>
+    <section id="banner" class="banner"><div id="Bcontent"><span id="banJSON"></span></div></section>
 
     <div class="content">
 
         <!-- Summery Section -->
-        <section class="colFloat" style="padding: 30px 30px;">
-            <div class="column column-1">
-                <h3>Wat is vereist?</h3><br>
-                <ul id="colOneJSON" class="p2 less-spacing fa-ul"></ul>
-            </div>
-            <div class="column column-1">
-                <h3>Wat krijg je?</h3><br>
-                <ul id="colTwoJSON" class="p2 less-spacing fa-ul"></ul>
-            </div>
-            <div class="column column-2">
-                <h3>Wat doe je?</h3>
-                <br>
-                <ul>
-                    <li><canvas id="myChart"></canvas></li>
-                </ul>
-            </div>
-        </section>
+        <section id="summery" class="colFloat" style="padding: 30px 30px;"><div class="column column-1"><h3>Wat is vereist?</h3><br><ul id="colOneJSON" class="p2 less-spacing fa-ul"></ul></div><div class="column column-1"><h3>Wat krijg je?</h3><br><ul id="colTwoJSON" class="p2 less-spacing fa-ul"></ul></div><div class="column column-2"><h3>Wat doe je?</h3><br><ul><li><canvas id="myChart"></canvas></li></ul></div></section>
 
         <!-- Contact Section -->
-        <section style="padding: 30px 30px;">
-            <div class="contact"></div>
-        </section>
+        <section id="contact" style="padding: 30px 30px;"><div class="contact"></div></section>
 
         <!-- Vacancy Section -->
         <section id="vacancy" style="padding: 30px 30px;"></section>
 
         <!-- Calendar Section -->
-        <section class="workWeek" style="background-color: #e8e8e8; padding: 30px 30px; display:inline-block;">
-            <!-- <div class="popper-tooltip"></div> -->
-        </section>
+        <section id="calendar" class="workWeek" style="background-color: #e8e8e8; padding: 30px 30px; display:inline-block;"></section>
 
         <!-- practicalExample Section -->
         <section id="practicalExample" style="padding: 30px 30px; margin-top: 10vh; display: inline-block;"></section>
 
         <!-- careerGrowth Section -->
-        <section>
-            <div id="careerGrowth" style="padding: 30px 30px;"></div>
-        </section>
+        <section><div id="careerGrowth" style="padding: 30px 30px;"></div></section>
 
         <!-- Video Section -->
         <section id="video" style="padding: 30px 30px;"></section>
 
         <!-- Work With Us Section -->
         <section id="workWithUs" style="padding: 30px 30px;"></section>
+        
     </div>
     <script src="assets/scripts/objects/navBar.js"></script>
     <script src="assets/scripts/objects/banner.js"></script>

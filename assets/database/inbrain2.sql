@@ -369,7 +369,9 @@ INSERT INTO `vacancy` (`id`, `vacature_id`, `vacancy_header`, `Paragraaph1`, `Pa
 
 CREATE TABLE `vacature` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL
+  `name` varchar(50) NOT NULL,
+  `img` varchar(50) NOT NULL,
+  `description` text NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

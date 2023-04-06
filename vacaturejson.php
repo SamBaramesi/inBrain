@@ -149,50 +149,56 @@ foreach ($vacatures as $vacature) {
                 [
                     'id' => 1,
                     'name' => 'anchorLink1',
-                    'contentLink' => '(URL)',
-                    'contentPlaceholder' => 'Vereisten'
+                    'contentLink' => '#banner',
+                    'contentPlaceholder' => 'Banner'
                 ],
                 [
                     'id' => 2,
                     'name' => 'anchorLink2',
-                    'contentLink' => '(URL)',
-                    'contentPlaceholder' => 'Vereisten'
+                    'contentLink' => '#summery',
+                    'contentPlaceholder' => 'Summery'
                 ],
                 [
                     'id' => 3,
                     'name' => 'anchorLink3',
-                    'contentLink' => '(URL)',
-                    'contentPlaceholder' => 'Vereisten'
+                    'contentLink' => '#contact',
+                    'contentPlaceholder' => 'Contact'
                 ],
                 [
                     'id' => 4,
                     'name' => 'anchorLink4',
-                    'contentLink' => '(URL)',
-                    'contentPlaceholder' => 'Vereisten'
+                    'contentLink' => '#vacancy',
+                    'contentPlaceholder' => 'Vacancy'
                 ],
                 [
                     'id' => 5,
                     'name' => 'anchorLink5',
-                    'contentLink' => '(URL)',
-                    'contentPlaceholder' => 'Vereisten'
+                    'contentLink' => '#calendar',
+                    'contentPlaceholder' => 'Calendar'
                 ],
                 [
                     'id' => 6,
                     'name' => 'anchorLink6',
-                    'contentLink' => '(URL)',
-                    'contentPlaceholder' => 'Vereisten'
+                    'contentLink' => '#practicalExample',
+                    'contentPlaceholder' => 'Practical Example'
                 ],
                 [
                     'id' => 7,
                     'name' => 'anchorLink7',
-                    'contentLink' => '(URL)',
-                    'contentPlaceholder' => 'Vereisten'
+                    'contentLink' => '#careerGrowth',
+                    'contentPlaceholder' => 'Career Growth'
                 ],
                 [
                     'id' => 8,
                     'name' => 'anchorLink8',
-                    'contentLink' => '(URL)',
-                    'contentPlaceholder' => 'Vereisten'
+                    'contentLink' => '#video',
+                    'contentPlaceholder' => 'Video'
+                ],
+                [
+                    'id' => 9,
+                    'name' => 'anchorLink9',
+                    'contentLink' => '#workWithUs',
+                    'contentPlaceholder' => 'WorkWithUs'
                 ]
             )
         ],

@@ -138,6 +138,11 @@ nav {
     background-color: white;
     text-align: center;
     padding: 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    offset: 250px;
 }
 
 nav li {
