@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2023 at 11:08 AM
+-- Generation Time: Apr 06, 2023 at 09:19 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -41,7 +41,8 @@ CREATE TABLE `activity` (
 INSERT INTO `activity` (`id`, `vacature_id`, `activity_name`, `activity_value`) VALUES
 (1, 1, 'schrijven', '30'),
 (2, 1, 'lezen', '30'),
-(3, 1, 'spreken', '40');
+(3, 1, 'spreken', '40'),
+(84, 42, '', '');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,8 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `vacature_id`, `header`, `companyName`, `companyLocation`, `button`) VALUES
-(1, 1, 'Project Manager', 'inBrain', 'Utrecht - De Meern', 'Soliciteren');
+(1, 1, 'Project Manager', 'inBrain', 'Utrecht - De Meern', 'Soliciteren'),
+(74, 42, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -88,7 +90,8 @@ INSERT INTO `benefits` (`id`, `vacature_id`, `icon`, `icon_class`, `icon_text`) 
 (2, 1, 'Calendar', 'fas fa-calendar-alt', '40-urige werkweek'),
 (3, 1, 'Plane', 'fas fa-plane', '26 vakantiedagen'),
 (4, 1, 'Wallet', 'fas fa-wallet', 'Persoonlijk opleidingsbudget om je te ontwikkelen '),
-(5, 1, 'Shopping Bag', 'fas fa-shopping-bag', 'Laptop, reiskostenvergoeding, materiaal voor een g');
+(5, 1, 'Shopping Bag', 'fas fa-shopping-bag', 'Laptop, reiskostenvergoeding, materiaal voor een g'),
+(172, 42, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -108,7 +111,8 @@ CREATE TABLE `careergrowth` (
 --
 
 INSERT INTO `careergrowth` (`id`, `vacature_id`, `header`, `paragraaph`) VALUES
-(1, 1, 'Groeipad', 'Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.');
+(1, 1, 'Groeipad', 'Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.'),
+(36, 42, '', '');
 
 -- --------------------------------------------------------
 
@@ -130,7 +134,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `vacature_id`, `contact_header`, `contact_name`, `contact_title`, `contact_email`) VALUES
-(1, 1, 'Stel direct een vraag', 'Clair', 'Office Manager', 'info@inbrain.nl');
+(1, 1, 'Stel direct een vraag', 'Clair', 'Office Manager', 'info@inbrain.nl'),
+(36, 42, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -179,10 +184,11 @@ CREATE TABLE `growthpath` (
 --
 
 INSERT INTO `growthpath` (`id`, `vacature_id`, `objectText`, `objectImage`) VALUES
-(1, 1, 'Junior', 'img.png'),
+(1, 1, 'Junior', 'assets/img/1.png'),
 (2, 1, 'Medior', 'img.png'),
 (3, 1, 'Senior', 'img.png'),
-(4, 1, 'Cracked', 'img.png');
+(4, 1, 'Cracked', 'img.png'),
+(149, 42, '', '');
 
 -- --------------------------------------------------------
 
@@ -234,7 +240,8 @@ CREATE TABLE `practicalexample` (
 --
 
 INSERT INTO `practicalexample` (`id`, `vacature_id`, `peHead`, `quote`, `paragraaph`) VALUES
-(1, 1, 'Voorbeeld uit de praktijk', 'Je moet een outline schrijven, maar hebt weinig input ontvangen van de klant. Wat doe je?', 'Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.');
+(1, 1, 'Voorbeeld uit de praktijk', 'Je moet een outline schrijven, maar hebt weinig input ontvangen van de klant. Wat doe je?', 'Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.'),
+(35, 42, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -247,7 +254,7 @@ CREATE TABLE `qualifications` (
   `vacature_id` int(11) NOT NULL,
   `icon` varchar(50) NOT NULL,
   `icon_class` varchar(50) NOT NULL,
-  `icon_text` varchar(50) NOT NULL
+  `icon_text` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -260,7 +267,8 @@ INSERT INTO `qualifications` (`id`, `vacature_id`, `icon`, `icon_class`, `icon_t
 (3, 1, 'Book', 'fas fa-book fa-fw', 'Kennis van leerbehoeftes en onderwijskundige werkv'),
 (4, 1, 'Exchange', 'fas fa-exchange-alt fa-fw', 'Allerlei soorten input uit kunnen werken in duidel'),
 (5, 1, 'Language Sign', 'fas fa-language fa-fw', 'Uitstekende beheersing Nederlands en Engels, zowel'),
-(6, 1, 'Smiley', 'fas fa-smile fa-fw', 'Nieuwsgierig, nauwkeurig, brede interesse');
+(6, 1, 'Smiley', 'fas fa-smile fa-fw', 'Nieuwsgierig, nauwkeurig, brede interesse'),
+(170, 42, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -343,6 +351,26 @@ INSERT INTO `tuesday` (`id`, `vacature_id`, `event_title`, `event_timeStart`, `e
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `username`, `password`) VALUES
+(1, 'Sam', 'sbaramesi@gmail.com', '$2y$10$/CNyiGofhloVaCsDG7b.mupJloTVXW0QgUJaDGXz0WUgmYHRHAgsm');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vacancy`
 --
 
@@ -359,7 +387,8 @@ CREATE TABLE `vacancy` (
 --
 
 INSERT INTO `vacancy` (`id`, `vacature_id`, `vacancy_header`, `Paragraaph1`, `Paragraaph2`) VALUES
-(1, 1, 'Vacature', 'Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.', 'RMMBR heeft allerlei klanten, dus je werkt aan uiteenlopende projecten die verschillen qua inhoud, omvang en doorlooptijd. Dit betekent dat je je continu moet verdiepen in een ander onderwerp. Je moet de materie volledig begrijpen voordat je tekstuele uitleg hierover kunt geven. Daarom heb je regelmatig contact met de inhoudsexpert(s) en/of projectmanager aan de klantzijde. Daarnaast doe je zelf onderzoek en houd je rekening met visuele aspecten. Copy en design gaan hand in hand, dus je denkt ook mee over hoe jouw tekst visueel het beste tot zijn recht komt. Verder ben je soms betrokken bij de offertefase en denk je mee over conceptvoorstellen.');
+(1, 1, 'Vacature', 'Als Learning Specialist bij RMMBR ben je verantwoordelijk voor het ontwikkelen van online en blended leeroplossingen voor klanten. Denk aan het opstellen van teksten voor digitale leeromgevingen, (fysieke) trainingen en onboardingstrajecten, vaak gericht op werknemers van een organisatie. Je gaat als eerst aan de slag met de outline: een gedetailleerde inhoudsopgave die je opstelt door middel van de leerdoelen. Soms krijg je die in concrete vorm aangeleverd van de klant, soms moet je die nog opstellen. Daarna ga je met het script aan de slag. Je schrijft zowel short copy voor bijvoorbeeld (tussen)koppen en klikbare elementen, als long copy waarin je inhoudelijk de diepte in gaat. Het eindresultaat is een op maat gemaakte leeroplossing voor de klant.', 'RMMBR heeft allerlei klanten, dus je werkt aan uiteenlopende projecten die verschillen qua inhoud, omvang en doorlooptijd. Dit betekent dat je je continu moet verdiepen in een ander onderwerp. Je moet de materie volledig begrijpen voordat je tekstuele uitleg hierover kunt geven. Daarom heb je regelmatig contact met de inhoudsexpert(s) en/of projectmanager aan de klantzijde. Daarnaast doe je zelf onderzoek en houd je rekening met visuele aspecten. Copy en design gaan hand in hand, dus je denkt ook mee over hoe jouw tekst visueel het beste tot zijn recht komt. Verder ben je soms betrokken bij de offertefase en denk je mee over conceptvoorstellen.'),
+(36, 42, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -371,15 +400,16 @@ CREATE TABLE `vacature` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `img` varchar(50) NOT NULL,
-  `description` text NOT NULL,
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `vacature`
 --
 
-INSERT INTO `vacature` (`id`, `name`) VALUES
-(1, 'projectManager');
+INSERT INTO `vacature` (`id`, `name`, `img`, `description`) VALUES
+(1, 'projectManager', 'pm.jpg', 'inBrain is de weg naar JESUS'),
+(42, 'asdawdasd', 'wadsdwdasd', 'asdwdasdwdas');
 
 -- --------------------------------------------------------
 
@@ -398,7 +428,8 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`id`, `vacature_id`, `link`) VALUES
-(1, 1, 'https://www.youtube.com/embed/lcKaqoh0GJI');
+(1, 1, 'https://www.youtube.com/embed/lcKaqoh0GJI'),
+(36, 42, '');
 
 -- --------------------------------------------------------
 
@@ -471,14 +502,14 @@ INSERT INTO `weekday` (`id`, `vacature_id`, `day`, `event_title`, `event_timeSta
 (14, 1, 'wednesday', 'Lunch', '12:30:00', '2023-03-01', '13:00:00', '2023-03-01', '#FFFFFF', '#ADADAD', 'Hello, This is a description'),
 (15, 1, 'wednesday', 'Brainstormen voor sales aanvraag', '13:05:00', '2023-03-01', '15:00:00', '2023-03-01', '#F26531', '#333333', 'Hello, This is a description'),
 (16, 1, 'wednesday', 'Helpen bij schrijven offerte potentiele klant', '15:05:00', '2023-03-01', '16:30:00', '2023-03-01', '#FFFFFF', '#ADADAD', ''),
-(17, 1, 'thursday', 'Visuals uitwerken met designer', '09:00:00', '2023-03-02', '10:00:00', '2023-03-02', '#333333', '#FFFFFF', 'Hello, This is a description'),
-(18, 1, 'thursday', 'Globaal ontwerp opstellen', '10:15:00', '2023-03-02', '12:15:00', '2023-03-02', '#FFFFFF', '#ADADAD', ''),
+(17, 1, 'thursday', 'Visuals uitwerken met designer', '09:00:00', '2023-03-02', '12:15:00', '2023-03-02', '#333333', '#FFFFFF', 'Hello, This is a description'),
 (19, 1, 'thursday', 'Lunch', '12:30:00', '2023-03-02', '13:00:00', '2023-03-02', '#FFFFFF', '#ADADAD', ''),
 (20, 1, 'thursday', 'Globaal ontwerp opstellen', '13:05:00', '2023-03-02', '17:30:00', '2023-03-02', '#FFFFFF', '#ADADAD', ''),
 (21, 1, 'friday', 'Globaal ontwerp opstellen', '09:00:00', '2023-03-03', '12:15:00', '2023-03-03', '#FFFFFF', '#ADADAD', ''),
 (22, 1, 'friday', 'Fry-day!', '12:30:00', '2023-03-03', '13:00:00', '2023-03-03', '#F26531', '#FFFFFF', 'Hello, This is a description Hello, This is a description Hello, This is a description Hello, This is a description Hello, This is a description Hello, This is a description Hello, This is a description'),
 (23, 1, 'friday', 'Storyboard schrijven', '13:05:00', '2023-03-03', '16:30:00', '2023-03-03', '#FFFFFF', '#ADADAD', ''),
-(24, 1, 'friday', 'VrijMiBo', '16:45:00', '2023-03-03', '17:30:00', '2023-03-03', '#333333', '#FFFFFF', 'Vrijdag middag Borrel. YAAAAAY !');
+(24, 1, 'friday', 'VrijMiBo', '16:45:00', '2023-03-03', '17:30:00', '2023-03-03', '#333333', '#FFFFFF', 'Vrijdag middag Borrel. YAAAAAY !'),
+(676, 42, '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -498,7 +529,8 @@ CREATE TABLE `workwithus` (
 --
 
 INSERT INTO `workwithus` (`id`, `vacature_id`, `header`, `paragraaph`) VALUES
-(1, 1, 'Werken Bij RMMBR', 'RMMBR zorgt ervoor dat de medewerkers van klanten zo goed mogelijk ondersteund worden bij hun ontwikkeling en leerproces. RMMBR leidt het project en houdt de doelen scherp in het vizier, maar wel constructief en met gevoel. De organisatie gaat continu op zoek naar mogelijkheden en nieuwe oplossingen. De ervaring van RMMBR leert dat de connectie tussen mensen en organisatie de basis is voor oplossingen zonder houdbaarheidsdatum. Daarom streeft RMMBR ernaar om het beste uit digitaal leren te halen voor de ontwikkeling van medewerkers. Bij RMMBR werken gemotiveerde professionals die enthousiast zijn over hun vak.');
+(1, 1, 'Werken Bij RMMBR', 'RMMBR zorgt ervoor dat de medewerkers van klanten zo goed mogelijk ondersteund worden bij hun ontwikkeling en leerproces. RMMBR leidt het project en houdt de doelen scherp in het vizier, maar wel constructief en met gevoel. De organisatie gaat continu op zoek naar mogelijkheden en nieuwe oplossingen. De ervaring van RMMBR leert dat de connectie tussen mensen en organisatie de basis is voor oplossingen zonder houdbaarheidsdatum. Daarom streeft RMMBR ernaar om het beste uit digitaal leren te halen voor de ontwikkeling van medewerkers. Bij RMMBR werken gemotiveerde professionals die enthousiast zijn over hun vak.'),
+(36, 42, '', '');
 
 -- --------------------------------------------------------
 
@@ -523,7 +555,8 @@ INSERT INTO `workwithusicons` (`id`, `vacature_id`, `icon_name`, `icon_text`, `i
 (2, 1, 'Globe', 'Wereldwijd actief', 'fas fa-globe fa-iconi'),
 (3, 1, 'Employees', '30 werknemers', 'fas fa-users fa-iconi'),
 (4, 1, 'gender', '67% / 33%', 'fas fa-venus-mars fa-iconi'),
-(5, 1, 'Age', 'Gem. leeftijd 35 jaar', 'fas fa-infinity fa-iconi');
+(5, 1, 'Age', 'Gem. leeftijd 35 jaar', 'fas fa-infinity fa-iconi'),
+(113, 42, '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -608,6 +641,13 @@ ALTER TABLE `tuesday`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- Indexes for table `vacancy`
 --
 ALTER TABLE `vacancy`
@@ -657,31 +697,31 @@ ALTER TABLE `workwithusicons`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `benefits`
 --
 ALTER TABLE `benefits`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT for table `careergrowth`
 --
 ALTER TABLE `careergrowth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `friday`
@@ -693,7 +733,7 @@ ALTER TABLE `friday`
 -- AUTO_INCREMENT for table `growthpath`
 --
 ALTER TABLE `growthpath`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT for table `monday`
@@ -705,13 +745,13 @@ ALTER TABLE `monday`
 -- AUTO_INCREMENT for table `practicalexample`
 --
 ALTER TABLE `practicalexample`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `qualifications`
 --
 ALTER TABLE `qualifications`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `quote`
@@ -732,22 +772,28 @@ ALTER TABLE `tuesday`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT for table `vacancy`
 --
 ALTER TABLE `vacancy`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `vacature`
 --
 ALTER TABLE `vacature`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `wednesday`
@@ -759,19 +805,19 @@ ALTER TABLE `wednesday`
 -- AUTO_INCREMENT for table `weekday`
 --
 ALTER TABLE `weekday`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=677;
 
 --
 -- AUTO_INCREMENT for table `workwithus`
 --
 ALTER TABLE `workwithus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `workwithusicons`
 --
 ALTER TABLE `workwithusicons`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
