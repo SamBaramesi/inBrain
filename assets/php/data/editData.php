@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
         global: false,
         url: "../../../vacaturejson.php?id=" + vacatureID,
         dataType: "json",
-        success: function (data) {
+        success: function(data) {
             jsonData = data;
         }
     });
@@ -40,8 +40,7 @@ if (isset($_GET['id'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Update Users</title>
     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 
 <style>
@@ -52,11 +51,42 @@ if (isset($_GET['id'])) {
     }
 </style>
 
-
 <?php
 
+// ---------------------------- Function ----------------------------------------- //
+
+function getButtonValue()
+{
+}
+
+
+
+function isSubmitButtonClicked($name, $value)
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST[$name]) && $_POST[$name] === $value) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function createVacancyRow($table)
+{
+    global $pdo, $vacatureID;
+
+    $stmt = $pdo->prepare("INSERT INTO $table (`vacature_id`) VALUES (?)");
+    $stmt->execute([$vacatureID]);
+}
+
+
+
+
+?>
+
+<?php
 // --------------------------- Banner ------------------------- //
-if (isset($_POST['submit'])) {
+if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
     $bannerHeader = $_POST["bannerHeader"];
     $companyName = $_POST["companyName"];
@@ -73,13 +103,11 @@ if (isset($_POST['submit'])) {
 
 <body>
     <!-- --------------------------- Banner ------------------------- -->
-
     <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Banner</h1>
@@ -106,7 +134,7 @@ if (isset($_POST['submit'])) {
                         <input type="text" class="form-control mb-2" name="companyLocation" placeholder="${companyLocationJSON}" required></input>
                         <label for="buttonText">Button Text</label>
                         <input type="text" class="form-control mb-2" name="buttonText" placeholder="${buttonJSON}" required></input>
-                        <button type="submit" name="submit" class="btn btn-primary">Update Section</button>
+                        <button type="submit" name="updateBanner" value="clicked" class="btn btn-primary">Update Section</button>
                         `;
                     }
                 </script>
@@ -118,26 +146,37 @@ if (isset($_POST['submit'])) {
 
     <?php
 
-    if (isset($_POST['submit'])) {
+    if (isSubmitButtonClicked('addInput', 'clicked')) {
 
-        $iconClass = $_POST["iconClass"];
-        $iconText = $_POST["iconText"];
+        $stmt = $pdo->prepare("INSERT INTO qualifications (vacature_id, icon_class, icon_text) VALUES (:vacature_id, '', '')");
+        $stmt->execute(['vacature_id' => $vacatureID]);
 
-        $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
-    
-        $stmt = $pdo->prepare("UPDATE qualifications SET header = :header, companyName = :companyName, companyLocation = :companyLocation, button = :button WHERE vacature_id = :vacatureID");
-        $stmt->execute(['header' => $bannerHeader, 'companyName' => $companyName, 'companyLocation' => $companyLocation, 'button' => $buttonText, 'vacatureID' => $vacatureID]);
+        $newId = $pdo->lastInsertId();
+    }
+
+    if (isSubmitButtonClicked('updateQualifications', 'clicked')) {
+
+        global $vacatureID, $newId;
+
+        $iconClass = isset($_POST['iconClass']) ? $_POST['iconClass'] : null;
+        $iconText = isset($_POST['iconText']) ? $_POST['iconText'] : null;
+
+        if ($iconClass && $iconText) {
+            $stmt = $pdo->prepare("UPDATE qualifications SET icon_class = :iconClass, icon_text = :iconText WHERE id = :newId AND vacature_id = :vacatureID");
+            $stmt->execute(['newId'=> $newId, 'vacatureID'=> $vacatureID,'iconClass' => $iconClass, 'iconText' => $iconText]);
+        } else {
+            // handle error here
+            error_log('something wrong');
+        }
     }
 
     ?>
-
     <!-- --------------------------- Qualifications ------------------------- -->
     <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Qualifications</h1>
@@ -154,19 +193,36 @@ if (isset($_POST['submit'])) {
 
                         column1.forEach(row => {
                             // Append the HTML string for each row to the variable
+
+
                             document.getElementById('qualifications').innerHTML +=
                                 `
-                            <div class="col-sm-6">
-                            <label for="iconClass">Icon class</label>
-                            <input type="text" class="form-control mb-2" name="iconClass" placeholder="${row.objectClass}">
-                            </div>
-                            <div class="col-sm-6">
-                            <label for="text">Text</label>
-                            <input type="text" class="form-control mb-2" name="iconText" placeholder="${row.objectText}">
-                            </div>
-                            <button type="submit" name="submit" class="btn btn-primary">Update Section</button>
+                                <div class="row mb-3">
+                                    <div class="col-md-2">
+                                        <label for="iconClass" class="form-label">Icon Class</label>
+                                        <input type="text" name="iconClass" class="form-control" id="iconClass" placeholder="${row.objectClass}">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="iconText" class="form-label">Icon Text</label>
+                                        <input type="text" name="iconText" class="form-control" id="iconText" placeholder="${row.objectText}">
+                                    </div>
+                                    <div class="col-md-2 d-flex justify-content-end mt-4">
+                                        <button type="submit" name="deleteQualificationsRow" value="${row.id}" class="btn btn-danger col-md-12">Delete Row</button>
+                                    </div>
+                                </div>
                             `;
                         });
+
+                        document.getElementById('qualifications').innerHTML +=
+                            `<div class="row">
+                            <div class="col-md-6">
+                                <button type="submit" name="updateQualifications" value="clicked" class="btn btn-primary col-md-12">Update Section</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" name="addInput" value="clicked" class="btn btn-success col-md-12">Add Input</button>
+                            </div>
+                        </div>`;
+
                     }
                 </script>
             </div>
@@ -496,13 +552,11 @@ if (isset($_POST['submit'])) {
     </div> -->
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script>
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip({
                 container: 'body',
                 boundary: '.toolTipContainer',
