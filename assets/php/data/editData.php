@@ -146,29 +146,34 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
     <?php
 
-    if (isSubmitButtonClicked('addInput', 'clicked')) {
-
-        $stmt = $pdo->prepare("INSERT INTO qualifications (vacature_id, icon_class, icon_text) VALUES (:vacature_id, '', '')");
-        $stmt->execute(['vacature_id' => $vacatureID]);
-
-        $newId = $pdo->lastInsertId();
-    }
-
     if (isSubmitButtonClicked('updateQualifications', 'clicked')) {
 
         global $vacatureID, $newId;
-
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
         $iconClass = isset($_POST['iconClass']) ? $_POST['iconClass'] : null;
         $iconText = isset($_POST['iconText']) ? $_POST['iconText'] : null;
 
-        if ($iconClass && $iconText) {
-            $stmt = $pdo->prepare("UPDATE qualifications SET icon_class = :iconClass, icon_text = :iconText WHERE id = :newId AND vacature_id = :vacatureID");
-            $stmt->execute(['newId'=> $newId, 'vacatureID'=> $vacatureID,'iconClass' => $iconClass, 'iconText' => $iconText]);
+        if ($id && $iconClass && $iconText) {
+            $stmt = $pdo->prepare("UPDATE qualifications SET icon_class = :iconClass, icon_text = :iconText WHERE id = :id");
+            $stmt->execute(['id'=> $id,'iconClass' => $iconClass, 'iconText' => $iconText]);
         } else {
             // handle error here
             error_log('something wrong');
         }
     }
+
+
+    if (isSubmitButtonClicked('addInput', 'clicked')) {
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+
+        $stmt = $pdo->prepare("INSERT INTO qualifications (vacature_id, icon_class, icon_text) VALUES (:vacature_id, '', '')");
+        $stmt->execute(['vacature_id' => $vacatureID]);
+
+    }
+
+    
+
 
     ?>
     <!-- --------------------------- Qualifications ------------------------- -->
@@ -200,11 +205,12 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                                 <div class="row mb-3">
                                     <div class="col-md-2">
                                         <label for="iconClass" class="form-label">Icon Class</label>
-                                        <input type="text" name="iconClass" class="form-control" id="iconClass" placeholder="${row.objectClass}">
+                                        <input type="text" name="iconClass" class="form-control" id="iconClass" value="${row.objectClass}">
                                     </div>
                                     <div class="col-md-8">
                                         <label for="iconText" class="form-label">Icon Text</label>
-                                        <input type="text" name="iconText" class="form-control" id="iconText" placeholder="${row.objectText}">
+                                        <input type="text" name="iconText" class="form-control" id="iconText" value="${row.objectText}">
+                                        <input type="hidden" name="rowID" class="form-control" value="${row.id}">
                                     </div>
                                     <div class="col-md-2 d-flex justify-content-end mt-4">
                                         <button type="submit" name="deleteQualificationsRow" value="${row.id}" class="btn btn-danger col-md-12">Delete Row</button>
@@ -212,7 +218,6 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                                 </div>
                             `;
                         });
-
                         document.getElementById('qualifications').innerHTML +=
                             `<div class="row">
                             <div class="col-md-6">
@@ -222,7 +227,6 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                                 <button type="submit" name="addInput" value="clicked" class="btn btn-success col-md-12">Add Input</button>
                             </div>
                         </div>`;
-
                     }
                 </script>
             </div>

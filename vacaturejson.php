@@ -24,11 +24,11 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch qualifications
-    $stmt = $pdo->query("SELECT icon,icon_class,icon_text from qualifications where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT id,icon,icon_class,icon_text from qualifications where vacature_id={$vacatureID}");
     $qualificationsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $qualifications = array();
     foreach ($qualificationsData as $qualificationsRow) {
-        $qualifications[] = array("id" => count($qualifications) + 1, "objectIcon" => $qualificationsRow["icon"], "objectClass" => $qualificationsRow["icon_class"], "objectText" => $qualificationsRow["icon_text"]);
+        $qualifications[] = array("id" => $qualificationsRow["id"], "objectIcon" => $qualificationsRow["icon"], "objectClass" => $qualificationsRow["icon_class"], "objectText" => $qualificationsRow["icon_text"]);
     }
 
     // Fetch benefits
