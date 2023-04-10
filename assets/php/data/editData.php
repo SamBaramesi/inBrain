@@ -12,12 +12,11 @@ if (isset($_GET['id'])) {
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
-    var url_string = window.location.href;
 
+    var url_string = window.location.href;
     var url = new URL(url_string);
 
     var vacatureID = url.searchParams.get("id");
-
     let jsonData = null;
 
     $.ajax({
@@ -25,7 +24,7 @@ if (isset($_GET['id'])) {
         global: false,
         url: "../../../vacaturejson.php?id=" + vacatureID,
         dataType: "json",
-        success: function(data) {
+        success: function (data) {
             jsonData = data;
         }
     });
@@ -40,7 +39,8 @@ if (isset($_GET['id'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Update Users</title>
     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 
 <style>
@@ -105,9 +105,11 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     <!-- --------------------------- Banner ------------------------- -->
     <div class="container mt-5 toolTipContainer">
         <div class="container">
+            <a href="data.php" class="btn btn-secondary mb-4"> Go Back</a>
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Banner</h1>
@@ -149,13 +151,14 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     if (isSubmitButtonClicked('updateQualifications', 'clicked')) {
 
         global $vacatureID, $newId;
+
         $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
         $iconClass = isset($_POST['iconClass']) ? $_POST['iconClass'] : null;
         $iconText = isset($_POST['iconText']) ? $_POST['iconText'] : null;
 
         if ($id && $iconClass && $iconText) {
             $stmt = $pdo->prepare("UPDATE qualifications SET icon_class = :iconClass, icon_text = :iconText WHERE id = :id");
-            $stmt->execute(['id'=> $id,'iconClass' => $iconClass, 'iconText' => $iconText]);
+            $stmt->execute(['id' => $id, 'iconClass' => $iconClass, 'iconText' => $iconText]);
         } else {
             // handle error here
             error_log('something wrong');
@@ -172,8 +175,13 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
     }
 
-    
+    if (isSubmitButtonClicked('deleteQualificationsRow', 'clicked')) {
 
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+
+        $stmt = $pdo->prepare("DELETE FROM qualifications WHERE vacature_id = :vacature_id AND id = :id");
+        $stmt->execute(['vacature_id' => $vacatureID, 'id' => $id]);
+    }
 
     ?>
     <!-- --------------------------- Qualifications ------------------------- -->
@@ -181,7 +189,8 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Qualifications</h1>
@@ -192,6 +201,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="qualifications">
                 <script>
+
                     if (jsonData) {
 
                         let column1 = jsonData[2].sectionContent[0].sectionContent[0].columnContent
@@ -199,11 +209,10 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                         column1.forEach(row => {
                             // Append the HTML string for each row to the variable
 
-
                             document.getElementById('qualifications').innerHTML +=
                                 `
                                 <div class="row mb-3">
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                         <label for="iconClass" class="form-label">Icon Class</label>
                                         <input type="text" name="iconClass" class="form-control" id="iconClass" value="${row.objectClass}">
                                     </div>
@@ -212,21 +221,24 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                                         <input type="text" name="iconText" class="form-control" id="iconText" value="${row.objectText}">
                                         <input type="hidden" name="rowID" class="form-control" value="${row.id}">
                                     </div>
-                                    <div class="col-md-2 d-flex justify-content-end mt-4">
-                                        <button type="submit" name="deleteQualificationsRow" value="${row.id}" class="btn btn-danger col-md-12">Delete Row</button>
-                                    </div>
                                 </div>
                             `;
                         });
+
                         document.getElementById('qualifications').innerHTML +=
-                            `<div class="row">
-                            <div class="col-md-6">
-                                <button type="submit" name="updateQualifications" value="clicked" class="btn btn-primary col-md-12">Update Section</button>
+                            `
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button type="submit" name="updateQualifications" value="clicked" class="btn btn-primary col-md-12">Update Section</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" name="addInput" value="clicked" class="btn btn-success col-md-12">Add Input</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" name="deleteQualificationsRow" value="clicked" class="btn btn-danger col-md-12">Delete Last Row</button>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <button type="submit" name="addInput" value="clicked" class="btn btn-success col-md-12">Add Input</button>
-                            </div>
-                        </div>`;
+                        `;
                     }
                 </script>
             </div>
@@ -234,11 +246,12 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     </div>
 
     <!-- --------------------------- Benefits ------------------------- -->
-    <!-- <div class="container mt-5 toolTipContainer">
+    <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Benefits</h1>
@@ -246,7 +259,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
             </div>
         </div>
         <hr>
-        <form action="editData.php" method="POST">
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="benefits">
                 <script>
                     if (jsonData) {
@@ -255,13 +268,41 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
                         column2.forEach(row => {
                             // Append the HTML string for each row to the variable
-                            document.getElementById('benefits').innerHTML += `<div class="col-sm-6"><label for="iconClass">Icon class</label><input type="text" class="form-control mb-2" placeholder="${row.objectClass}"></div><div class="col-sm-6"><label for="text">Text</label><input type="text" class="form-control mb-2" placeholder="${row.objectText}"></div>`;
+                            document.getElementById('benefits').innerHTML +=
+                                `
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="iconClass" class="form-label">Icon Class</label>
+                                        <input type="text" name="iconClass" class="form-control" id="iconClass" value="${row.objectClass}">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="iconText" class="form-label">Icon Text</label>
+                                        <input type="text" name="iconText" class="form-control" id="iconText" value="${row.objectText}">
+                                        <input type="hidden" name="rowID" class="form-control" value="${row.id}">
+                                    </div>
+                                </div>
+                            `;
                         });
+
+                        document.getElementById('benefits').innerHTML +=
+                            `
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button type="submit" name="updateBenefits" value="clicked" class="btn btn-primary col-md-12">Update Section</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" name="addInputBenefits" value="clicked" class="btn btn-success col-md-12">Add Input</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" name="deleteBenefits" value="clicked" class="btn btn-danger col-md-12">Delete Last Row</button>
+                                </div>
+                            </div>
+                        `;
                     }
                 </script>
             </div>
         </form>
-    </div> -->
+    </div>
 
     <!-- --------------------------- Activity ------------------------- -->
     <!-- <div class="container mt-5 toolTipContainer">
@@ -556,11 +597,13 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     </div> -->
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script>
-        $(function() {
+        $(function () {
             $('[data-toggle="tooltip"]').tooltip({
                 container: 'body',
                 boundary: '.toolTipContainer',

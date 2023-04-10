@@ -31,7 +31,7 @@ $vacancies = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container mt-5">
         <h1 class="mb-4">Manage Data</h1>
         <a href="addData.php" class="btn btn-primary mb-4">Add Vacancy</a>
-        <a href="../index.php" class="btn btn-secondary mb-4">Back to Home</a>
+        <a href="../index.php" class="btn btn-secondary mb-4">Back to Dashboard</a>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -46,7 +46,7 @@ $vacancies = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th scope="row"><?php echo $vacancy["id"]; ?></th>
                         <td><?php echo $vacancy["name"]; ?></td>
                         <td>
-                            <?php $vacayID = $vacancy['id']; if($vacayID !== 1){echo "<a type=\"submit\" href=\"deleteData.php?id=$vacayID\" class=\"btn btn-danger\">Delete</a>";}?>
+                            <a type="submit" href="deleteData.php?id=<?php echo $vacancy["id"]; ?>" class="btn btn-danger">Delete</a>
                             <a type="submit" href="editData.php?id=<?php echo $vacancy["id"]; ?>" class="btn btn-primary">Edit</a>
                         </td>
                     </tr>
