@@ -555,20 +555,22 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
     if (isSubmitButtonClicked('updateWorkWeek', 'clicked')) {
 
-        global $vacatureID, $newId;
+        global $vacatureID;
 
         $eventName = isset($_POST['eventName']) ? $_POST['eventName'] : null;
-        $startTime = isset($_POST['startTime']) ? $_POST['startTime'] : null;
-        $endTime = isset($_POST['endTime']) ? $_POST['endTime'] : null;
+        $st = isset($_POST['startTime']) ? $_POST['startTime'] : null;
+        list($event_dateStart,$event_timeStart) = explode("T", $st);
+        $et = isset($_POST['endTime']) ? $_POST['endTime'] : null;
+        list($event_dateEnd,$event_timeEnd) = explode("T", $et);
         $eventId = isset($_POST['eventId']) ? $_POST['eventId'] : null;
         $evColor = isset($_POST['evColor']) ? $_POST['evColor'] : null;
         $txtColor = isset($_POST['txtColor']) ? $_POST['txtColor'] : null;
         $desc = isset($_POST['desc']) ? $_POST['desc'] : null;
         $eventDay = isset($_POST['eventDay']) ? $_POST['eventDay'] : null;
 
-        if ($eventName && $startTime && $endTime && $eventId && $evColor && $txtColor && $desc) {
-            $stmt = $pdo->prepare("UPDATE weekday SET day = :day, event_title = :eventName, event_timeStart = :startTime, event_dateStart = : WHERE id = :id");
-            $stmt->execute(['id' => $id, 'activityName' => $activityName, 'activityValue' => $activityValue]);
+        if ($eventName && $eventDay && $event_dateStart && $event_timeStart && $event_dateEnd && $event_timeEnd && $eventId && $evColor && $txtColor && $desc) {
+            $stmt = $pdo->prepare("UPDATE weekday SET day = :eventDay, event_title = :eventName, event_timeStart = :startTime, event_dateStart = :startDate, event_timeEnd = :endTime, event_dateEnd = :endDate, event_color = :evColor, event_textColor = :txtColor, event_description = :desc WHERE id = :eventId AND vacature_id = :vacature_id");
+            $stmt->execute(['eventDay' => $eventDay,'eventName' => $eventName,'startTime' => $event_timeStart,'startDate' => $event_dateStart,'endTime' => $event_timeEnd,'endDate' => $event_dateEnd,'evColor' => $evColor,'txtColor' => $txtColor,'desc' => $desc,'eventId' => $eventId,'vacature_id' => $vacatureID]);
         } else {
             // handle error here
             error_log('something wrong');
@@ -578,7 +580,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
     if (isSubmitButtonClicked('addInputWorkWeek', 'clicked')) {
 
-        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+        $eventId = isset($_POST['eventId']) ? $_POST['eventId'] : null;
 
         $stmt = $pdo->prepare("INSERT INTO weekday (vacature_id, day, event_title, event_timeStart, event_dateStart, event_timeEnd, event_dateEnd, event_color, event_textColor, event_description) VALUES (:vacature_id, '', '', '', '', '', '', '', '', '')");
         $stmt->execute(['vacature_id' => $vacatureID]);
@@ -587,10 +589,10 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
     if (isSubmitButtonClicked('deleteWorkWeekRow', 'clicked')) {
 
-        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+        $eventId = isset($_POST['eventId']) ? $_POST['eventId'] : null;
 
         $stmt = $pdo->prepare("DELETE FROM weekday WHERE vacature_id = :vacature_id AND id = :id");
-        $stmt->execute(['vacature_id' => $vacatureID, 'id' => $id]);
+        $stmt->execute(['vacature_id' => $vacatureID, 'id' => $eventId]);
     }
 
     ?>
