@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Update Users</title>
+    <title>Update Data</title>
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
@@ -52,14 +52,7 @@ if (isset($_GET['id'])) {
 </style>
 
 <?php
-
 // ---------------------------- Function ----------------------------------------- //
-
-function getButtonValue()
-{
-}
-
-
 
 function isSubmitButtonClicked($name, $value)
 {
@@ -79,13 +72,10 @@ function createVacancyRow($table)
     $stmt->execute([$vacatureID]);
 }
 
-
-
-
 ?>
-
 <?php
 // --------------------------- Banner ------------------------- //
+
 if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
     $bannerHeader = $_POST["bannerHeader"];
@@ -129,13 +119,13 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
                         document.getElementById("banner").innerHTML = `
                         <label for="bannerHeader">Function Name</label>
-                        <input type="text" class="form-control mb-2" name="bannerHeader" placeholder="${bannerHeaderJSON}" required></input>
+                        <input type="text" class="form-control mb-2" name="bannerHeader" value="${bannerHeaderJSON}"></input>
                         <label for="companyName">Company Name</label>
-                        <input type="text" class="form-control mb-2" name="companyName" placeholder="${companyNameJSON}" required></input>
+                        <input type="text" class="form-control mb-2" name="companyName" value="${companyNameJSON}"></input>
                         <label for="companyLocation">Company Location</label>
-                        <input type="text" class="form-control mb-2" name="companyLocation" placeholder="${companyLocationJSON}" required></input>
+                        <input type="text" class="form-control mb-2" name="companyLocation" value="${companyLocationJSON}"></input>
                         <label for="buttonText">Button Text</label>
-                        <input type="text" class="form-control mb-2" name="buttonText" placeholder="${buttonJSON}" required></input>
+                        <input type="text" class="form-control mb-2" name="buttonText" value="${buttonJSON}"></input>
                         <button type="submit" name="updateBanner" value="clicked" class="btn btn-primary">Update Section</button>
                         `;
                     }
@@ -144,7 +134,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         </form>
     </div>
 
-    <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------- Qualifications --------------------------------------------------------------- -->
 
     <?php
 
@@ -246,6 +236,48 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     </div>
 
     <!-- --------------------------- Benefits ------------------------- -->
+    <?php
+    if (isSubmitButtonClicked('updateBenefits', 'clicked')) {
+
+        global $vacatureID, $newId;
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+        $iconClass = isset($_POST['iconClass']) ? $_POST['iconClass'] : null;
+        $iconText = isset($_POST['iconText']) ? $_POST['iconText'] : null;
+
+        if ($id && $iconClass && $iconText) {
+            $stmt = $pdo->prepare("UPDATE benefits SET icon_class = :iconClass, icon_text = :iconText WHERE id = :id");
+            $stmt->execute(['id' => $id, 'iconClass' => $iconClass, 'iconText' => $iconText]);
+        } else {
+            // handle error here
+            error_log('something wrong');
+        }
+    }
+
+
+    if (isSubmitButtonClicked('addInputBenefits', 'clicked')) {
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+
+        $stmt = $pdo->prepare("INSERT INTO benefits (vacature_id, icon_class, icon_text) VALUES (:vacature_id, '', '')");
+        $stmt->execute(['vacature_id' => $vacatureID]);
+
+    }
+
+    if (isSubmitButtonClicked('deleteBenefitsRow', 'clicked')) {
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+
+        $stmt = $pdo->prepare("DELETE FROM benefits WHERE vacature_id = :vacature_id AND id = :id");
+        $stmt->execute(['vacature_id' => $vacatureID, 'id' => $id]);
+    }
+
+    ?>
+
+
+
+
+    <!-- --------------------------- Benefits ------------------------- -->
     <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
@@ -294,7 +326,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                                     <button type="submit" name="addInputBenefits" value="clicked" class="btn btn-success col-md-12">Add Input</button>
                                 </div>
                                 <div class="col-md-4">
-                                    <button type="submit" name="deleteBenefits" value="clicked" class="btn btn-danger col-md-12">Delete Last Row</button>
+                                    <button type="submit" name="deleteBenefitsRow" value="clicked" class="btn btn-danger col-md-12">Delete Last Row</button>
                                 </div>
                             </div>
                         `;
@@ -305,11 +337,53 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     </div>
 
     <!-- --------------------------- Activity ------------------------- -->
-    <!-- <div class="container mt-5 toolTipContainer">
+
+    <?php
+
+    if (isSubmitButtonClicked('updateActivity', 'clicked')) {
+
+        global $vacatureID, $newId;
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+        $activityName = isset($_POST['activityName']) ? $_POST['activityName'] : null;
+        $activityValue = isset($_POST['activityValue']) ? $_POST['activityValue'] : null;
+
+        if ($id && $activityName && $activityValue) {
+            $stmt = $pdo->prepare("UPDATE activity SET activity_name = :activityName, activity_value = :activityValue WHERE id = :id");
+            $stmt->execute(['id' => $id, 'activityName' => $activityName, 'activityValue' => $activityValue]);
+        } else {
+            // handle error here
+            error_log('something wrong');
+        }
+    }
+
+
+    if (isSubmitButtonClicked('addInputActivity', 'clicked')) {
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+
+        $stmt = $pdo->prepare("INSERT INTO activity (vacature_id, activity_name, activity_value) VALUES (:vacature_id, '', '')");
+        $stmt->execute(['vacature_id' => $vacatureID]);
+
+    }
+
+    if (isSubmitButtonClicked('deleteActivityRow', 'clicked')) {
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+
+        $stmt = $pdo->prepare("DELETE FROM activity WHERE vacature_id = :vacature_id AND id = :id");
+        $stmt->execute(['vacature_id' => $vacatureID, 'id' => $id]);
+    }
+
+    ?>
+
+    <!-- --------------------------- Activity ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Activity</h1>
@@ -317,7 +391,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
             </div>
         </div>
         <hr>
-        <form action="editData.php" method="POST">
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="activity">
                 <script>
                     if (jsonData) {
@@ -326,20 +400,66 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
                         content.forEach(row => {
                             // Append the HTML string for each row to the variable
-                            document.getElementById('activity').innerHTML += `<div class="col-sm-6"><label for="iconClass">Activity</label><input type="text" class="form-control mb-2" placeholder="${row.label}"></div><div class="col-sm-6"><label for="iconText">Value (In %)</label><input type="text" class="form-control mb-2" placeholder="${row.value}"></div>`;
+                            document.getElementById('activity').innerHTML +=
+                                `
+                                <div class="col-sm-6">
+                                    <label for="iconClass">Activity</label>
+                                    <input type="text" name="activityName" class="form-control mb-2" value="${row.label}">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="iconText">Value (In %)</label>
+                                    <input type="text" name="activityValue" class="form-control mb-2" value="${row.value}">
+                                    <input type="hidden" name="rowID" class="form-control" value="${row.id}">
+                                </div>
+                            `;
                         });
+
+                        document.getElementById('activity').innerHTML +=
+                            `
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button type="submit" name="updateActivity" value="clicked" class="btn btn-primary col-md-12">Update Section</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" name="addInputActivity" value="clicked" class="btn btn-success col-md-12">Add Input</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" name="deleteActivityRow" value="clicked" class="btn btn-danger col-md-12">Delete Last Row</button>
+                                </div>
+                            </div>
+                        `;
                     }
                 </script>
             </div>
         </form>
-    </div> -->
+    </div>
 
-    <!-- --------------------------- Activity ------------------------- -->
-    <!-- <div class="container mt-5 toolTipContainer">
+    <!-- --------------------------- Contact ------------------------- -->
+
+    <?php
+    if (isSubmitButtonClicked('updateContact', 'clicked')) {
+
+        $contactHeader = $_POST["contactHeader"];
+        $contactName = $_POST["contactName"];
+        $contactTitle = $_POST["contactTitle"];
+        $contactEmail = $_POST["contactEmail"];
+
+        $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
+    
+        $stmt = $pdo->prepare("UPDATE contact SET contact_header = :contactHeader, contact_name = :contactName, contact_title = :contactTitle, contact_email = :contactEmail WHERE vacature_id = :vacatureID");
+        $stmt->execute(['contactHeader' => $contactHeader, 'contactName' => $contactName, 'contactTitle' => $contactTitle, 'contactEmail' => $contactEmail, 'vacatureID' => $vacatureID]);
+    }
+
+    ?>
+
+    <!-- --------------------------- Contact ------------------------- -->
+
+    <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Contact</h1>
@@ -347,7 +467,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
             </div>
         </div>
         <hr>
-        <form action="editData.php" method="POST">
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="contact">
                 <script>
                     if (jsonData) {
@@ -359,26 +479,46 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
                         document.getElementById("contact").innerHTML = `
                         <label for="iconClass">Title</label>
-                        <input type="text" class="form-control mb-2" placeholder="${title}"></input>
+                        <input type="text" name="contactHeader" class="form-control mb-2" value="${title}"></input>
                         <label for="iconClass">Contact Name</label>
-                        <input type="text" class="form-control mb-2" placeholder="${contactName}"></input>
+                        <input type="text" name="contactName" class="form-control mb-2" value="${contactName}"></input>
                         <label for="iconClass">Contact Title</label>
-                        <input type="text" class="form-control mb-2" placeholder="${contactTitle}"></input>
+                        <input type="text" name="contactTitle" class="form-control mb-2" value="${contactTitle}"></input>
                         <label for="iconClass">Contact Email</label>
-                        <input type="text" class="form-control mb-2" placeholder="${contactEmail}"></input>
+                        <input type="text" name="contactEmail" class="form-control mb-2" value="${contactEmail}"></input>
+                        <button type="submit" name="updateContact" value="clicked" class="btn btn-primary">Update Section</button>
                         `
                     }
                 </script>
             </div>
         </form>
-    </div> -->
+    </div>
 
     <!-- --------------------------- Vacancy ------------------------- -->
-    <!-- <div class="container mt-5 toolTipContainer">
+    <?php
+
+    if (isSubmitButtonClicked('updateVacancy', 'clicked')) {
+
+        $vacancyHead = $_POST["vacancyHead"];
+        $firstP = $_POST["firstP"];
+        $secondP = $_POST["secondP"];
+
+        $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
+    
+        $stmt = $pdo->prepare("UPDATE vacancy SET vacancy_header = :vacancyHead, Paragraaph1 = :Paragraaph1, Paragraaph2 = :Paragraaph2 WHERE vacature_id = :vacatureID");
+        $stmt->execute(['vacancyHead' => $vacancyHead, 'Paragraaph1' => $firstP, 'Paragraaph2' => $secondP, 'vacatureID' => $vacatureID]);
+    }
+
+    ?>
+
+    <!-- --------------------------- Vacancy ------------------------- -->
+
+    <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Vacature</h1>
@@ -386,7 +526,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
             </div>
         </div>
         <hr>
-        <form action="editData.php" method="POST">
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="vacature">
                 <script>
                     if (jsonData) {
@@ -397,24 +537,72 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
                         document.getElementById("vacature").innerHTML = `
                         <label for="iconClass">Vacancy Title</label>
-                        <input type="text" class="form-control mb-2" placeholder="${vacancyHead}"></input>
+                        <input type="text" name="vacancyHead" class="form-control mb-2" value="${vacancyHead}"></input>
                         <label for="iconClass">First Paragraaph</label>
-                        <input type="text" class="form-control mb-2" placeholder="${firstP}"></input>
+                        <input type="text" name="firstP" class="form-control mb-2" value="${firstP}"></input>
                         <label for="iconClass">Second Paragraaph</label>
-                        <input type="text" class="form-control mb-2" placeholder="${secondP}"></input>
+                        <input type="text" name="secondP" class="form-control mb-2" value="${secondP}"></input>
+                        <button type="submit" name="updateVacancy" value="clicked" class="btn btn-primary">Update Section</button>
                         `
                     }
                 </script>
             </div>
         </form>
-    </div> -->
+    </div>
 
     <!-- --------------------------- Work Week ------------------------- -->
-    <!-- <div class="container mt-5 toolTipContainer">
+    <?php
+
+    if (isSubmitButtonClicked('updateWorkWeek', 'clicked')) {
+
+        global $vacatureID, $newId;
+
+        $eventName = isset($_POST['eventName']) ? $_POST['eventName'] : null;
+        $startTime = isset($_POST['startTime']) ? $_POST['startTime'] : null;
+        $endTime = isset($_POST['endTime']) ? $_POST['endTime'] : null;
+        $eventId = isset($_POST['eventId']) ? $_POST['eventId'] : null;
+        $evColor = isset($_POST['evColor']) ? $_POST['evColor'] : null;
+        $txtColor = isset($_POST['txtColor']) ? $_POST['txtColor'] : null;
+        $desc = isset($_POST['desc']) ? $_POST['desc'] : null;
+        $eventDay = isset($_POST['eventDay']) ? $_POST['eventDay'] : null;
+
+        if ($eventName && $startTime && $endTime && $eventId && $evColor && $txtColor && $desc) {
+            $stmt = $pdo->prepare("UPDATE weekday SET day = :day, event_title = :eventName, event_timeStart = :startTime, event_dateStart = : WHERE id = :id");
+            $stmt->execute(['id' => $id, 'activityName' => $activityName, 'activityValue' => $activityValue]);
+        } else {
+            // handle error here
+            error_log('something wrong');
+        }
+    }
+
+
+    if (isSubmitButtonClicked('addInputWorkWeek', 'clicked')) {
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+
+        $stmt = $pdo->prepare("INSERT INTO weekday (vacature_id, day, event_title, event_timeStart, event_dateStart, event_timeEnd, event_dateEnd, event_color, event_textColor, event_description) VALUES (:vacature_id, '', '', '', '', '', '', '', '', '')");
+        $stmt->execute(['vacature_id' => $vacatureID]);
+
+    }
+
+    if (isSubmitButtonClicked('deleteWorkWeekRow', 'clicked')) {
+
+        $id = isset($_POST['rowID']) ? $_POST['rowID'] : null;
+
+        $stmt = $pdo->prepare("DELETE FROM weekday WHERE vacature_id = :vacature_id AND id = :id");
+        $stmt->execute(['vacature_id' => $vacatureID, 'id' => $id]);
+    }
+
+    ?>
+
+    <!-- --------------------------- Work Week ------------------------- -->
+
+    <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Work Week</h1>
@@ -422,7 +610,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
             </div>
         </div>
         <hr>
-        <form action="editData.php" method="POST">
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="workWeek">
                 <script>
                     if (jsonData) {
@@ -455,44 +643,59 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <label for="iconClass">Event Name</label>
-                                            <input type="text" class="form-control mb-2" placeholder="${name}"></input>
+                                            <input type="text" name="eventName" class="form-control mb-2" value="${name}"></input>
                                         </div>
                                         <div class="col-sm-3">
                                             <label for="iconClass">Event Start</label>
-                                            <input type="text" class="form-control mb-2" placeholder="${startTime}"></input>
+                                            <input type="text" name="startTime" class="form-control mb-2" value="${startTime}"></input>
                                         </div>
                                         <div class="col-sm-3">
                                             <label for="iconClass">Event End</label>
-                                            <input type="text" class="form-control mb-2" placeholder="${endTime}"></input>
+                                            <input type="text" name="endTime" class="form-control mb-2" value="${endTime}"></input>
+                                            <input type="hidden" name="eventId" class="form-control mb-2" value="${eventId}"></input>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label for="iconClass">Event ID</label>
-                                            <input type="text" class="form-control mb-2" placeholder="${eventId}"></input>
+                                            <label for="iconClass">Event day</label>
+                                            <input type="text" name="eventDay" class="form-control mb-2"></input>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <label for="iconClass">Event Color</label>
-                                            <input type="text" class="form-control mb-2" placeholder="${evColor}"></input>
+                                            <input type="text" name="evColor" class="form-control mb-2" value="${evColor}"></input>
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="iconClass">Text Color</label>
-                                            <input type="text" class="form-control mb-2" placeholder="${txtColor}"></input>
+                                            <input type="text" name="txtColor" class="form-control mb-2" value="${txtColor}"></input>
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="iconClass">Description</label>
-                                            <input type="text" class="form-control mb-2" placeholder="${desc}"></input>
+                                            <input type="text" name="desc" class="form-control mb-2" value="${desc}"></input>
                                         </div>
                                     </div>
                                     <hr>
                                 `;
                             }
+
+                            document.getElementById(dayId).innerHTML +=
+                            `
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button type="submit" name="updateWorkWeek" value="clicked" class="btn btn-primary col-md-12">Update Section</button>
+                                        </div>                                        <div class="col-md-4">
+                                        <button type="submit" name="addInputWorkWeek" value="clicked" class="btn btn-success col-md-12">Add Input</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="submit" name="deleteWorkWeekRow" value="clicked" class="btn btn-danger col-md-12">Delete Last Row</button>
+                                    </div>
+                                </div>
+                            `;
                         });
                     };
                 </script>
             </div>
         </form>
-    </div> -->
+    </div>
 
     <!-- --------------------------- Practical Example ------------------------- -->
     <!-- <div class="container mt-5 toolTipContainer">

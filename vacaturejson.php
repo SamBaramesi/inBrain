@@ -32,19 +32,19 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch benefits
-    $stmt = $pdo->query("SELECT icon,icon_class,icon_text from benefits where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT id,icon,icon_class,icon_text from benefits where vacature_id={$vacatureID}");
     $benefitsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $benefits = array();
     foreach ($benefitsData as $benefitsRow) {
-        $benefits[] = array("id" => count($benefits) + 1, "objectIcon" => $benefitsRow["icon"], "objectClass" => $benefitsRow["icon_class"], "objectText" => $benefitsRow["icon_text"]);
+        $benefits[] = array("id" => $benefitsRow["id"], "objectIcon" => $benefitsRow["icon"], "objectClass" => $benefitsRow["icon_class"], "objectText" => $benefitsRow["icon_text"]);
     }
 
     // Fetch activity
-    $stmt = $pdo->query("SELECT activity_name,activity_value from activity where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT id,activity_name,activity_value from activity where vacature_id={$vacatureID}");
     $activityData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $activity = array();
     foreach ($activityData as $activityRow) {
-        $activity[] = array("id" => count($activity) + 1, "label" => $activityRow["activity_name"], "value" => $activityRow["activity_value"]);
+        $activity[] = array("id" => $activityRow["id"], "label" => $activityRow["activity_name"], "value" => $activityRow["activity_value"]);
     }
 
     // Fetch contact
@@ -56,11 +56,15 @@ foreach ($vacatures as $vacature) {
         $contact[] = array("id" => count($contact) + 1, "contactName" => $contactRow["contact_name"], "contactTitle" => $contactRow["contact_title"], "contactEmail" => $contactRow["contact_email"]);
     }
 
+    // fetch vacancy header
+    $stmt = $pdo->query("SELECT vacancy_header from vacancy where vacature_id={$vacatureID}");
+    $vacancyData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $vacHead = isset($vacancyData[0]['vacancy_header']) ? $vacancyData[0]['vacancy_header']: "";
+    
     // Fetch vacancy
-    $stmt = $pdo->query("SELECT vacancy_header,Paragraaph1,Paragraaph2 from vacancy where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT Paragraaph1,Paragraaph2 from vacancy where vacature_id={$vacatureID}");
     $vacancyData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $vacancy = array();
-    $vacHead = isset($vacancyData[0]["contact_header"]) ? $vacancyData[0]["contact_header"] : "";
     foreach ($vacancyData as $vacancyRow) {
         foreach ($vacancyRow as $vacancyKey => $vacancyValue) {
             $vacancy[] = array("id" => count($vacancy) + 1, "objectName" => $vacancyKey, "objectValue" => $vacancyValue);
@@ -82,7 +86,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch practicalExample
-    $stmt = $pdo->query("SELECT peHead,quote,paragraaph from practicalexample where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT id,peHead,quote,paragraaph from practicalexample where vacature_id={$vacatureID}");
     $peData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $pe = array();
     foreach ($peData as $peRow) {
@@ -102,11 +106,11 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch growthpath
-    $stmt = $pdo->query("SELECT objectText, objectImage from growthpath where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT id,objectText, objectImage from growthpath where vacature_id={$vacatureID}");
     $growthpathData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $growthpath = array();
     foreach ($growthpathData as $growthpathRow) {
-        $growthpath[] = array("id" => count($growthpath) + 1, "objectText" => $growthpathRow["objectText"], "objectImage" => $growthpathRow["objectImage"]);
+        $growthpath[] = array("id" => $growthpathRow["id"], "objectText" => $growthpathRow["objectText"], "objectImage" => $growthpathRow["objectImage"]);
     }
 
     // Fetch video
@@ -129,11 +133,11 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch workWithUsIcons
-    $stmt = $pdo->query("SELECT icon_name,icon_text,icon_class from workwithusicons where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT id,icon_name,icon_text,icon_class from workwithusicons where vacature_id={$vacatureID}");
     $workwithusiconsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $workwithusicons = array();
     foreach ($workwithusiconsData as $workwithusiconsRow) {
-        $workwithusicons[] = array("id" => count($workwithusicons) + 1, "objectName" => $workwithusiconsRow["icon_name"], "objectText" => $workwithusiconsRow["icon_text"], "objectIcon" => $workwithusiconsRow["icon_class"]);
+        $workwithusicons[] = array("id" => $workwithusiconsRow["id"], "objectName" => $workwithusiconsRow["icon_name"], "objectText" => $workwithusiconsRow["icon_text"], "objectIcon" => $workwithusiconsRow["icon_class"]);
     }
 
     // Add each field to the array
