@@ -59,8 +59,8 @@ foreach ($vacatures as $vacature) {
     // fetch vacancy header
     $stmt = $pdo->query("SELECT vacancy_header from vacancy where vacature_id={$vacatureID}");
     $vacancyData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $vacHead = isset($vacancyData[0]['vacancy_header']) ? $vacancyData[0]['vacancy_header']: "";
-    
+    $vacHead = isset($vacancyData[0]['vacancy_header']) ? $vacancyData[0]['vacancy_header'] : "";
+
     // Fetch vacancy
     $stmt = $pdo->query("SELECT Paragraaph1,Paragraaph2 from vacancy where vacature_id={$vacatureID}");
     $vacancyData = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -75,7 +75,7 @@ foreach ($vacatures as $vacature) {
     $stmt = $pdo->query("SELECT quote_text from quote where vacature_id={$vacatureID}");
     $quoteData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $quote = isset($quoteData[0]["contact_header"]) ? $quoteData[0]["contact_header"] : "";
-    
+
 
     // Fetch weekday
     $stmt = $pdo->query("SELECT `day`, id, event_title, event_timeStart, event_dateStart, event_timeEnd, event_dateEnd, event_color, event_textColor, event_description from `weekday` where vacature_id={$vacatureID}");
@@ -86,12 +86,12 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch practicalExample
-    $stmt = $pdo->query("SELECT id,peHead,quote,paragraaph from practicalexample where vacature_id={$vacatureID}");
+    $stmt = $pdo->query("SELECT id, peHead, quote, paragraaph FROM practicalexample WHERE vacature_id = {$vacatureID}");
     $peData = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $pe = array();
     foreach ($peData as $peRow) {
         foreach ($peRow as $peKey => $peValue) {
-            $pe[] = array("id" => count($pe) + 1, "objectName" => $peKey, "objectValue" => $peValue);
+            $pe[] = array("id" => $peRow["id"], "objectName" => $peKey, "objectValue" => $peValue);
         }
     }
 

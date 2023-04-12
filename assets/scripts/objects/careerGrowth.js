@@ -32,23 +32,23 @@ window.startCareerGrowth = function startCareerGrowth(jsonData) {
     secondContDiv.appendChild(contCircle);
 
     // create circles
-    circle.forEach(row => {
-        let span = document.createElement("span");
-        span.classList.add("dot");
-        span.innerText = row.objectText;
-        span.style.backgroundImage = row.objectImage;
-        contCircle.appendChild(span);
-    });
+    // circle.forEach(row => {
+    //     let span = document.createElement("span");
+    //     span.classList.add("dot");
+    //     span.innerText = row.objectText;
+    //     span.style.backgroundImage = row.objectImage;
+    //     contCircle.appendChild(span);
+    // });
 
 
-    // create Line container
-    let contLine = document.createElement("div");
-    contLine.classList.add("line");
-    secondContDiv.appendChild(contLine);
+    // // create Line container
+    // let contLine = document.createElement("div");
+    // contLine.classList.add("line");
+    // secondContDiv.appendChild(contLine);
 
-    // create Line
-    let line = document.createElement("span");
-    line.id = "line";
-    contLine.appendChild(line);
+    // // create Line
+    // let line = document.createElement("span");
+    // line.id = "line";
+    // contLine.appendChild(line);
 
 }

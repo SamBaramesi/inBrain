@@ -694,7 +694,25 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     </div>
 
     <!-- --------------------------- Practical Example ------------------------- -->
-    <!-- <div class="container mt-5 toolTipContainer">
+
+    <?php
+    if (isSubmitButtonClicked('updatePracticalExample', 'clicked')) {
+
+        $title = $_POST["title"];
+        $quote = $_POST["quote"];
+        $paragraph = $_POST["paragraph"];
+
+        $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
+
+        $stmt = $pdo->prepare("UPDATE practicalexample SET peHead = :peHead, quote = :quote, paragraaph = :paragraaph WHERE vacature_id = :vacatureID");
+        $stmt->execute(['peHead' => $title, 'quote' => $quote, 'paragraaph' => $paragraph, 'vacatureID' => $vacatureID]);
+    }
+    ?>
+
+
+
+    <!-- --------------------------- Practical Example ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -706,31 +724,45 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
             </div>
         </div>
         <hr>
-        <form action="editData.php" method="POST">
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="practicalExample">
                 <script>
                     if (jsonData) {
 
-                        let title = jsonData[2].sectionContent[5].sectionContent[0].objectValue
-                        let quote = jsonData[2].sectionContent[5].sectionContent[1].objectValue
-                        let paragraph = jsonData[2].sectionContent[5].sectionContent[2].objectValue
+                        let title = jsonData[2].sectionContent[5].sectionContent[1].objectValue
+                        let quote = jsonData[2].sectionContent[5].sectionContent[2].objectValue
+                        let paragraph = jsonData[2].sectionContent[5].sectionContent[3].objectValue
 
                         document.getElementById("practicalExample").innerHTML = `
-                        <label for="iconClass">Title</label>
-                        <input type="text" class="form-control mb-2" placeholder="${title}"></input>
-                        <label for="iconClass">Quote</label>
-                        <input type="text" class="form-control mb-2" placeholder="${quote}"></input>
-                        <label for="iconClass">Paragraaph</label>
-                        <input type="text" class="form-control mb-2" placeholder="${paragraph}"></input>
+                        <label for="Title">Title</label>
+                        <input type="text" name="title" class="form-control mb-2" value="${title}"></input>
+                        <label for="Quote">Quote</label>
+                        <input type="text" name="quote" class="form-control mb-2" value="${quote}"></input>
+                        <label for="Paragraaph">Paragraaph</label>
+                        <input type="text" name="paragraph" class="form-control mb-2" value="${paragraph}"></input>
+                        <button type="submit" name="updatePracticalExample" value="clicked" class="btn btn-primary">Update Section</button>
                         `
                     }
                 </script>
             </div>
         </form>
-    </div> -->
+    </div>
 
     <!-- --------------------------- Career Growth ------------------------- -->
-    <!-- <div class="container mt-5 toolTipContainer">
+    <?php
+    if (isSubmitButtonClicked('updateCareerGrowth', 'clicked')) {
+
+        $title = $_POST["title"];
+        $paragraph = $_POST["paragraaph"];
+
+        $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
+
+        $stmt = $pdo->prepare("UPDATE careergrowth SET header = :header, paragraaph = :paragraaph WHERE vacature_id = :vacatureID");
+        $stmt->execute(['header' => $title, 'paragraaph' => $paragraph, 'vacatureID' => $vacatureID]);
+    }
+    ?>
+    <!-- --------------------------- Career Growth ------------------------- -->
+    <div class="container mt-5 toolTipContainer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -742,7 +774,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
             </div>
         </div>
         <hr>
-        <form action="editData.php" method="POST">
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="careerGrowth">
                 <script>
                     if (jsonData) {
@@ -752,49 +784,93 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
                         document.getElementById("careerGrowth").innerHTML = `
                         <label for="iconClass">Title</label>
-                        <input type="text" class="form-control mb-2" placeholder="${title}"></input>
+                        <input type="text" name="title" class="form-control mb-2" value="${title}"></input>
                         <label for="iconClass">paragraph</label>
-                        <input type="text" class="form-control mb-2" placeholder="${paragraph}"></input>
+                        <input type="text" name="paragraaph" class="form-control mb-2" value="${paragraph}"></input>
+                        <button type="submit" name="updateCareerGrowth" value="clicked" class="btn btn-primary">Update Section</button>
                         `;
                     }
                 </script>
-                <div class="row">
-                    <script>
-                        if (jsonData) {
-
-                            let circle = jsonData[2].sectionContent[6].sectionContent[1].objectValue[1].objectValue
-
-                            circle.forEach(row => {
-
-                                document.getElementById("careerGrowth").innerHTML += `
-                            
-                                    <div class="col-sm-3">
-                                        <label for="iconClass">Object Text</label>
-                                        <input type="text" class="form-control mb-2" placeholder="${row.objectText}"></input>
-                                    </div>
-                                    
-                                    `;
-                            });
-
-                            circle.forEach(row => {
-
-                                document.getElementById("careerGrowth").innerHTML += `
-
-                                <div class="col-sm-3">
-                                    <label for="iconClass">Object Image</label>
-                                    <img type="image" class="form-control mb-2">${row.objectImage}</img>
-                                    <input type="file" class="form-control mb-2"></input>
-                                    </div>
-                                
-                                `;
-                            });
-                        }
-                    </script>
-                </div>
             </div>
         </form>
-    </div> -->
+    </div>
 
+    <!-- --------------------------- Video ------------------------------ -->
+    <?php
+    if (isSubmitButtonClicked('updateVideo', 'clicked')) {
+
+        $videoURL = $_POST["videoURL"];
+        $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
+
+        $stmt = $pdo->prepare("UPDATE video SET link = :link WHERE vacature_id = :vacatureID");
+        $stmt->execute(['link' => $videoURL, 'vacatureID' => $vacatureID]);
+    }
+    ?>
+    <!-- --------------------------- Video ------------------------------ -->
+
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Video</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
+            <div class="row form-group" id="video">
+                <script>
+                    document.getElementById("video").innerHTML = `
+                        <label for="video">Video Link</label>
+                        <input type="text" name="videoURL" class="form-control mb-2" value="" placeholder="only add url inside href from embed link"></input>
+                        <button type="submit" name="updateVideo" value="clicked" class="btn btn-primary">Update Section</button>
+                        `;
+                </script>
+            </div>
+        </form>
+    </div>
+
+    <!-- --------------------------- workWithUs ------------------------------ -->
+
+
+
+
+
+    <!-- --------------------------- workWithUs ------------------------------ -->
+    <div class="container mt-5 toolTipContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h1>Work With us</h1>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
+            <div class="row form-group" id="workWithUs">
+                <script>
+                    if (jsonData) {
+                        let title = jsonData[2].sectionContent[8].sectionContent[0].objectValue
+                        let paragraph = jsonData[2].sectionContent[8].sectionContent[1].objectValue[0].objectValue
+
+                        document.getElementById("workWithUs").innerHTML = `
+                        <label for="title">title</label>
+                        <input type="text" name="title" class="form-control mb-2" value="${title}"></input>
+                        <label for="paragraph">paragraph</label>
+                        <input type="text" name="paragraph" class="form-control mb-2" value="${paragraph}"></input>
+                        <button type="submit" name="updateWorkWithUs" value="clicked" class="btn btn-primary">Update Section</button>
+                        `;
+                    }
+                </script>
+            </div>
+        </form>
+    </div>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

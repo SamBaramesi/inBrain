@@ -1,8 +1,8 @@
 window.startPracticalExample = function startPracticalExample(jsonData) {
 
-    let title = jsonData[2].sectionContent[5].sectionContent[0].objectValue
-    let quote = jsonData[2].sectionContent[5].sectionContent[1].objectValue
-    let paragraph = jsonData[2].sectionContent[5].sectionContent[2].objectValue
+    let title = jsonData[2].sectionContent[5].sectionContent[1].objectValue
+    let quote = jsonData[2].sectionContent[5].sectionContent[2].objectValue
+    let paragraph = jsonData[2].sectionContent[5].sectionContent[3].objectValue
 
     let section = document.getElementById("practicalExample");
 
