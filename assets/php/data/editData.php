@@ -2,7 +2,7 @@
 
 session_start(); // start session
 
-require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
+require_once "../dbconnect.php";
 
 if (isset($_GET['id'])) {
     $vacatureID = $_GET['id'];
@@ -12,7 +12,6 @@ if (isset($_GET['id'])) {
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
-
     var url_string = window.location.href;
     var url = new URL(url_string);
 
@@ -24,7 +23,7 @@ if (isset($_GET['id'])) {
         global: false,
         url: "../../../vacaturejson.php?id=" + vacatureID,
         dataType: "json",
-        success: function (data) {
+        success: function(data) {
             jsonData = data;
         }
     });
@@ -39,8 +38,7 @@ if (isset($_GET['id'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Update Data</title>
     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 
 <style>
@@ -98,8 +96,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
             <a href="data.php" class="btn btn-secondary mb-4"> Go Back</a>
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Banner</h1>
@@ -162,7 +159,6 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
         $stmt = $pdo->prepare("INSERT INTO qualifications (vacature_id, icon_class, icon_text) VALUES (:vacature_id, '', '')");
         $stmt->execute(['vacature_id' => $vacatureID]);
-
     }
 
     if (isSubmitButtonClicked('deleteQualificationsRow', 'clicked')) {
@@ -179,8 +175,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Qualifications</h1>
@@ -191,7 +186,6 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <form action="editData.php?id=<?php echo $vacatureID ?>" method="POST">
             <div class="row form-group" id="qualifications">
                 <script>
-
                     if (jsonData) {
 
                         let column1 = jsonData[2].sectionContent[0].sectionContent[0].columnContent
@@ -261,7 +255,6 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
         $stmt = $pdo->prepare("INSERT INTO benefits (vacature_id, icon_class, icon_text) VALUES (:vacature_id, '', '')");
         $stmt->execute(['vacature_id' => $vacatureID]);
-
     }
 
     if (isSubmitButtonClicked('deleteBenefitsRow', 'clicked')) {
@@ -282,8 +275,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Benefits</h1>
@@ -364,7 +356,6 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
         $stmt = $pdo->prepare("INSERT INTO activity (vacature_id, activity_name, activity_value) VALUES (:vacature_id, '', '')");
         $stmt->execute(['vacature_id' => $vacatureID]);
-
     }
 
     if (isSubmitButtonClicked('deleteActivityRow', 'clicked')) {
@@ -382,8 +373,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Activity</h1>
@@ -445,7 +435,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         $contactEmail = $_POST["contactEmail"];
 
         $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
-    
+
         $stmt = $pdo->prepare("UPDATE contact SET contact_header = :contactHeader, contact_name = :contactName, contact_title = :contactTitle, contact_email = :contactEmail WHERE vacature_id = :vacatureID");
         $stmt->execute(['contactHeader' => $contactHeader, 'contactName' => $contactName, 'contactTitle' => $contactTitle, 'contactEmail' => $contactEmail, 'vacatureID' => $vacatureID]);
     }
@@ -458,8 +448,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Contact</h1>
@@ -504,7 +493,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         $secondP = $_POST["secondP"];
 
         $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
-    
+
         $stmt = $pdo->prepare("UPDATE vacancy SET vacancy_header = :vacancyHead, Paragraaph1 = :Paragraaph1, Paragraaph2 = :Paragraaph2 WHERE vacature_id = :vacatureID");
         $stmt->execute(['vacancyHead' => $vacancyHead, 'Paragraaph1' => $firstP, 'Paragraaph2' => $secondP, 'vacatureID' => $vacatureID]);
     }
@@ -517,8 +506,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Vacature</h1>
@@ -553,38 +541,48 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     <!-- --------------------------- Work Week ------------------------- -->
     <?php
 
-    if (isSubmitButtonClicked('updateWorkWeek', 'clicked')) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['updateWorkWeek'])) {
+            global $vacatureID;
 
-        global $vacatureID;
+            $eventName = isset($_POST['eventName']) ? $_POST['eventName'] : '';
+            $st = isset($_POST['startTime']) ? $_POST['startTime'] : '';
+            if ($st !== '') {
+                list($event_dateStart, $event_timeStart) = explode("T", $st);
+            } else {
+                $event_dateStart = '';
+                $event_timeStart = '';
+            }
 
-        $eventName = isset($_POST['eventName']) ? $_POST['eventName'] : null;
-        $st = isset($_POST['startTime']) ? $_POST['startTime'] : null;
-        list($event_dateStart,$event_timeStart) = explode("T", $st);
-        $et = isset($_POST['endTime']) ? $_POST['endTime'] : null;
-        list($event_dateEnd,$event_timeEnd) = explode("T", $et);
-        $eventId = isset($_POST['eventId']) ? $_POST['eventId'] : null;
-        $evColor = isset($_POST['evColor']) ? $_POST['evColor'] : null;
-        $txtColor = isset($_POST['txtColor']) ? $_POST['txtColor'] : null;
-        $desc = isset($_POST['desc']) ? $_POST['desc'] : null;
-        $eventDay = isset($_POST['eventDay']) ? $_POST['eventDay'] : null;
+            $et = isset($_POST['endTime']) ? $_POST['endTime'] : '';
+            if ($et !== '') {
+                list($event_dateEnd, $event_timeEnd) = explode("T", $et);
+            } else {
+                $event_dateEnd = '';
+                $event_timeEnd = '';
+            }
 
-        if ($eventName && $eventDay && $event_dateStart && $event_timeStart && $event_dateEnd && $event_timeEnd && $eventId && $evColor && $txtColor && $desc) {
-            $stmt = $pdo->prepare("UPDATE weekday SET day = :eventDay, event_title = :eventName, event_timeStart = :startTime, event_dateStart = :startDate, event_timeEnd = :endTime, event_dateEnd = :endDate, event_color = :evColor, event_textColor = :txtColor, event_description = :desc WHERE id = :eventId AND vacature_id = :vacature_id");
-            $stmt->execute(['eventDay' => $eventDay,'eventName' => $eventName,'startTime' => $event_timeStart,'startDate' => $event_dateStart,'endTime' => $event_timeEnd,'endDate' => $event_dateEnd,'evColor' => $evColor,'txtColor' => $txtColor,'desc' => $desc,'eventId' => $eventId,'vacature_id' => $vacatureID]);
-        } else {
-            // handle error here
-            error_log('something wrong');
+            $eventId = isset($_POST['eventId']) ? $_POST['eventId'] : '';
+            $evColor = isset($_POST['evColor']) ? $_POST['evColor'] : '';
+            $txtColor = isset($_POST['txtColor']) ? $_POST['txtColor'] : '';
+            $desc = isset($_POST['desc']) ? $_POST['desc'] : '';
+            $eventDay = strtolower($_POST['updateWorkWeek']);
+
+            $stmt = $pdo->prepare("UPDATE weekday SET event_title = :eventName, event_timeStart = :startTime, event_dateStart = :startDate, event_timeEnd = :endTime, event_dateEnd = :endDate, event_color = :evColor, event_textColor = :txtColor, event_description = :desc WHERE id = :eventId AND vacature_id = :vacature_id AND day = :eventDay");
+            $stmt->execute(['eventName' => $eventName, 'startTime' => $event_timeStart, 'startDate' => $event_dateStart, 'endTime' => $event_timeEnd, 'endDate' => $event_dateEnd, 'evColor' => $evColor, 'txtColor' => $txtColor, 'desc' => $desc, 'eventId' => $eventId, 'vacature_id' => $vacatureID, 'eventDay' => $eventDay]);
         }
     }
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['addInputWorkWeek'])) {
 
-    if (isSubmitButtonClicked('addInputWorkWeek', 'clicked')) {
+            global $vacatureID;
 
-        $eventId = isset($_POST['eventId']) ? $_POST['eventId'] : null;
+            $eventDay = strtolower($_POST['addInputWorkWeek']);
 
-        $stmt = $pdo->prepare("INSERT INTO weekday (vacature_id, day, event_title, event_timeStart, event_dateStart, event_timeEnd, event_dateEnd, event_color, event_textColor, event_description) VALUES (:vacature_id, '', '', '', '', '', '', '', '', '')");
-        $stmt->execute(['vacature_id' => $vacatureID]);
-
+            $stmt = $pdo->prepare("INSERT INTO weekday (vacature_id, day, event_title, event_timeStart, event_dateStart, event_timeEnd, event_dateEnd, event_color, event_textColor, event_description) VALUES (:vacature_id, :eventDay, '', '', '', '', '', '', '', '')");
+            $stmt->execute(['vacature_id' => $vacatureID, 'eventDay' => $eventDay]);
+        }
     }
 
     if (isSubmitButtonClicked('deleteWorkWeekRow', 'clicked')) {
@@ -603,8 +601,7 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                        title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" title="<img src='../../img/banner.png'>">Don't Know What You're editing?</button>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h1>Work Week</h1>
@@ -643,22 +640,18 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
 
                                 document.getElementById(dayId).innerHTML += `
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <label for="iconClass">Event Name</label>
                                             <input type="text" name="eventName" class="form-control mb-2" value="${name}"></input>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <label for="iconClass">Event Start</label>
                                             <input type="text" name="startTime" class="form-control mb-2" value="${startTime}"></input>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <label for="iconClass">Event End</label>
                                             <input type="text" name="endTime" class="form-control mb-2" value="${endTime}"></input>
                                             <input type="hidden" name="eventId" class="form-control mb-2" value="${eventId}"></input>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label for="iconClass">Event day</label>
-                                            <input type="text" name="eventDay" class="form-control mb-2"></input>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -678,14 +671,15 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                                     <hr>
                                 `;
                             }
+                            console.log(day.weekDay);
 
                             document.getElementById(dayId).innerHTML +=
-                            `
+                                `
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <button type="submit" name="updateWorkWeek" value="clicked" class="btn btn-primary col-md-12">Update Section</button>
+                                        <button type="submit" name="updateWorkWeek" value="${day.weekDay}" class="btn btn-primary col-md-12">Update Section</button>
                                         </div>                                        <div class="col-md-4">
-                                        <button type="submit" name="addInputWorkWeek" value="clicked" class="btn btn-success col-md-12">Add Input</button>
+                                        <button type="submit" name="addInputWorkWeek" value="${day.weekDay}" class="btn btn-success col-md-12">Add Input</button>
                                     </div>
                                     <div class="col-md-4">
                                         <button type="submit" name="deleteWorkWeekRow" value="clicked" class="btn btn-danger col-md-12">Delete Last Row</button>
@@ -802,13 +796,11 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     </div> -->
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script>
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip({
                 container: 'body',
                 boundary: '.toolTipContainer',

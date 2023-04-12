@@ -1,7 +1,7 @@
 <?php
 	session_start(); // start session
 
-    require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
+    require_once "../dbconnect.php";
     
     // Check if the user is logged in
 if (!isset($_SESSION["user_id"])) {

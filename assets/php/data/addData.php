@@ -4,7 +4,7 @@
 session_start();
 
 // Include database connection file
-require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
+require_once "../dbconnect.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize input to prevent SQL Injection attacks

@@ -2,7 +2,7 @@
 
 session_start(); // start session
 
-require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php";
+require_once "../dbconnect.php";
 
 if (!isset($_SESSION['user_id'])) { // Redirect to login page if user is not logged in
     header("location: ../login.php");

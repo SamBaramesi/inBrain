@@ -3,3 +3,4 @@ Deze link werkt bij  mij niet :). Want ik heb een andere folderstructuur. Kan he
 
 - vacaturejson.php heeft een lang script (zo'n 300 regels, startend op regel 14) die ingekort kan worden tot een paar regels! Je doet elke keer hetzelfde, namelijk je fetcht elke keer data, maar dan voor een andere tabel. Dit moet uiteindelijk een functie worden. Hoeft niet nu, maar als je dit in je portefolio gooit is het wel belangrijk!
 
+- When editing vacancy fields, make sure to handle your requests one by one. meaning dont add multiple input fields before filling and submitting the one you already added.

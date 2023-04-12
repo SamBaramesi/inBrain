@@ -2,7 +2,7 @@
 
 session_start(); // start session
 
-require_once "/xampp/htdocs/inBrain/assets/php/dbconnect.php"; // Include database connection file
+require_once "../dbconnect.php"; // Include database connection file
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
