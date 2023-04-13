@@ -68,14 +68,7 @@ foreach ($vacatures as $vacature) {
     $vacHead = isset($vacancyData[0]['vacancy_header']) ? $vacancyData[0]['vacancy_header'] : "";
 
     // Fetch vacancy
-    $stmt = $pdo->query("SELECT Paragraaph1,Paragraaph2 from vacancy where vacature_id={$vacatureID}");
-    $vacancyData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $vacancy = array();
-    foreach ($vacancyData as $vacancyRow) {
-        foreach ($vacancyRow as $vacancyKey => $vacancyValue) {
-            $vacancy[] = array("id" => count($vacancy) + 1, "objectName" => $vacancyKey, "objectValue" => $vacancyValue);
-        }
-    }
+    $vacancy = fetchData('vacancy');
 
     // Fetch quote
     $stmt = $pdo->query("SELECT quote_text from quote where vacature_id={$vacatureID}");
@@ -92,14 +85,7 @@ foreach ($vacatures as $vacature) {
     }
 
     // Fetch practicalExample
-    $stmt = $pdo->query("SELECT id, peHead, quote, paragraaph FROM practicalexample WHERE vacature_id = {$vacatureID}");
-    $peData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $pe = array();
-    foreach ($peData as $peRow) {
-        foreach ($peRow as $peKey => $peValue) {
-            $pe[] = array("id" => $peRow["id"], "objectName" => $peKey, "objectValue" => $peValue);
-        }
-    }
+    $pe = fetchData('practicalexample');
 
     // Fetch careerGrowth
     $stmt = $pdo->query("SELECT header,paragraaph from careergrowth where vacature_id={$vacatureID}");

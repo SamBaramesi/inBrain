@@ -2,8 +2,8 @@ window.startVacancy = function startVacancy(jsonData) {
 
     // Get the data thats going to be used!
     let vacancyHead = jsonData[2].sectionContent[2].sectionContent[0].objectValue
-    let firstP = jsonData[2].sectionContent[2].sectionContent[1].objectValue[0].objectValue
-    let secondP = jsonData[2].sectionContent[2].sectionContent[1].objectValue[1].objectValue
+    let firstP = jsonData[2].sectionContent[2].sectionContent[1].objectValue[3].objectValue
+    let secondP = jsonData[2].sectionContent[2].sectionContent[1].objectValue[4].objectValue
     // calling section where data will be inserted
     let section = document.getElementById("vacancy");
 
