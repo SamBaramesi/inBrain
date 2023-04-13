@@ -109,10 +109,10 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
                 <script>
                     if (jsonData) {
 
-                        let bannerHeaderJSON = jsonData[1].sectionContent[0].objectValue
-                        let companyNameJSON = jsonData[1].sectionContent[1].objectValue
-                        let companyLocationJSON = jsonData[1].sectionContent[2].objectValue
-                        let buttonJSON = jsonData[1].sectionContent[3].objectValue
+                        let bannerHeaderJSON = jsonData[1].sectionContent[2].objectValue
+                        let companyNameJSON = jsonData[1].sectionContent[3].objectValue
+                        let companyLocationJSON = jsonData[1].sectionContent[4].objectValue
+                        let buttonJSON = jsonData[1].sectionContent[5].objectValue
 
                         document.getElementById("banner").innerHTML = `
                         <label for="bannerHeader">Function Name</label>
