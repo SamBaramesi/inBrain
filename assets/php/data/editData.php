@@ -834,11 +834,17 @@ if (isSubmitButtonClicked('updateBanner', 'clicked')) {
     </div>
 
     <!-- --------------------------- workWithUs ------------------------------ -->
+    <?php
+    if (isSubmitButtonClicked('updateWorkWithUs', 'clicked')) {
 
+        $vacatureID = $_GET['id']; // Get the value of the id parameter from the URL
+        $header = $_POST["title"];
+        $paragraph = $_POST["paragraph"];
 
-
-
-
+        $stmt = $pdo->prepare("UPDATE workwithus SET header = :header, paragraaph = :paragraaph WHERE vacature_id = :vacatureID");
+        $stmt->execute(['header' => $header, 'paragraaph' => $paragraph, 'vacatureID' => $vacatureID]);
+    }
+    ?>
     <!-- --------------------------- workWithUs ------------------------------ -->
     <div class="container mt-5 toolTipContainer">
         <div class="container">

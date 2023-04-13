@@ -8,7 +8,7 @@ var url = new URL(url_string);
 var vacatureID = url.searchParams.get("id");
 
 $.ajax({
-    url: "/inBrain/vacaturejson.php?id=" + vacatureID,
+    url: "vacaturejson.php?id=" + vacatureID,
     dataType: "json",
     success: function (data) {
         
