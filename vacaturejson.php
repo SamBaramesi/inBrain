@@ -10,18 +10,33 @@ $stmt->bindParam(":id", $vacatureID);
 $stmt->execute();
 $vacatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+function fetchData($table){
+    global $pdo, $vacatureID;
+    $stmt = $pdo->query("SELECT * from $table where vacature_id={$vacatureID}");
+    $tableData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $table = array();
+    foreach ($tableData as $tableRow) {
+        foreach ($tableRow as $key => $value) {
+            $table[] = array("id" => count($table) + 1, "objectName" => $key, "objectValue" => $value);
+        }
+    }
+    return $table;
+}
+
 // Loop through the results and build the JSON structure
 foreach ($vacatures as $vacature) {
 
     // Fetch banner
-    $stmt = $pdo->query("SELECT header,companyName,companyLocation,button from banner where vacature_id={$vacatureID}");
-    $bannerData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $banner = array();
-    foreach ($bannerData as $bannerRow) {
-        foreach ($bannerRow as $bannerKey => $bannerValue) {
-            $banner[] = array("id" => count($banner) + 1, "objectName" => $bannerKey, "objectValue" => $bannerValue);
-        }
-    }
+    // $stmt = $pdo->query("SELECT header,companyName,companyLocation,button from banner where vacature_id={$vacatureID}");
+    // $bannerData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // $banner = array();
+    // foreach ($bannerData as $bannerRow) {
+    //     foreach ($bannerRow as $bannerKey => $bannerValue) {
+    //         $banner[] = array("id" => count($banner) + 1, "objectName" => $bannerKey, "objectValue" => $bannerValue);
+    //     }
+    // }
+
+    $banner = fetchData('banner');
 
     // Fetch qualifications
     $stmt = $pdo->query("SELECT id,icon,icon_class,icon_text from qualifications where vacature_id={$vacatureID}");
