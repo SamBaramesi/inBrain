@@ -10,6 +10,6 @@ The Job Vacancy Generator saves time and effort for HR professionals and recruit
 
 Overall, a Job Vacancy Generator is a valuable tool for any organization that wants to attract and hire top talent. It streamlines the recruitment process and helps companies create job descriptions that stand out in a crowded job market.
 
-#Instructions
+# Instructions
 
 - When editing vacancy fields, make sure to handle your requests one by one. meaning dont add multiple input fields before filling and submitting the one you already added.
